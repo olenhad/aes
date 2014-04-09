@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/testbench_isim_beh.exe" -prj "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/testbench_beh.prj" "work.testbench" 

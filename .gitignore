@@ -1,5 +1,8 @@
-*
-!*.vhdl
+!*.vhd
 !*.c
 !*.bit
 !.gitignore
+*
+#/*/
+#!/pcores/*.vhd
+#/pcores/*

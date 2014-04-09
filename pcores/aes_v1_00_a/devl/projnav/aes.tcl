@@ -1,0 +1,10 @@
+project new C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes.xise;
+project set family spartan3e;
+project set device xc3s1600e;
+project set package fg320;
+project set speed -4;
+project set top_level_module_type HDL;
+project set synthesis_tool "XST (VHDL/Verilog)";
+lib_vhdl new aes_v1_00_a;
+xfile add C:/ee4218-aes/aes2//pcores/aes_v1_00_a/hdl/vhdl/aes.vhd -lib_vhdl aes_v1_00_a;
+project close;
