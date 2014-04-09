@@ -1,0 +1,5 @@
+*
+!*.vhdl
+!*.c
+!*.bit
+!.gitignore
