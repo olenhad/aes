@@ -130,7 +130,7 @@ architecture EXAMPLE of aes is
 
    type STATE_TYPE is (Idle, Read_Inputs, Write_Outputs);
 
-   signal state        : STATE_TYPE;
+   signal fsl_state        : STATE_TYPE;
 
    -- Accumulator to hold sum of inputs read at any point in time
    signal sum          : std_logic_vector(0 to 31);
@@ -235,14 +235,31 @@ architecture EXAMPLE of aes is
 	2 => ( 0 => x"f3", 1 => x"07", 2 => x"a7", 3 => x"8b"), 
 	3 => ( 0 => x"4d", 1 => x"2b", 2 => x"30", 3 => x"c5")));
 	
+	
+	signal verify_decrypt : AES_Block := 
+	(
+	0 => (0 => x"03", 1 => x"05", 2 => x"07", 3 => x"03"),
+	1 => (0 => x"00", 1 => x"05", 2 => x"66", 3 => x"77"),
+	2 => (0 => x"88", 1 => x"99", 2 => x"aa", 3 => x"bb"), 
+	3 => (0 => x"cc", 1 => x"dd", 2 => x"ee", 3 => x"ff")
+	);
+	signal test_decrypt_result : AES_Block;
+	signal test_decrypt_input : AES_Block := 
+	(
+	0  => (0 => x"12", 1 => x"c4", 2 => x"97", 3 => x"c5"), 
+	1  => (0 => x"6f", 1 => x"b4", 2 => x"b8", 3 => x"f4"), 
+	2  => (0 => x"d1", 1 => x"1f", 2 => x"ed", 3 => x"9d"), 
+	3  => (0 => x"3e", 1 => x"c3", 2 => x"a4", 3 => x"ce")
+	);
+	
 begin
    -- CAUTION:
    -- The sequence in which data are read in and written out should be
    -- consistent with the sequence they are written and read in the
    -- driver's aes.c file
 
-   FSL_S_Read  <= FSL_S_Exists   when state = Read_Inputs   else '0';
-   FSL_M_Write <= not FSL_M_Full when state = Write_Outputs else '0';
+   FSL_S_Read  <= FSL_S_Exists   when fsl_state = Read_Inputs   else '0';
+   FSL_M_Write <= not FSL_M_Full when fsl_state = Write_Outputs else '0';
 
    --FSL_M_Data <= sum;
 	
@@ -250,7 +267,12 @@ begin
 	FSL_M_Data <= word_to_vector(inter);
 	
    The_SW_accelerator : process (FSL_Clk) is
-   begin  -- process The_SW_accelerator
+	variable step_num : Integer range 0 to 10 := 0;
+	variable expanded_key : AES_ExpandedKey;
+	variable state : AES_Block;	
+   
+	begin  -- process The_SW_accelerator
+
 	result_block <= inv_shift_rows(test_block);
 	assert (result_block = verify_block) report "inv_shift_row failed!!!" severity warning;
 	
@@ -260,19 +282,44 @@ begin
 	test_key_expand <= key_expansion(cypher_key);
 	assert (test_key_expand = verify_key_expand) report "key exp fucked!!!!" severity warning;
 	
+	
+	
     if FSL_Clk'event and FSL_Clk = '1' then     -- Rising clock edge
       if FSL_Rst = '1' then               -- Synchronous reset (active high)
         -- CAUTION: make sure your reset polarity is consistent with the
         -- system reset polarity
-        state        <= Idle;
+        fsl_state        <= Idle;
         nr_of_reads  <= 0;
         nr_of_writes <= 0;
         sum          <= (others => '0');
       else
-        case state is
+		
+		if (step_num = 0) then
+					expanded_key := key_expansion(cypher_key);	
+					state := add_round_key(test_decrypt_input, expanded_key(10));
+					step_num := 1;											
+				elsif (step_num > 0 and step_num <= 9) then
+					state := inv_shift_rows(state);
+					state := inv_subs_block(state);
+					state := add_round_key(state, expanded_key(10 - step_num));
+					state := inv_mix_column_block(state);
+					step_num := step_num + 1;
+				else 
+					state := inv_shift_rows(state);
+					state := inv_subs_block(state);
+					state := add_round_key(state, expanded_key(0));
+					--result <= state;
+					assert (state = verify_decrypt) report "DECRYPT DOESNT WORK  :(" severity warning;
+					step_num := 0;
+					
+				end if;
+	
+		
+
+        case fsl_state is
           when Idle =>
             if (FSL_S_Exists = '1') then
-              state       <= Read_Inputs;
+              fsl_state       <= Read_Inputs;
               nr_of_reads <= NUMBER_OF_INPUT_WORDS - 1;
               sum         <= (others => '0');
             end if;
@@ -282,7 +329,7 @@ begin
               -- Coprocessor function (Adding) happens here
               sum         <= std_logic_vector(unsigned(sum) + unsigned(FSL_S_Data));
               if (nr_of_reads = 0) then
-                state        <= Write_Outputs;
+                fsl_state        <= Write_Outputs;
                 nr_of_writes <= NUMBER_OF_OUTPUT_WORDS - 1;
               else
                 nr_of_reads <= nr_of_reads - 1;
@@ -291,7 +338,7 @@ begin
 
           when Write_Outputs =>
             if (nr_of_writes = 0) then
-              state <= Idle;
+              fsl_state <= Idle;
             else
               if (FSL_M_Full = '0') then
                 nr_of_writes <= nr_of_writes - 1;

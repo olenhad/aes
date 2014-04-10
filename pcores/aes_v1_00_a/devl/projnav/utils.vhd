@@ -32,7 +32,7 @@ package utils is
 -- std_logic_vector is the Column. 
 	subtype AES_Byte is std_logic_vector(0 to 7);
 	subtype AES_32 is std_logic_vector(0 to 31);
-	subtype AES_Int is integer range 0 to 127;
+	subtype AES_Int is integer range 0 to 256;
 	
 	type AES_Word is array(0 to 3) of AES_Byte;
 -- Word is a column!!!
@@ -52,22 +52,23 @@ package utils is
 	
 	function i2v (arg : AES_Int) return AES_Byte;
 	
-	function word_to_vector (signal w: in AES_Word) return AES_32;
+	function word_to_vector ( w:  AES_Word) return AES_32;
 	
-	function inv_subs_byte (signal b: in AES_Byte) return AES_Byte;
-	function inv_subs_word (signal w : in AES_Word) return AES_Word;
-	function inv_subs_block (signal b : in AES_Block) return AES_Block ;
+	function inv_subs_byte ( b: AES_Byte) return AES_Byte;
+	function inv_subs_word ( w :  AES_Word) return AES_Word;
+	function inv_subs_block ( b :  AES_Block) return AES_Block ;
 	
 	function subs_byte (b: AES_Byte) return AES_Byte;
 	function subs_word (w : AES_Word) return AES_Word;
 	
-	function inv_shift_rows (signal b : in AES_Block) return AES_Block;
+	function inv_shift_rows ( b :  AES_Block) return AES_Block;
 	
-	function add_round_key (signal inp : in AES_Block; signal key : in AES_Block) return AES_Block;
+	function add_round_key (inp : AES_Block; key : AES_Block) return AES_Block;
 	
-	function inv_mix_column (signal w: in AES_Word) return AES_Word;
+	function inv_mix_column ( w:  AES_Word) return AES_Word;
+	function inv_mix_column_block (w : AES_Block) return AES_Block;
 	
-	function key_expansion (signal cipher_key : in AES_Block) return AES_ExpandedKey;
+	function key_expansion ( cipher_key :  AES_Block) return AES_ExpandedKey;
 	
 		function xor_word ( a :AES_Word;  b: AES_Word) return AES_Word;
 		
@@ -197,11 +198,13 @@ package body utils is
 	end v2i;
 	
 	function i2v (arg : AES_Int) return AES_Byte is
+	variable accum : AES_Byte;
 	begin
-		return std_logic_vector(to_unsigned(arg, 8));
+		accum := std_logic_vector(to_unsigned(arg, accum'length));
+		return accum;
 	end i2v;
 	
-	function word_to_vector (signal w: in AES_Word) return AES_32 is
+	function word_to_vector ( w: AES_Word) return AES_32 is
 	variable accum : std_logic_vector(0 to 31);
 	begin
 		accum(0 to 7) := w(0);
@@ -212,7 +215,7 @@ package body utils is
 		return accum;
 	end word_to_vector;
 
-	function inv_subs_byte (signal b: in AES_Byte) return AES_Byte is
+	function inv_subs_byte ( b: AES_Byte) return AES_Byte is
 	variable upper : std_logic_vector(0 to 3);
 	variable lower : std_logic_vector(0 to 3);
 	begin
@@ -221,7 +224,7 @@ package body utils is
 		return SBOX_INV( to_integer(unsigned(upper)), to_integer(unsigned(lower)));
 	end inv_subs_byte;
 	
-	function inv_subs_word (signal w : in AES_Word) return AES_Word is
+	function inv_subs_word ( w : AES_Word) return AES_Word is
 	variable accum : AES_Word;
 	begin
 		accum(0) := inv_subs_byte(w(0));
@@ -231,7 +234,7 @@ package body utils is
 		return accum;
 	end inv_subs_word;
 	
-	function inv_subs_block (signal b : in AES_Block) return AES_Block is
+	function inv_subs_block ( b :  AES_Block) return AES_Block is
 	variable accum : AES_Block;
 	begin
 		for i in 0 to 3 loop
@@ -259,7 +262,7 @@ package body utils is
 		return accum;
 	end subs_word;
 
-	function inv_shift_rows (signal b : in AES_Block) return AES_Block is
+	function inv_shift_rows ( b : AES_Block) return AES_Block is
 	variable accum : AES_Block;
 	begin
 	-- first index is col number. snd is row number
@@ -287,7 +290,7 @@ package body utils is
 		return accum;
 	end inv_shift_rows;
 	
-	function add_round_key (signal inp : in AES_Block; signal key : in AES_Block) return AES_Block is
+	function add_round_key (inp : AES_Block; key : AES_Block) return AES_Block is
 	variable accum : AES_Block;
 	begin
 		for i in 0 to 3 loop
@@ -307,7 +310,7 @@ package body utils is
 		return accum;
 	end xor_word;
 	
-	function inv_mix_column ( signal w: in AES_Word) return AES_Word is
+	function inv_mix_column ( w: AES_Word) return AES_Word is
 	variable accum : AES_Word;
 	begin
 		for i in 0 to 3 loop
@@ -319,6 +322,15 @@ package body utils is
 		return accum;
 	end inv_mix_column;
 	
+	function inv_mix_column_block (w : AES_Block) return AES_Block is
+	variable accum : AES_Block;
+	begin
+		for i in 0 to 3 loop
+			accum(i) := inv_mix_column(w(i));
+		end loop;
+		return accum;
+	end inv_mix_column_block;
+	
 	function rot_word (w : AES_Word) return AES_Word is
 	variable accum : AES_Word;
 	begin
@@ -329,7 +341,7 @@ package body utils is
 		return accum;
 	end rot_word;
 	
-	function key_expansion (signal cipher_key : in AES_Block) return AES_ExpandedKey is
+	function key_expansion (cipher_key : AES_Block) return AES_ExpandedKey is
 	variable expanded_key : AES_ExpandedKey;
 	variable t : AES_Word;
 	variable padded_rcons : AES_Word;
@@ -352,22 +364,28 @@ package body utils is
 							    signal key: in AES_Block;
 							    signal cypher: in AES_Block;
 							    signal result: out AES_Block) is
-		variable step_num : Integer range -1 to 10 := -1;
+		variable step_num : Integer range 0 to 10 := 0;
 		variable expanded_key : AES_ExpandedKey;
-		variable	state : AES_Block;	
+		variable state : AES_Block;	
 		begin
 			if rising_edge(CLK) then
 				if (step_num = 0) then
-					expanded_key := key_expansion(key);
+					expanded_key := key_expansion(key);	
 					state := add_round_key(cypher, expanded_key(10));
 					step_num := 1;											
 				elsif (step_num > 0 and step_num <= 9) then
 					state := inv_shift_rows(state);
-					state := 
+					state := inv_subs_block(state);
+					state := add_round_key(state, expanded_key(10 - step_num));
+					state := inv_mix_column_block(state);
+					step_num := step_num + 1;
 				else 
-				
+					state := inv_shift_rows(state);
+					state := inv_subs_block(state);
+					state := add_round_key(state, expanded_key(0));
+					result <= state;
+					step_num := 0;
 				end if;
-				
 			end if;
 		end decrypt;
 end utils;
