@@ -18,6 +18,7 @@ UROP
 *.wdb
 *.ini
 temp/
+isim/
 #Xilinx EDK files
 blockkdiagram/
 synthesis/
