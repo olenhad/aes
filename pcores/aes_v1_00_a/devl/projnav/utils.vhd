@@ -31,14 +31,18 @@ package utils is
 --
 -- std_logic_vector is the Column. 
 	subtype AES_Byte is std_logic_vector(7 downto 0);
+	subtype AES_32 is std_logic_vector(31 downto 0);
 	type AES_Word is array(3 downto 0) of AES_Byte;
 -- Word is a column!!!
 	type AES_Block is array (3 downto 0) of AES_Word;
 	type AES_SBox is array (15 downto 0,15 downto 0) of AES_Byte;
 	
+	function word_to_vector (signal w: in AES_Word) return AES_32;
 	
 	function inv_subs_byte (signal b: in AES_Byte) return AES_Byte;
---	function inv_subs_word (signal w : in AES_Word) return AES_Word;
+	function inv_subs_word (signal w : in AES_Word) return AES_Word;
+	
+	function inv_shift_rows (signal b : in AES_Block) return AES_Block;
 	
 	constant SBOX_INV : AES_SBox := 
 	
@@ -123,6 +127,16 @@ package body utils is
 --  begin
 --    
 --  end <procedure_name>;
+	function word_to_vector (signal w: in AES_Word) return AES_32 is
+	variable accum : std_logic_vector(31 downto 0);
+	begin
+		accum(31 downto 24) := w(3);
+		accum(23 downto 16) := w(2);
+		accum(15 downto 8) := w(1);
+		accum(7 downto 0) := w(0);
+		return accum;
+	end word_to_vector;
+
 	function inv_subs_byte (signal b: in AES_Byte) return AES_Byte is
 	variable upper : std_logic_vector(3 downto 0);
 	variable lower : std_logic_vector(3 downto 0);
@@ -132,9 +146,39 @@ package body utils is
 		return SBOX_INV( to_integer(unsigned(upper)), to_integer(unsigned(lower)));
 	end inv_subs_byte;
 	
---	function inv_subs_word (signal w : in AES_Word) return AES_Word is
---	begin
+	function inv_subs_word (signal w : in AES_Word) return AES_Word is
+	variable accum : AES_Word;
+	begin
+		accum(0) := inv_subs_byte(w(0));
+		accum(1) := inv_subs_byte(w(1));
+		accum(2) := inv_subs_byte(w(2));
+		accum(3) := inv_subs_byte(w(3));
+		return accum;
+	end inv_subs_word;
+
+	function inv_shift_rows (signal b : in AES_Block) return AES_Block is
+	variable accum : AES_Block;
+	begin
+		accum(0)(0) := b(0)(0);
+		accum(0)(1) := b(3)(1);
+		accum(0)(2) := b(2)(2);
+		accum(0)(3) := b(1)(3);
 		
---	end inv_subs_word;
-	
+		accum(1)(0) := b(1)(0);
+		accum(1)(1) := b(0)(1);
+		accum(1)(2) := b(3)(2);
+		accum(1)(3) := b(2)(3);
+		
+		accum(2)(0) := b(2)(0);
+		accum(2)(1) := b(1)(1);
+		accum(2)(2) := b(0)(2);
+		accum(2)(3) := b(3)(3);
+		
+		accum(3)(0) := b(3)(0);
+		accum(3)(1) := b(2)(1);
+		accum(3)(2) := b(1)(2);
+		accum(3)(3) := b(0)(3);
+		
+		return accum;
+	end inv_shift_rows;
 end utils;

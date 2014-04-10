@@ -150,7 +150,7 @@ begin
    FSL_S_Read  <= FSL_S_Exists   when state = Read_Inputs   else '0';
    FSL_M_Write <= not FSL_M_Full when state = Write_Outputs else '0';
 
-   FSL_M_Data <= sum;
+   FSL_M_Data(0 to 31) <= sum;
 
    The_SW_accelerator : process (FSL_Clk) is
    begin  -- process The_SW_accelerator

@@ -140,6 +140,19 @@ architecture EXAMPLE of aes is
    signal nr_of_writes : natural range 0 to NUMBER_OF_OUTPUT_WORDS - 1;
 	
 	signal test : AES_Byte := x"50";
+	signal test_word : AES_Word := (0 => x"50", 1 => x"52", 2 => x"53", 3 => x"54");
+	signal inter : AES_Word;
+	signal test_block : AES_Block :=
+	(0 => (0 => x"00", 1 => x"01", 2 => x"02", 3 => x"03"),
+	1 => (0 => x"04", 1 => x"05", 2 => x"06", 3 => x"07"),
+	2 => (0 => x"08", 1 => x"09", 2 => x"0a", 3 => x"0b"),
+	3 => (0 => x"0c", 1 => x"0d", 2 => x"0e", 3 => x"0f"));
+	signal result_block : AES_Block;
+	signal verify_block : AES_Block :=
+	(0 => (0 => x"00", 1 => x"0d", 2 => x"0a", 3 => x"07"),
+ 1 => (0 => x"04", 1 => x"01", 2 => x"0e", 3 => x"0b"),
+ 2 => (0 => x"08", 1 => x"05", 2 => x"02", 3 => x"0f"),
+ 3 => (0 => x"0c", 1 => x"09", 2 => x"06", 3 => x"03"));
 
 begin
    -- CAUTION:
@@ -151,9 +164,14 @@ begin
    FSL_M_Write <= not FSL_M_Full when state = Write_Outputs else '0';
 
    --FSL_M_Data <= sum;
-	FSL_M_Data( 24 to 31) <= inv_subs_byte(test);
+	
+	inter <= inv_subs_word(test_word);
+	FSL_M_Data <= word_to_vector(inter);
    The_SW_accelerator : process (FSL_Clk) is
    begin  -- process The_SW_accelerator
+	result_block <= inv_shift_rows(test_block);
+	assert (result_block = verify_block) report "inv_shift_row failed!!!" severity warning;
+	
     if FSL_Clk'event and FSL_Clk = '1' then     -- Rising clock edge
       if FSL_Rst = '1' then               -- Synchronous reset (active high)
         -- CAUTION: make sure your reset polarity is consistent with the
