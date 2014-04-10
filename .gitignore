@@ -13,7 +13,11 @@
 
 #Xilinx ISE files
 UROP
-
+*.html
+*.dat
+*.wdb
+*.ini
+temp/
 #Xilinx EDK files
 blockkdiagram/
 synthesis/

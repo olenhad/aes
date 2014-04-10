@@ -44,6 +44,16 @@ package utils is
 	
 	function inv_shift_rows (signal b : in AES_Block) return AES_Block;
 	
+	function add_round_key (signal inp : in AES_Block; signal key : in AES_Block) return AES_Block;
+	
+	function 
+	
+	constant mix_col_matrix : AES_Block :=
+	( 0 => (0 => x"02", 1=> x"01", 2 => x"01", 3 => x"03"),
+	  1 => (0 => x"03", 1=> x"02", 2 => x"01", 3 => x"01"),
+	  2 => (0 => x"01", 1=> x"03", 2 => x"02", 3 => x"01"),
+	  3 => (0 => x"01", 1=> x"01", 2 => x"03", 3 => x"02"));
+	
 	constant SBOX_INV : AES_SBox := 
 	
  (
@@ -160,25 +170,38 @@ package body utils is
 	variable accum : AES_Block;
 	begin
 		accum(0)(0) := b(0)(0);
-		accum(0)(1) := b(3)(1);
+		accum(0)(1) := b(1)(1);
 		accum(0)(2) := b(2)(2);
-		accum(0)(3) := b(1)(3);
+		accum(0)(3) := b(3)(3);
 		
 		accum(1)(0) := b(1)(0);
-		accum(1)(1) := b(0)(1);
+		accum(1)(1) := b(2)(1);
 		accum(1)(2) := b(3)(2);
-		accum(1)(3) := b(2)(3);
+		accum(1)(3) := b(0)(3);
 		
 		accum(2)(0) := b(2)(0);
-		accum(2)(1) := b(1)(1);
+		accum(2)(1) := b(3)(1);
 		accum(2)(2) := b(0)(2);
-		accum(2)(3) := b(3)(3);
+		accum(2)(3) := b(1)(3);
 		
 		accum(3)(0) := b(3)(0);
-		accum(3)(1) := b(2)(1);
+		accum(3)(1) := b(0)(1);
 		accum(3)(2) := b(1)(2);
-		accum(3)(3) := b(0)(3);
+		accum(3)(3) := b(2)(3);
 		
 		return accum;
 	end inv_shift_rows;
+	
+	function add_round_key (signal inp : in AES_Block; signal key : in AES_Block) return AES_Block is
+	variable accum : AES_Block;
+	begin
+		for i in 3 downto 0 loop
+			for j in 3 downto 0 loop
+				accum(i)(j) := inp(i)(j) xor key(i)(j);
+			end loop;
+		end loop;
+		return accum;
+	end add_round_key;
+	
+	
 end utils;
