@@ -41,6 +41,8 @@ package utils is
 	
 	function v2i (arg : AES_Byte) return AES_Int;
 	
+	function i2v (arg : AES_Int) return AES_Byte;
+	
 	function word_to_vector (signal w: in AES_Word) return AES_32;
 	
 	function inv_subs_byte (signal b: in AES_Byte) return AES_Byte;
@@ -149,6 +151,16 @@ package body utils is
 --  begin
 --    
 --  end <procedure_name>;
+	function v2i (arg : AES_Byte) return AES_Int is
+	begin
+		return to_integer(unsigned(arg));
+	end v2i;
+	
+	function i2v (arg : AES_Int) return AES_Byte is
+	begin
+		return std_logic_vector(to_unsigned(arg, 8));
+	end i2v;
+	
 	function word_to_vector (signal w: in AES_Word) return AES_32 is
 	variable accum : std_logic_vector(0 to 31);
 	begin
@@ -218,12 +230,14 @@ package body utils is
 		return accum;
 	end add_round_key;
 	
-	function inv_mix_column (signal w: in AES_Word) return AES_Word is
+	function inv_mix_column ( signal w: in AES_Word) return AES_Word is
 	variable accum : AES_Word;
 	begin
 		for i in 0 to 3 loop
-			accum(i) := inv_mix_col_matrix(0)(i) * w(0) + inv_mix_col_matrix(1)(i) * w(1) + 
-							inv_mix_col_matrix(2)(i) * w(2) + inv_mix_col_matrix(3)(i) * w(3); 
+			accum(i) := i2v(
+								v2i(inv_mix_col_matrix(0)(i)) * v2i(w(0)) + v2i(inv_mix_col_matrix(1)(i)) * v2i(w(1)) + 
+								v2i(inv_mix_col_matrix(2)(i)) * v2i(w(2)) + v2i(inv_mix_col_matrix(3)(i)) * v2i(w(3))
+								); 
 		end loop;
 		return accum;
 	end inv_mix_column;

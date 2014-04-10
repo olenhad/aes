@@ -5,11 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="HDLCompiler" num="1731" delta="unknown" >"C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/utils.vhd" Line 222: found &apos;<arg fmt="%d" index="1">0</arg>&apos; definitions of operator <arg fmt="%s" index="2">&quot;*&quot;</arg>, cannot determine exact overloaded matching definition for <arg fmt="%s" index="2">&quot;*&quot;</arg>
-</msg>
-
-<msg type="error" file="HDLCompiler" num="854" delta="unknown" >"C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/utils.vhd" Line 122: Unit &lt;<arg fmt="%s" index="1">utils</arg>&gt; ignored due to previous errors.
-</msg>
-
 </messages>
 
