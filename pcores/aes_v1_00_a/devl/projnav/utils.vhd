@@ -42,6 +42,12 @@ package utils is
 	type AES_RCons is array (0 to 10) of AES_Byte;
 	type AES_ExpandedKey is array(0 to 10) of AES_Block;
 	
+	
+	procedure decrypt (signal clk: in std_logic; 
+							 signal key: in AES_Block;
+							 signal cypher: in AES_Block;
+							 signal result: out AES_Block);
+	
 	function v2i (arg : AES_Byte) return AES_Int;
 	
 	function i2v (arg : AES_Int) return AES_Byte;
@@ -50,6 +56,7 @@ package utils is
 	
 	function inv_subs_byte (signal b: in AES_Byte) return AES_Byte;
 	function inv_subs_word (signal w : in AES_Word) return AES_Word;
+	function inv_subs_block (signal b : in AES_Block) return AES_Block ;
 	
 	function subs_byte (b: AES_Byte) return AES_Byte;
 	function subs_word (w : AES_Word) return AES_Word;
@@ -224,6 +231,15 @@ package body utils is
 		return accum;
 	end inv_subs_word;
 	
+	function inv_subs_block (signal b : in AES_Block) return AES_Block is
+	variable accum : AES_Block;
+	begin
+		for i in 0 to 3 loop
+			accum(i) := inv_subs_word(b(i));
+		end loop;
+		return accum;
+	end inv_subs_block;
+	
 	function subs_byte (b: AES_Byte) return AES_Byte is
 	variable upper : std_logic_vector(0 to 3);
 	variable lower : std_logic_vector(0 to 3);
@@ -329,4 +345,29 @@ package body utils is
 		end loop;
 		return expanded_key;
 	end key_expansion;
+	
+		
+		
+		procedure decrypt (signal clk: in std_logic; 
+							    signal key: in AES_Block;
+							    signal cypher: in AES_Block;
+							    signal result: out AES_Block) is
+		variable step_num : Integer range -1 to 10 := -1;
+		variable expanded_key : AES_ExpandedKey;
+		variable	state : AES_Block;	
+		begin
+			if rising_edge(CLK) then
+				if (step_num = 0) then
+					expanded_key := key_expansion(key);
+					state := add_round_key(cypher, expanded_key(10));
+					step_num := 1;											
+				elsif (step_num > 0 and step_num <= 9) then
+					state := inv_shift_rows(state);
+					state := 
+				else 
+				
+				end if;
+				
+			end if;
+		end decrypt;
 end utils;

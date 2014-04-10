@@ -5,5 +5,17 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="error" file="HDLCompiler" num="187" delta="unknown" >"C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/utils.vhd" Line 362: Actual <arg fmt="%s" index="1">expanded_key</arg> of formal <arg fmt="%s" index="2">key</arg> must be a <arg fmt="%s" index="3">signal</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="187" delta="unknown" >"C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/utils.vhd" Line 365: Actual <arg fmt="%s" index="1">state</arg> of formal <arg fmt="%s" index="2">b</arg> must be a <arg fmt="%s" index="3">signal</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="806" delta="unknown" >"C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/utils.vhd" Line 367: Syntax error near &quot;<arg fmt="%s" index="1">else</arg>&quot;.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="854" delta="unknown" >"C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/utils.vhd" Line 167: Unit &lt;<arg fmt="%s" index="1">utils</arg>&gt; ignored due to previous errors.
+</msg>
+
 </messages>
 
