@@ -158,6 +158,83 @@ architecture EXAMPLE of aes is
 	signal verify_mix_col : AES_Word := (0 => x"2f", 1 => x"2f", 2 => x"2f", 3 => x"2f");
 	
 	signal test_mix_col: AES_Word;
+	
+	signal cypher_key : AES_Block := 
+	(
+	0 => ( 0 => x"00", 1 => x"01", 2 => x"02", 3 => x"03"), 
+	1 => ( 0 => x"04", 1 => x"05", 2 => x"06", 3 => x"07"), 
+	2 => ( 0 => x"08", 1 => x"09", 2 => x"0a", 3 => x"0b"), 
+	3 => ( 0 => x"0c", 1 => x"0d", 2 => x"0e", 3 => x"0f"));
+	
+	signal test_key_expand : AES_ExpandedKey ;
+	signal verify_key_expand : AES_ExpandedKey := 
+	(
+0 => (
+	0 => ( 0 => x"00", 1 => x"01", 2 => x"02", 3 => x"03"), 
+	1 => ( 0 => x"04", 1 => x"05", 2 => x"06", 3 => x"07"), 
+	2 => ( 0 => x"08", 1 => x"09", 2 => x"0a", 3 => x"0b"), 
+	3 => ( 0 => x"0c", 1 => x"0d", 2 => x"0e", 3 => x"0f")),
+
+1 => (
+	0 => ( 0 => x"d6", 1 => x"aa", 2 => x"74", 3 => x"fd"), 
+	1 => ( 0 => x"d2", 1 => x"af", 2 => x"72", 3 => x"fa"), 
+	2 => ( 0 => x"da", 1 => x"a6", 2 => x"78", 3 => x"f1"), 
+	3 => ( 0 => x"d6", 1 => x"ab", 2 => x"76", 3 => x"fe")),
+
+2 => (
+	0 => ( 0 => x"b6", 1 => x"92", 2 => x"cf", 3 => x"0b"), 
+	1 => ( 0 => x"64", 1 => x"3d", 2 => x"bd", 3 => x"f1"), 
+	2 => ( 0 => x"be", 1 => x"9b", 2 => x"c5", 3 => x"00"), 
+	3 => ( 0 => x"68", 1 => x"30", 2 => x"b3", 3 => x"fe")),
+
+3 => (
+	0 => ( 0 => x"b6", 1 => x"ff", 2 => x"74", 3 => x"4e"), 
+	1 => ( 0 => x"d2", 1 => x"c2", 2 => x"c9", 3 => x"bf"), 
+	2 => ( 0 => x"6c", 1 => x"59", 2 => x"0c", 3 => x"bf"), 
+	3 => ( 0 => x"04", 1 => x"69", 2 => x"bf", 3 => x"41")),
+
+4 => (
+	0 => ( 0 => x"47", 1 => x"f7", 2 => x"f7", 3 => x"bc"), 
+	1 => ( 0 => x"95", 1 => x"35", 2 => x"3e", 3 => x"03"), 
+	2 => ( 0 => x"f9", 1 => x"6c", 2 => x"32", 3 => x"bc"), 
+	3 => ( 0 => x"fd", 1 => x"05", 2 => x"8d", 3 => x"fd")),
+
+5 => (
+	0 => ( 0 => x"3c", 1 => x"aa", 2 => x"a3", 3 => x"e8"), 
+	1 => ( 0 => x"a9", 1 => x"9f", 2 => x"9d", 3 => x"eb"), 
+	2 => ( 0 => x"50", 1 => x"f3", 2 => x"af", 3 => x"57"), 
+	3 => ( 0 => x"ad", 1 => x"f6", 2 => x"22", 3 => x"aa")), 
+
+6 => (
+	0 => ( 0 => x"5e", 1 => x"39", 2 => x"0f", 3 => x"7d"), 
+	1 => ( 0 => x"f7", 1 => x"a6", 2 => x"92", 3 => x"96"), 
+	2 => ( 0 => x"a7", 1 => x"55", 2 => x"3d", 3 => x"c1"), 
+	3 => ( 0 => x"0a", 1 => x"a3", 2 => x"1f", 3 => x"6b")), 
+
+7 => (
+	0 => ( 0 => x"14", 1 => x"f9", 2 => x"70", 3 => x"1a"), 
+	1 => ( 0 => x"e3", 1 => x"5f", 2 => x"e2", 3 => x"8c"), 
+	2 => ( 0 => x"44", 1 => x"0a", 2 => x"df", 3 => x"4d"), 
+	3 => ( 0 => x"4e", 1 => x"a9", 2 => x"c0", 3 => x"26")), 
+
+8 => (
+	0 => ( 0 => x"47", 1 => x"43", 2 => x"87", 3 => x"35"), 
+	1 => ( 0 => x"a4", 1 => x"1c", 2 => x"65", 3 => x"b9"), 
+	2 => ( 0 => x"e0", 1 => x"16", 2 => x"ba", 3 => x"f4"), 
+	3 => ( 0 => x"ae", 1 => x"bf", 2 => x"7a", 3 => x"d2")), 
+
+9 => (
+	0 => ( 0 => x"54", 1 => x"99", 2 => x"32", 3 => x"d1"), 
+	1 => ( 0 => x"f0", 1 => x"85", 2 => x"57", 3 => x"68"), 
+	2 => ( 0 => x"10", 1 => x"93", 2 => x"ed", 3 => x"9c"), 
+	3 => ( 0 => x"be", 1 => x"2c", 2 => x"97", 3 => x"4e")),
+
+10 => (
+	0 => ( 0 => x"13", 1 => x"11", 2 => x"1d", 3 => x"7f"), 
+	1 => ( 0 => x"e3", 1 => x"94", 2 => x"4a", 3 => x"17"), 
+	2 => ( 0 => x"f3", 1 => x"07", 2 => x"a7", 3 => x"8b"), 
+	3 => ( 0 => x"4d", 1 => x"2b", 2 => x"30", 3 => x"c5")));
+	
 begin
    -- CAUTION:
    -- The sequence in which data are read in and written out should be
@@ -179,6 +256,9 @@ begin
 	
 	test_mix_col <= inv_mix_column(inp_mix_col);
 	assert (test_mix_col = verify_mix_col) report "inv_mix_col failed!!!" severity warning;
+	
+	test_key_expand <= key_expansion(cypher_key);
+	assert (test_key_expand = verify_key_expand) report "key exp fucked!!!!" severity warning;
 	
     if FSL_Clk'event and FSL_Clk = '1' then     -- Rising clock edge
       if FSL_Rst = '1' then               -- Synchronous reset (active high)

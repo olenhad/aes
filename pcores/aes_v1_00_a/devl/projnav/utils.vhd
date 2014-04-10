@@ -39,6 +39,9 @@ package utils is
 	type AES_Block is array (0 to 3) of AES_Word;
 	type AES_SBox is array (0 to 15, 0 to 15) of AES_Byte;
 	
+	type AES_RCons is array (0 to 10) of AES_Byte;
+	type AES_ExpandedKey is array(0 to 10) of AES_Block;
+	
 	function v2i (arg : AES_Byte) return AES_Int;
 	
 	function i2v (arg : AES_Int) return AES_Byte;
@@ -48,13 +51,19 @@ package utils is
 	function inv_subs_byte (signal b: in AES_Byte) return AES_Byte;
 	function inv_subs_word (signal w : in AES_Word) return AES_Word;
 	
+	function subs_byte (b: AES_Byte) return AES_Byte;
+	function subs_word (w : AES_Word) return AES_Word;
+	
 	function inv_shift_rows (signal b : in AES_Block) return AES_Block;
 	
 	function add_round_key (signal inp : in AES_Block; signal key : in AES_Block) return AES_Block;
 	
 	function inv_mix_column (signal w: in AES_Word) return AES_Word;
-	--function 
 	
+	function key_expansion (signal cipher_key : in AES_Block) return AES_ExpandedKey;
+	
+		function xor_word ( a :AES_Word;  b: AES_Word) return AES_Word;
+		
 	constant mix_col_matrix : AES_Block :=
 	( 0 => (0 => x"02", 1=> x"01", 2 => x"01", 3 => x"03"),
 	  1 => (0 => x"03", 1=> x"02", 2 => x"01", 3 => x"01"),
@@ -67,6 +76,30 @@ package utils is
 	1 => (0 => x"0b", 1 => x"0e", 2 => x"09", 3 => x"0d"),
 	2 => (0 => x"0d", 1 => x"0b", 2 => x"0e", 3 => x"09"),
 	3 => (0 => x"09", 1 => x"0d", 2 => x"0b", 3 => x"0e"));
+	
+	constant round_cons : AES_RCons :=
+	(0 => x"00", 1 => x"01", 2 => x"02",3 => x"04",4 => x"08",5 => x"10",6 => x"20",7 => x"40",8 => x"80",9 => x"1B",10 => x"36");
+	
+	
+	constant SBOX : AES_SBox :=
+	
+  (
+  0=> (0=> x"63", 1=> x"7c", 2=> x"77", 3=> x"7b", 4=> x"f2", 5=> x"6b", 6=> x"6f", 7=> x"c5", 8=> x"30", 9=> x"01", 10=> x"67", 11=> x"2b", 12=> x"fe", 13=> x"d7", 14=> x"ab", 15=> x"76"),
+  1=> (0=> x"ca", 1=> x"82", 2=> x"c9", 3=> x"7d", 4=> x"fa", 5=> x"59", 6=> x"47", 7=> x"f0", 8=> x"ad", 9=> x"d4", 10=> x"a2", 11=> x"af", 12=> x"9c", 13=> x"a4", 14=> x"72", 15=> x"c0"),
+  2=> (0=> x"b7", 1=> x"fd", 2=> x"93", 3=> x"26", 4=> x"36", 5=> x"3f", 6=> x"f7", 7=> x"cc", 8=> x"34", 9=> x"a5", 10=> x"e5", 11=> x"f1", 12=> x"71", 13=> x"d8", 14=> x"31", 15=> x"15"),
+  3=> (0=> x"04", 1=> x"c7", 2=> x"23", 3=> x"c3", 4=> x"18", 5=> x"96", 6=> x"05", 7=> x"9a", 8=> x"07", 9=> x"12", 10=> x"80", 11=> x"e2", 12=> x"eb", 13=> x"27", 14=> x"b2", 15=> x"75"),
+  4=> (0=> x"09", 1=> x"83", 2=> x"2c", 3=> x"1a", 4=> x"1b", 5=> x"6e", 6=> x"5a", 7=> x"a0", 8=> x"52", 9=> x"3b", 10=> x"d6", 11=> x"b3", 12=> x"29", 13=> x"e3", 14=> x"2f", 15=> x"84"),
+  5=> (0=> x"53", 1=> x"d1", 2=> x"00", 3=> x"ed", 4=> x"20", 5=> x"fc", 6=> x"b1", 7=> x"5b", 8=> x"6a", 9=> x"cb", 10=> x"be", 11=> x"39", 12=> x"4a", 13=> x"4c", 14=> x"58", 15=> x"cf"),
+  6=> (0=> x"d0", 1=> x"ef", 2=> x"aa", 3=> x"fb", 4=> x"43", 5=> x"4d", 6=> x"33", 7=> x"85", 8=> x"45", 9=> x"f9", 10=> x"02", 11=> x"7f", 12=> x"50", 13=> x"3c", 14=> x"9f", 15=> x"a8"),
+  7=> (0=> x"51", 1=> x"a3", 2=> x"40", 3=> x"8f", 4=> x"92", 5=> x"9d", 6=> x"38", 7=> x"f5", 8=> x"bc", 9=> x"b6", 10=> x"da", 11=> x"21", 12=> x"10", 13=> x"ff", 14=> x"f3", 15=> x"d2"),
+  8=> (0=> x"cd", 1=> x"0c", 2=> x"13", 3=> x"ec", 4=> x"5f", 5=> x"97", 6=> x"44", 7=> x"17", 8=> x"c4", 9=> x"a7", 10=> x"7e", 11=> x"3d", 12=> x"64", 13=> x"5d", 14=> x"19", 15=> x"73"),
+  9=> (0=> x"60", 1=> x"81", 2=> x"4f", 3=> x"dc", 4=> x"22", 5=> x"2a", 6=> x"90", 7=> x"88", 8=> x"46", 9=> x"ee", 10=> x"b8", 11=> x"14", 12=> x"de", 13=> x"5e", 14=> x"0b", 15=> x"db"),
+  10=> (0=> x"e0", 1=> x"32", 2=> x"3a", 3=> x"0a", 4=> x"49", 5=> x"06", 6=> x"24", 7=> x"5c", 8=> x"c2", 9=> x"d3", 10=> x"ac", 11=> x"62", 12=> x"91", 13=> x"95", 14=> x"e4", 15=> x"79"),
+  11=> (0=> x"e7", 1=> x"c8", 2=> x"37", 3=> x"6d", 4=> x"8d", 5=> x"d5", 6=> x"4e", 7=> x"a9", 8=> x"6c", 9=> x"56", 10=> x"f4", 11=> x"ea", 12=> x"65", 13=> x"7a", 14=> x"ae", 15=> x"08"),
+  12=> (0=> x"ba", 1=> x"78", 2=> x"25", 3=> x"2e", 4=> x"1c", 5=> x"a6", 6=> x"b4", 7=> x"c6", 8=> x"e8", 9=> x"dd", 10=> x"74", 11=> x"1f", 12=> x"4b", 13=> x"bd", 14=> x"8b", 15=> x"8a"),
+  13=> (0=> x"70", 1=> x"3e", 2=> x"b5", 3=> x"66", 4=> x"48", 5=> x"03", 6=> x"f6", 7=> x"0e", 8=> x"61", 9=> x"35", 10=> x"57", 11=> x"b9", 12=> x"86", 13=> x"c1", 14=> x"1d", 15=> x"9e"),
+  14=> (0=> x"e1", 1=> x"f8", 2=> x"98", 3=> x"11", 4=> x"69", 5=> x"d9", 6=> x"8e", 7=> x"94", 8=> x"9b", 9=> x"1e", 10=> x"87", 11=> x"e9", 12=> x"ce", 13=> x"55", 14=> x"28", 15=> x"df"),
+  15=> (0=> x"8c", 1=> x"a1", 2=> x"89", 3=> x"0d", 4=> x"bf", 5=> x"e6", 6=> x"42", 7=> x"68", 8=> x"41", 9=> x"99", 10=> x"2d", 11=> x"0f", 12=> x"b0", 13=> x"54", 14=> x"bb", 15=> x"16"));
 	
 	constant SBOX_INV : AES_SBox := 
 	
@@ -190,6 +223,25 @@ package body utils is
 		accum(3) := inv_subs_byte(w(3));
 		return accum;
 	end inv_subs_word;
+	
+	function subs_byte (b: AES_Byte) return AES_Byte is
+	variable upper : std_logic_vector(0 to 3);
+	variable lower : std_logic_vector(0 to 3);
+	begin
+		upper := b(0 to 3);
+		lower := b(4 to 7);
+		return SBOX( to_integer(unsigned(upper)), to_integer(unsigned(lower)));
+	end subs_byte;
+	
+	function subs_word (w : AES_Word) return AES_Word is
+	variable accum : AES_Word;
+	begin
+		accum(0) := subs_byte(w(0));
+		accum(1) := subs_byte(w(1));
+		accum(2) := subs_byte(w(2));
+		accum(3) := subs_byte(w(3));
+		return accum;
+	end subs_word;
 
 	function inv_shift_rows (signal b : in AES_Block) return AES_Block is
 	variable accum : AES_Block;
@@ -230,6 +282,15 @@ package body utils is
 		return accum;
 	end add_round_key;
 	
+	function xor_word ( a :AES_Word;  b: AES_Word) return AES_Word is
+	variable accum : AES_Word;
+	begin
+		for i in 0 to 3 loop
+			accum(i) := a(i) xor b(i);
+		end loop;
+		return accum;
+	end xor_word;
+	
 	function inv_mix_column ( signal w: in AES_Word) return AES_Word is
 	variable accum : AES_Word;
 	begin
@@ -241,4 +302,31 @@ package body utils is
 		end loop;
 		return accum;
 	end inv_mix_column;
+	
+	function rot_word (w : AES_Word) return AES_Word is
+	variable accum : AES_Word;
+	begin
+		accum(0) := w(1);
+		accum(1) := w(2);
+		accum(2) := w(3);
+		accum(3) := w(0);
+		return accum;
+	end rot_word;
+	
+	function key_expansion (signal cipher_key : in AES_Block) return AES_ExpandedKey is
+	variable expanded_key : AES_ExpandedKey;
+	variable t : AES_Word;
+	variable padded_rcons : AES_Word;
+	begin
+		expanded_key(0) := cipher_key;
+		for i in 1 to 10 loop
+			padded_rcons := ( 0 => round_cons(i), others => x"00");
+			t :=  xor_word( padded_rcons, subs_word(rot_word(expanded_key(i - 1)(3))));
+			expanded_key(i)(0) := xor_word(t, expanded_key(i-1)(0));
+			expanded_key(i)(1) := xor_word(expanded_key(i)(0), expanded_key(i-1)(1));
+			expanded_key(i)(2) := xor_word(expanded_key(i)(1), expanded_key(i-1)(2));
+			expanded_key(i)(3) := xor_word(expanded_key(i)(2),expanded_key(i-1)(3));			
+		end loop;
+		return expanded_key;
+	end key_expansion;
 end utils;
