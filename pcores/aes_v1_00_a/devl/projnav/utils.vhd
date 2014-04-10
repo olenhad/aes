@@ -30,12 +30,16 @@ package utils is
 -- procedure <procedure_name> (<type_declaration> <constant_name>	: in <type_declaration>);
 --
 -- std_logic_vector is the Column. 
-	subtype AES_Byte is std_logic_vector(7 downto 0);
-	subtype AES_32 is std_logic_vector(31 downto 0);
-	type AES_Word is array(3 downto 0) of AES_Byte;
+	subtype AES_Byte is std_logic_vector(0 to 7);
+	subtype AES_32 is std_logic_vector(0 to 31);
+	subtype AES_Int is integer range 0 to 127;
+	
+	type AES_Word is array(0 to 3) of AES_Byte;
 -- Word is a column!!!
-	type AES_Block is array (3 downto 0) of AES_Word;
-	type AES_SBox is array (15 downto 0,15 downto 0) of AES_Byte;
+	type AES_Block is array (0 to 3) of AES_Word;
+	type AES_SBox is array (0 to 15, 0 to 15) of AES_Byte;
+	
+	function v2i (arg : AES_Byte) return AES_Int;
 	
 	function word_to_vector (signal w: in AES_Word) return AES_32;
 	
@@ -46,13 +50,21 @@ package utils is
 	
 	function add_round_key (signal inp : in AES_Block; signal key : in AES_Block) return AES_Block;
 	
-	function 
+	function inv_mix_column (signal w: in AES_Word) return AES_Word;
+	--function 
 	
 	constant mix_col_matrix : AES_Block :=
 	( 0 => (0 => x"02", 1=> x"01", 2 => x"01", 3 => x"03"),
 	  1 => (0 => x"03", 1=> x"02", 2 => x"01", 3 => x"01"),
 	  2 => (0 => x"01", 1=> x"03", 2 => x"02", 3 => x"01"),
 	  3 => (0 => x"01", 1=> x"01", 2 => x"03", 3 => x"02"));
+	  
+	constant inv_mix_col_matrix : AES_Block :=
+	(
+	0 => (0 => x"0e", 1 => x"09", 2 => x"0d", 3 => x"0b"),
+	1 => (0 => x"0b", 1 => x"0e", 2 => x"09", 3 => x"0d"),
+	2 => (0 => x"0d", 1 => x"0b", 2 => x"0e", 3 => x"09"),
+	3 => (0 => x"09", 1 => x"0d", 2 => x"0b", 3 => x"0e"));
 	
 	constant SBOX_INV : AES_SBox := 
 	
@@ -138,21 +150,22 @@ package body utils is
 --    
 --  end <procedure_name>;
 	function word_to_vector (signal w: in AES_Word) return AES_32 is
-	variable accum : std_logic_vector(31 downto 0);
+	variable accum : std_logic_vector(0 to 31);
 	begin
-		accum(31 downto 24) := w(3);
-		accum(23 downto 16) := w(2);
-		accum(15 downto 8) := w(1);
-		accum(7 downto 0) := w(0);
+		accum(0 to 7) := w(0);
+		accum(8 to 15) := w(1);
+		accum(16 to 23) := w(2);
+		accum(24 to 31) := w(3);
+		
 		return accum;
 	end word_to_vector;
 
 	function inv_subs_byte (signal b: in AES_Byte) return AES_Byte is
-	variable upper : std_logic_vector(3 downto 0);
-	variable lower : std_logic_vector(3 downto 0);
+	variable upper : std_logic_vector(0 to 3);
+	variable lower : std_logic_vector(0 to 3);
 	begin
-		upper := b(7 downto 4);
-		lower := b(3 downto 0);
+		upper := b(0 to 3);
+		lower := b(4 to 7);
 		return SBOX_INV( to_integer(unsigned(upper)), to_integer(unsigned(lower)));
 	end inv_subs_byte;
 	
@@ -169,25 +182,27 @@ package body utils is
 	function inv_shift_rows (signal b : in AES_Block) return AES_Block is
 	variable accum : AES_Block;
 	begin
+	-- first index is col number. snd is row number
+		
 		accum(0)(0) := b(0)(0);
-		accum(0)(1) := b(1)(1);
-		accum(0)(2) := b(2)(2);
-		accum(0)(3) := b(3)(3);
+		accum(1)(1) := b(0)(1);
+		accum(2)(2) := b(0)(2);
+		accum(3)(3) := b(0)(3);
 		
 		accum(1)(0) := b(1)(0);
-		accum(1)(1) := b(2)(1);
-		accum(1)(2) := b(3)(2);
-		accum(1)(3) := b(0)(3);
+		accum(2)(1) := b(1)(1);
+		accum(3)(2) := b(1)(2);
+		accum(0)(3) := b(1)(3);
 		
 		accum(2)(0) := b(2)(0);
-		accum(2)(1) := b(3)(1);
-		accum(2)(2) := b(0)(2);
-		accum(2)(3) := b(1)(3);
+		accum(3)(1) := b(2)(1);
+		accum(0)(2) := b(2)(2);
+		accum(1)(3) := b(2)(3);
 		
 		accum(3)(0) := b(3)(0);
-		accum(3)(1) := b(0)(1);
-		accum(3)(2) := b(1)(2);
-		accum(3)(3) := b(2)(3);
+		accum(0)(1) := b(3)(1);
+		accum(1)(2) := b(3)(2);
+		accum(2)(3) := b(3)(3);
 		
 		return accum;
 	end inv_shift_rows;
@@ -195,13 +210,21 @@ package body utils is
 	function add_round_key (signal inp : in AES_Block; signal key : in AES_Block) return AES_Block is
 	variable accum : AES_Block;
 	begin
-		for i in 3 downto 0 loop
-			for j in 3 downto 0 loop
+		for i in 0 to 3 loop
+			for j in 0 to 3 loop
 				accum(i)(j) := inp(i)(j) xor key(i)(j);
 			end loop;
 		end loop;
 		return accum;
 	end add_round_key;
 	
-	
+	function inv_mix_column (signal w: in AES_Word) return AES_Word is
+	variable accum : AES_Word;
+	begin
+		for i in 0 to 3 loop
+			accum(i) := inv_mix_col_matrix(0)(i) * w(0) + inv_mix_col_matrix(1)(i) * w(1) + 
+							inv_mix_col_matrix(2)(i) * w(2) + inv_mix_col_matrix(3)(i) * w(3); 
+		end loop;
+		return accum;
+	end inv_mix_column;
 end utils;

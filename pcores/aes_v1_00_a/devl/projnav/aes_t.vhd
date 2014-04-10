@@ -153,7 +153,11 @@ architecture EXAMPLE of aes is
  1 => (0 => x"04", 1 => x"01", 2 => x"0e", 3 => x"0b"),
  2 => (0 => x"08", 1 => x"05", 2 => x"02", 3 => x"0f"),
  3 => (0 => x"0c", 1 => x"09", 2 => x"06", 3 => x"03"));
-
+ 
+	signal inp_mix_col : AES_Word := (0 => x"01", 1 => x"01", 2 => x"01", 3 => x"01");
+	signal verify_mix_col : AES_Word := (0 => x"2f", 1 => x"2f", 2 => x"2f", 3 => x"2f");
+	
+	signal test_mix_col: AES_Word;
 begin
    -- CAUTION:
    -- The sequence in which data are read in and written out should be
@@ -167,10 +171,14 @@ begin
 	
 	inter <= inv_subs_word(test_word);
 	FSL_M_Data <= word_to_vector(inter);
+	
    The_SW_accelerator : process (FSL_Clk) is
    begin  -- process The_SW_accelerator
 	result_block <= inv_shift_rows(test_block);
 	assert (result_block = verify_block) report "inv_shift_row failed!!!" severity warning;
+	
+	test_mix_col <= inv_mix_column(inp_mix_col);
+	assert (test_mix_col = verify_mix_col) report "inv_mix_col failed!!!" severity warning;
 	
     if FSL_Clk'event and FSL_Clk = '1' then     -- Rising clock edge
       if FSL_Rst = '1' then               -- Synchronous reset (active high)
