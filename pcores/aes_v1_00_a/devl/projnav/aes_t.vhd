@@ -276,8 +276,8 @@ begin
 	result_block <= inv_shift_rows(test_block);
 	assert (result_block = verify_block) report "inv_shift_row failed!!!" severity warning;
 	
-	test_mix_col <= inv_mix_column(inp_mix_col);
-	assert (test_mix_col = verify_mix_col) report "inv_mix_col failed!!!" severity warning;
+	--test_mix_col <= inv_mix_column(inp_mix_col);
+	--assert (test_mix_col = verify_mix_col) report "inv_mix_col failed!!!" severity warning;
 	
 	test_key_expand <= key_expansion(cypher_key);
 	assert (test_key_expand = verify_key_expand) report "key exp fucked!!!!" severity warning;

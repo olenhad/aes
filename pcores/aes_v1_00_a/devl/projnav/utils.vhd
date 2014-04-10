@@ -32,7 +32,7 @@ package utils is
 -- std_logic_vector is the Column. 
 	subtype AES_Byte is std_logic_vector(0 to 7);
 	subtype AES_32 is std_logic_vector(0 to 31);
-	subtype AES_Int is integer range 0 to 256;
+	subtype AES_Int is integer range 0 to 127;
 	
 	type AES_Word is array(0 to 3) of AES_Byte;
 -- Word is a column!!!
@@ -70,7 +70,11 @@ package utils is
 	
 	function key_expansion ( cipher_key :  AES_Block) return AES_ExpandedKey;
 	
-		function xor_word ( a :AES_Word;  b: AES_Word) return AES_Word;
+	function xor_word ( a :AES_Word;  b: AES_Word) return AES_Word;
+		
+	function gmul_2 (a : AES_Byte) return AES_Byte;
+		
+	function gmul (a : AES_Byte; g: AES_Byte) return AES_Byte;
 		
 	constant mix_col_matrix : AES_Block :=
 	( 0 => (0 => x"02", 1=> x"01", 2 => x"01", 3 => x"03"),
@@ -192,16 +196,47 @@ package body utils is
 --  begin
 --    
 --  end <procedure_name>;
+
+	function gmul_2 (a : AES_Byte) return AES_Byte is
+	variable accum : AES_Byte;
+	begin
+		if a(0) = '1' then
+			accum := std_logic_vector(unsigned(a) sll 1);
+			accum := accum xor x"1b";
+		else
+			accum := std_logic_vector(unsigned(a) sll 1);
+		end if;
+		return accum;
+	end gmul_2;
+	
+	function gmul (a : AES_Byte; g: AES_Byte) return AES_Byte is
+	variable accum : AES_Byte;
+	begin
+		if g = x"01" then
+			accum := a;
+		elsif g = x"02" then
+			accum := gmul_2(a);
+		elsif g = x"03" then
+			accum := gmul_2(a) xor a;
+		elsif g = x"09" then
+			accum := gmul_2(gmul_2(gmul_2(a))) xor a;
+		elsif g = x"0b" then
+			accum := gmul_2(gmul_2(gmul_2(a)) xor a) xor a;
+		elsif g = x"0d" then
+			accum := gmul_2(gmul_2(gmul_2(a) xor a)) xor a;
+		elsif g = x"0e" then
+			accum := gmul_2(gmul_2(gmul_2(a) xor a) xor a);
+		end if;
+		return accum;
+	end gmul;
 	function v2i (arg : AES_Byte) return AES_Int is
 	begin
 		return to_integer(unsigned(arg));
 	end v2i;
 	
 	function i2v (arg : AES_Int) return AES_Byte is
-	variable accum : AES_Byte;
 	begin
-		accum := std_logic_vector(to_unsigned(arg, accum'length));
-		return accum;
+		return std_logic_vector(to_unsigned(arg, 8));
 	end i2v;
 	
 	function word_to_vector ( w: AES_Word) return AES_32 is
@@ -314,10 +349,8 @@ package body utils is
 	variable accum : AES_Word;
 	begin
 		for i in 0 to 3 loop
-			accum(i) := i2v(
-								v2i(inv_mix_col_matrix(0)(i)) * v2i(w(0)) + v2i(inv_mix_col_matrix(1)(i)) * v2i(w(1)) + 
-								v2i(inv_mix_col_matrix(2)(i)) * v2i(w(2)) + v2i(inv_mix_col_matrix(3)(i)) * v2i(w(3))
-								); 
+			accum(i) := gmul(w(0), inv_mix_col_matrix(0)(i)) xor gmul(w(1), inv_mix_col_matrix(1)(i)) xor
+							gmul(w(2), inv_mix_col_matrix(2)(i)) xor gmul(w(3), inv_mix_col_matrix(3)(i));
 		end loop;
 		return accum;
 	end inv_mix_column;
