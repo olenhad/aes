@@ -313,10 +313,10 @@ variable verify_key_expand : AES_ExpandedKey :=
 		 	state := inv_subs_block(state);
 		--	state := add_round_key(state, block_from_expkey(expanded_key, (10 - step_num)));
 		-- 	state := inv_mix_column_block(state);
-		--	   step_num := step_num + 1;
-		-- else 
-		-- 	state := inv_shift_rows(state);
-		-- 	state := inv_subs_block(state);
+		   step_num := step_num + 1;
+		else 
+		 	state := inv_shift_rows(state);
+		 	state := inv_subs_block(state);
 		-- 	state := add_round_key(state, block_from_expkey(expanded_key,0));
 		-- 			--result <= state;
 		 	FSL_M_Data <= word_to_vector(state(0));

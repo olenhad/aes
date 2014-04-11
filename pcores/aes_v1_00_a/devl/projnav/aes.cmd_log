@@ -14,3 +14,5 @@ xst -intstyle ise -ifn "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes.x
 xst -intstyle ise -ifn "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes.xst" -ofn "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes.syr" 
 xst -intstyle ise -ifn "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes.xst" -ofn "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes.syr" 
 xst -intstyle ise -ifn "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes.xst" -ofn "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes.syr" 
+xst -intstyle ise -ifn "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes.xst" -ofn "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes.syr" 
+xst -intstyle ise -ifn "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes.xst" -ofn "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes.syr" 
