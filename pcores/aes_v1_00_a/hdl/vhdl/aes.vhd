@@ -306,19 +306,20 @@ variable verify_key_expand : AES_ExpandedKey :=
 		if (step_num = 0) then
 			expanded_key := key_expansion(cypher_key);	
 			state := add_round_key(test_decrypt_input, block_from_expkey(expanded_key,10));
+			FSL_M_Data <= word_to_vector(state(0));
 			step_num := 1;
 		elsif (step_num > 1 and step_num <= 9) then
-			state := inv_shift_rows(state);
-			state := inv_subs_block(state);
-			state := add_round_key(state, block_from_expkey(expanded_key, (10 - step_num)));
-			state := inv_mix_column_block(state);
-			step_num := step_num + 1;
-		else 
-			state := inv_shift_rows(state);
-			state := inv_subs_block(state);
-			state := add_round_key(state, block_from_expkey(expanded_key,0));
-					--result <= state;
-			FSL_M_Data <= word_to_vector(state(0));
+		 	state := inv_shift_rows(state);
+		 	state := inv_subs_block(state);
+		--	state := add_round_key(state, block_from_expkey(expanded_key, (10 - step_num)));
+		-- 	state := inv_mix_column_block(state);
+		--	   step_num := step_num + 1;
+		-- else 
+		-- 	state := inv_shift_rows(state);
+		-- 	state := inv_subs_block(state);
+		-- 	state := add_round_key(state, block_from_expkey(expanded_key,0));
+		-- 			--result <= state;
+		 	FSL_M_Data <= word_to_vector(state(0));
 					--assert (state = verify_decrypt) report "DECRYPT DOESNT WORK  :(" severity warning;
 			--step_num := 0;
 					

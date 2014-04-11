@@ -160,80 +160,67 @@ WARNING:Xst:1781 - Signal <cypher_key<2>> is used but never assigned. Tied to de
 WARNING:Xst:1781 - Signal <cypher_key<1>> is used but never assigned. Tied to default value.
 WARNING:Xst:1781 - Signal <cypher_key<0>> is used but never assigned. Tied to default value.
     Using one-hot encoding for signal <fsl_state>.
+    Using one-hot encoding for signal <step_num>.
+    Found 16x128-bit ROM for signal <slice0074$rom0000>.
+    Found 16x128-bit ROM for signal <slice0076$rom0000>.
+    Found 16x128-bit ROM for signal <slice0078$rom0000>.
+    Found 16x128-bit ROM for signal <slice0016$rom0000>.
+    Found 16x128-bit ROM for signal <slice0018$rom0000>.
+    Found 16x128-bit ROM for signal <slice0020$rom0000>.
+    Found 16x128-bit ROM for signal <slice0022$rom0000>.
+    Found 16x128-bit ROM for signal <slice0096$rom0000>.
+    Found 16x128-bit ROM for signal <slice0098$rom0000>.
+    Found 16x128-bit ROM for signal <slice0100$rom0000>.
+    Found 16x128-bit ROM for signal <slice0102$rom0000>.
+    Found 16x128-bit ROM for signal <slice0048$rom0000>.
+    Found 16x128-bit ROM for signal <slice0050$rom0000>.
+    Found 16x128-bit ROM for signal <slice0052$rom0000>.
+    Found 16x128-bit ROM for signal <slice0054$rom0000>.
+    Found 16x128-bit ROM for signal <slice0104$rom0000>.
+    Found 16x128-bit ROM for signal <slice0106$rom0000>.
+    Found 16x128-bit ROM for signal <slice0108$rom0000>.
+    Found 16x128-bit ROM for signal <slice0110$rom0000>.
+    Found 16x128-bit ROM for signal <slice0024$rom0000>.
     Found 16x128-bit ROM for signal <slice0026$rom0000>.
-    Found 16x128-bit ROM for signal <slice0132$rom0000>.
     Found 16x128-bit ROM for signal <slice0028$rom0000>.
-    Found 16x128-bit ROM for signal <slice0134$rom0000>.
     Found 16x128-bit ROM for signal <slice0030$rom0000>.
     Found 16x128-bit ROM for signal <slice0056$rom0000>.
     Found 16x128-bit ROM for signal <slice0058$rom0000>.
     Found 16x128-bit ROM for signal <slice0060$rom0000>.
     Found 16x128-bit ROM for signal <slice0062$rom0000>.
-    Found 16x128-bit ROM for signal <slice0000$rom0000>.
-    Found 16x128-bit ROM for signal <slice0002$rom0000>.
-    Found 16x128-bit ROM for signal <slice0004$rom0000>.
-    Found 16x128-bit ROM for signal <slice0006$rom0000>.
-    Found 16x128-bit ROM for signal <slice0080$rom0000>.
-    Found 16x128-bit ROM for signal <slice0082$rom0000>.
-    Found 16x128-bit ROM for signal <slice0084$rom0000>.
-    Found 16x128-bit ROM for signal <slice0086$rom0000>.
-    Found 16x128-bit ROM for signal <slice0088$rom0000>.
-    Found 16x128-bit ROM for signal <slice0090$rom0000>.
-    Found 16x128-bit ROM for signal <slice0092$rom0000>.
-    Found 16x128-bit ROM for signal <slice0094$rom0000>.
-    Found 16x128-bit ROM for signal <slice0096$rom0000>.
-    Found 16x128-bit ROM for signal <slice0098$rom0000>.
-    Found 16x128-bit ROM for signal <slice0100$rom0000>.
-    Found 16x128-bit ROM for signal <slice0102$rom0000>.
-    Found 16x128-bit ROM for signal <slice0104$rom0000>.
-    Found 16x128-bit ROM for signal <slice0106$rom0000>.
-    Found 16x128-bit ROM for signal <slice0108$rom0000>.
-    Found 16x128-bit ROM for signal <slice0110$rom0000>.
     Found 16x128-bit ROM for signal <slice0032$rom0000>.
     Found 16x128-bit ROM for signal <slice0034$rom0000>.
     Found 16x128-bit ROM for signal <slice0036$rom0000>.
     Found 16x128-bit ROM for signal <slice0038$rom0000>.
+    Found 16x128-bit ROM for signal <slice0000$rom0000>.
+    Found 16x128-bit ROM for signal <slice0002$rom0000>.
+    Found 16x128-bit ROM for signal <slice0004$rom0000>.
+    Found 16x128-bit ROM for signal <slice0006$rom0000>.
     Found 16x128-bit ROM for signal <slice0064$rom0000>.
     Found 16x128-bit ROM for signal <slice0066$rom0000>.
     Found 16x128-bit ROM for signal <slice0068$rom0000>.
     Found 16x128-bit ROM for signal <slice0070$rom0000>.
-    Found 16x128-bit ROM for signal <slice0136$rom0000>.
     Found 16x128-bit ROM for signal <slice0008$rom0000>.
-    Found 16x128-bit ROM for signal <slice0138$rom0000>.
     Found 16x128-bit ROM for signal <slice0010$rom0000>.
-    Found 16x128-bit ROM for signal <slice0140$rom0000>.
     Found 16x128-bit ROM for signal <slice0012$rom0000>.
-    Found 16x128-bit ROM for signal <slice0142$rom0000>.
     Found 16x128-bit ROM for signal <slice0014$rom0000>.
+    Found 16x128-bit ROM for signal <slice0080$rom0000>.
+    Found 16x128-bit ROM for signal <slice0082$rom0000>.
+    Found 16x128-bit ROM for signal <slice0084$rom0000>.
+    Found 16x128-bit ROM for signal <slice0086$rom0000>.
     Found 16x128-bit ROM for signal <slice0040$rom0000>.
     Found 16x128-bit ROM for signal <slice0042$rom0000>.
     Found 16x128-bit ROM for signal <slice0044$rom0000>.
     Found 16x128-bit ROM for signal <slice0046$rom0000>.
+    Found 16x128-bit ROM for signal <slice0088$rom0000>.
+    Found 16x128-bit ROM for signal <slice0090$rom0000>.
+    Found 16x128-bit ROM for signal <slice0092$rom0000>.
+    Found 16x128-bit ROM for signal <slice0094$rom0000>.
     Found 16x128-bit ROM for signal <slice0072$rom0000>.
-    Found 16x128-bit ROM for signal <slice0074$rom0000>.
-    Found 16x128-bit ROM for signal <slice0076$rom0000>.
-    Found 16x128-bit ROM for signal <slice0078$rom0000>.
-    Found 16x128-bit ROM for signal <slice0112$rom0000>.
-    Found 16x128-bit ROM for signal <slice0016$rom0000>.
-    Found 16x128-bit ROM for signal <slice0114$rom0000>.
-    Found 16x128-bit ROM for signal <slice0018$rom0000>.
-    Found 16x128-bit ROM for signal <slice0116$rom0000>.
-    Found 16x128-bit ROM for signal <slice0020$rom0000>.
-    Found 16x128-bit ROM for signal <slice0118$rom0000>.
-    Found 16x128-bit ROM for signal <slice0022$rom0000>.
-    Found 16x128-bit ROM for signal <slice0048$rom0000>.
-    Found 16x128-bit ROM for signal <slice0050$rom0000>.
-    Found 16x128-bit ROM for signal <slice0052$rom0000>.
-    Found 16x128-bit ROM for signal <slice0054$rom0000>.
-    Found 16x128-bit ROM for signal <slice0120$rom0000>.
-    Found 16x128-bit ROM for signal <slice0122$rom0000>.
-    Found 16x128-bit ROM for signal <slice0124$rom0000>.
-    Found 16x128-bit ROM for signal <slice0126$rom0000>.
-    Found 16x128-bit ROM for signal <slice0128$rom0000>.
-    Found 16x128-bit ROM for signal <slice0024$rom0000>.
-    Found 16x128-bit ROM for signal <slice0130$rom0000>.
     Found 32-bit register for signal <FSL_M_Data>.
     Found 32-bit 16-to-1 multiplexer for signal <$n0001<31:28>>.
+    Found 16-bit xor2 for signal <$n0003<30:29>>.
+    Found 8-bit xor2 for signal <$n0004<30>>.
     Found 32-bit 16-to-1 multiplexer for signal <$n0008<31:28>>.
     Found 32-bit xor2 for signal <$n0010<31:28>>.
     Found 32-bit xor2 for signal <$n0011<31:28>>.
@@ -283,128 +270,463 @@ WARNING:Xst:1781 - Signal <cypher_key<0>> is used but never assigned. Tied to de
     Found 32-bit 16-to-1 multiplexer for signal <$n0075<31:28>>.
     Found 32-bit 16-to-1 multiplexer for signal <$n0076<31:28>>.
     Found 32-bit 16-to-1 multiplexer for signal <$n0077<31:28>>.
-    Found 32-bit xor7 for signal <$n0081<31:28>>.
-    Found 32-bit xor7 for signal <$n0082<31:28>>.
-    Found 32-bit xor7 for signal <$n0083<31:28>>.
-    Found 32-bit xor7 for signal <$n0084<31:28>>.
-    Found 32-bit 16-to-1 multiplexer for signal <$n0087<31:28>>.
-    Found 32-bit 16-to-1 multiplexer for signal <$n0088<31:28>>.
-    Found 32-bit 16-to-1 multiplexer for signal <$n0089<31:28>>.
-    Found 32-bit 16-to-1 multiplexer for signal <$n0090<31:28>>.
-    Found 8-bit xor2 for signal <accum103$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum103$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum104$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum104$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum108$xor0000> created at line 220.
-    Found 1-bit xor2 for signal <accum108$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum111$xor0000> created at line 222.
-    Found 1-bit xor2 for signal <accum111$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum124$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum124$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum128$xor0000> created at line 220.
-    Found 1-bit xor2 for signal <accum128$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum132$xor0000> created at line 220.
-    Found 1-bit xor2 for signal <accum132$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum144$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum144$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum148$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum148$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum149$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum149$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum153$xor0000> created at line 220.
-    Found 1-bit xor2 for signal <accum153$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum156$xor0000> created at line 222.
-    Found 1-bit xor2 for signal <accum156$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum168$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum168$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum169$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum169$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum173$xor0000> created at line 220.
-    Found 1-bit xor2 for signal <accum173$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum176$xor0000> created at line 222.
-    Found 1-bit xor2 for signal <accum176$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum189$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum189$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum193$xor0000> created at line 220.
-    Found 1-bit xor2 for signal <accum193$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum197$xor0000> created at line 220.
-    Found 1-bit xor2 for signal <accum197$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum209$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum209$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum213$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum213$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum214$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum214$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum218$xor0000> created at line 220.
-    Found 1-bit xor2 for signal <accum218$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum221$xor0000> created at line 222.
-    Found 1-bit xor2 for signal <accum221$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum233$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum233$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum234$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum234$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum238$xor0000> created at line 220.
-    Found 1-bit xor2 for signal <accum238$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum241$xor0000> created at line 222.
-    Found 1-bit xor2 for signal <accum241$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum254$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum254$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum258$xor0000> created at line 220.
-    Found 1-bit xor2 for signal <accum258$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum262$xor0000> created at line 220.
-    Found 1-bit xor2 for signal <accum262$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum274$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum274$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum278$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum278$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum279$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum279$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum283$xor0000> created at line 220.
-    Found 1-bit xor2 for signal <accum283$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum286$xor0000> created at line 222.
-    Found 1-bit xor2 for signal <accum286$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum298$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum298$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum299$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum299$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum303$xor0000> created at line 220.
-    Found 1-bit xor2 for signal <accum303$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum306$xor0000> created at line 222.
-    Found 1-bit xor2 for signal <accum306$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum319$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum319$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum323$xor0000> created at line 220.
-    Found 1-bit xor2 for signal <accum323$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum327$xor0000> created at line 220.
-    Found 1-bit xor2 for signal <accum327$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum339$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum339$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum83$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum83$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum84$xor0000> created at line 224.
-    Found 1-bit xor2 for signal <accum84$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum88$xor0000> created at line 220.
-    Found 1-bit xor2 for signal <accum88$xor0005> created at line 199.
-    Found 8-bit xor2 for signal <accum91$xor0000> created at line 222.
-    Found 1-bit xor2 for signal <accum91$xor0005> created at line 199.
-    Found 32-bit register for signal <expanded_key<0><0>>.
-    Found 32-bit register for signal <expanded_key<0><1>>.
-    Found 32-bit register for signal <expanded_key<0><2>>.
-    Found 32-bit register for signal <expanded_key<0><3>>.
-    Found 4-bit comparator greater for signal <FSL_M_Data$cmp_gt0000> created at line 309.
-    Found 4-bit comparator lessequal for signal <FSL_M_Data$cmp_le0000> created at line 309.
     Found 32-bit register for signal <state<0>>.
     Found 32-bit register for signal <state<1>>.
     Found 32-bit register for signal <state<2>>.
     Found 32-bit register for signal <state<3>>.
-    Found 4-bit up counter for signal <step_num>.
+    Found 3-bit register for signal <step_num>.
     Summary:
-	inferred  72 ROM(s).
-	inferred   1 Counter(s).
-	inferred 288 D-type flip-flop(s).
-	inferred   2 Comparator(s).
-	inferred 580 Multiplexer(s).
-	inferred 128 Xor(s).
+	inferred  56 ROM(s).
+	inferred 163 D-type flip-flop(s).
+	inferred 448 Multiplexer(s).
 Unit <aes> synthesized.
 
-INTERNAL_ERROR:Xst:cmain.c:3464:1.56 -  Process will terminate. For technical support on this issue, please open a WebCase with this project attached at http://www.xilinx.com/support.  
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 56
+ 16x128-bit ROM                                        : 56
+# Registers                                            : 18
+ 3-bit register                                        : 1
+ 32-bit register                                       : 1
+ 8-bit register                                        : 16
+# Multiplexers                                         : 56
+ 8-bit 16-to-1 multiplexer                             : 56
+# Xors                                                 : 151
+ 8-bit xor2                                            : 151
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1426 - The value init of the FF/Latch step_num_0 hinder the constant cleaning in the block aes.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1293 - FF/Latch <step_num_2> has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <step_num_1> of sequential type is unconnected in block <aes>.
+
+Synthesizing (advanced) Unit <aes>.
+INFO:Xst:3044 - The ROM <Mrom_slice0098_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<1>_1>.
+INFO:Xst:3044 - The ROM <Mrom_slice0100_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<0>_2>.
+INFO:Xst:3044 - The ROM <Mrom_slice0102_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<3>_3>.
+INFO:Xst:3044 - The ROM <Mrom_slice0106_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<2>_1>.
+INFO:Xst:3044 - The ROM <Mrom_slice0110_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<0>_3>.
+INFO:Xst:3045 - The ROM description <Mrom_slice0080_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0082_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3044 - The ROM <Mrom_slice0084_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<2>_2>.
+INFO:Xst:3044 - The ROM <Mrom_slice0086_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<1>_3>.
+INFO:Xst:3044 - The ROM <Mrom_slice0090_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<0>_1>.
+INFO:Xst:3044 - The ROM <Mrom_slice0094_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<2>_3>.
+INFO:Xst:3225 - The RAM <Mrom_slice0098_rom0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 128-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <FSL_Clk>       | rise     |
+    |     enA            | connected to signal <state<2>_0_not0001> | high     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <Mrom_slice0100_rom0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 128-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <FSL_Clk>       | rise     |
+    |     enA            | connected to signal <state<2>_0_not0001> | high     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <Mrom_slice0102_rom0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 128-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <FSL_Clk>       | rise     |
+    |     enA            | connected to signal <state<2>_0_not0001> | high     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <Mrom_slice0106_rom0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 128-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <FSL_Clk>       | rise     |
+    |     enA            | connected to signal <state<2>_0_not0001> | high     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <Mrom_slice0110_rom0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 128-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <FSL_Clk>       | rise     |
+    |     enA            | connected to signal <state<2>_0_not0001> | high     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <Mrom_slice0084_rom0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 128-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <FSL_Clk>       | rise     |
+    |     enA            | connected to signal <state<2>_0_not0001> | high     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <Mrom_slice0086_rom0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 128-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <FSL_Clk>       | rise     |
+    |     enA            | connected to signal <state<2>_0_not0001> | high     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <Mrom_slice0090_rom0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 128-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <FSL_Clk>       | rise     |
+    |     enA            | connected to signal <state<2>_0_not0001> | high     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <Mrom_slice0094_rom0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 128-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <FSL_Clk>       | rise     |
+    |     enA            | connected to signal <state<2>_0_not0001> | high     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <aes> synthesized (advanced).
+WARNING:Xst:2677 - Node <state<2>_3_3> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<2>_3_2> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<2>_3_1> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<2>_3_0> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<2>_1_3> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<2>_1_2> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<2>_1_1> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<2>_1_0> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<2>_2_3> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<2>_2_2> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<2>_2_1> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<2>_2_0> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<1>_1_3> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<1>_1_2> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<1>_1_1> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<1>_1_0> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<1>_3_3> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<1>_3_2> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<1>_3_1> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<1>_3_0> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<0>_1_3> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<0>_1_2> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<0>_1_1> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<0>_1_0> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<0>_2_3> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<0>_2_2> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<0>_2_1> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<0>_2_0> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<0>_3_3> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<0>_3_2> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<0>_3_1> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<0>_3_0> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <step_num_1> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<3>_3_3> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<3>_3_2> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<3>_3_1> of sequential type is unconnected in block <aes>.
+WARNING:Xst:2677 - Node <state<3>_3_0> of sequential type is unconnected in block <aes>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 9
+ 16x128-bit single-port block RAM                      : 9
+# ROMs                                                 : 42
+ 16x128-bit ROM                                        : 42
+# Registers                                            : 86
+ Flip-Flops                                            : 86
+# Multiplexers                                         : 51
+ 8-bit 16-to-1 multiplexer                             : 51
+# Xors                                                 : 151
+ 8-bit xor2                                            : 151
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch step_num_0 hinder the constant cleaning in the block aes.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1293 - FF/Latch <step_num_2> has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_15> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_1_7> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_14> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_1_6> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_13> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_1_5> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_12> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_1_4> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_7> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_0_7> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_6> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_0_6> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_1> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_0_1> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_5> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_0_5> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_0> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_0_0> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_4> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_0_4> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_3> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_0_3> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_2> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_0_2> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_31> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_3_7> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_30> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_3_6> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_29> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_3_5> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_28> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_3_4> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_23> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_2_7> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_22> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_2_6> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_21> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_2_5> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_20> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <state<0>_2_4> 
+INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0004_rom0000> <Mrom_slice0000_rom0000> <Mrom_slice0002_rom0000> <Mrom_slice0006_rom0000> are equivalent, XST will keep only <Mrom_slice0004_rom0000>.
+INFO:Xst:2697 - Unit <aes> : the RAMs <Mrom_slice0102_rom0000>, <Mrom_slice0098_rom0000> are packed into the single block RAM <Mrom_slice0102_rom00001>
+INFO:Xst:2697 - Unit <aes> : the RAMs <Mrom_slice0100_rom0000>, <Mrom_slice0084_rom0000> are packed into the single block RAM <Mrom_slice0100_rom00001>
+INFO:Xst:2697 - Unit <aes> : the RAMs <Mrom_slice0106_rom0000>, <Mrom_slice0110_rom0000> are packed into the single block RAM <Mrom_slice0106_rom00001>
+INFO:Xst:2697 - Unit <aes> : the RAMs <Mrom_slice0094_rom0000>, <Mrom_slice0086_rom0000> are packed into the single block RAM <Mrom_slice0094_rom00001>
+
+Optimizing unit <aes> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block aes, actual ratio is 4.
+FlipFlop state<3>_1_0 has been replicated 3 time(s)
+FlipFlop state<3>_1_1 has been replicated 3 time(s)
+FlipFlop state<3>_1_2 has been replicated 4 time(s)
+FlipFlop state<3>_1_3 has been replicated 3 time(s)
+FlipFlop state<3>_1_7 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 79
+ Flip-Flops                                            : 79
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : aes.ngr
+Top Level Output File Name         : aes
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 74
+
+Cell Usage :
+# BELS                             : 1582
+#      GND                         : 1
+#      LUT3                        : 705
+#      LUT4                        : 346
+#      MUXF5                       : 354
+#      MUXF6                       : 176
+# FlipFlops/Latches                : 79
+#      FDE                         : 79
+# RAMS                             : 20
+#      RAMB16_S36                  : 4
+#      RAMB16_S36_S36              : 16
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 34
+#      OBUF                        : 34
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1600efg320-4 
+
+ Number of Slices:                      550  out of  14752     3%  
+ Number of Slice Flip Flops:             79  out of  29504     0%  
+ Number of 4 input LUTs:               1051  out of  29504     3%  
+ Number of IOs:                          74
+ Number of bonded IOBs:                  35  out of    250    14%  
+ Number of BRAMs:                        20  out of     36    55%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+FSL_Clk                            | BUFGP                  | 99    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 7.141ns (Maximum Frequency: 140.040MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 5.156ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'FSL_Clk'
+  Clock period: 7.141ns (frequency: 140.040MHz)
+  Total number of paths / destination ports: 8815 / 337
+-------------------------------------------------------------------------
+Delay:               7.141ns (Levels of Logic = 6)
+  Source:            state<3>_1_1_3 (FF)
+  Destination:       Mrom_slice0090_rom00001 (RAM)
+  Source Clock:      FSL_Clk rising
+  Destination Clock: FSL_Clk rising
+
+  Data Path: state<3>_1_1_3 to Mrom_slice0090_rom00001
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             34   0.591   1.342  state<3>_1_1_3 (state<3>_1_1_3)
+     LUT4:I1->O            1   0.704   0.000  Mrom_slice0082_rom00006811_SW0_F (N216)
+     MUXF5:I0->O           1   0.321   0.499  Mrom_slice0082_rom00006811_SW0 (N162)
+     LUT3:I1->O            1   0.704   0.000  Mmux__n0074<1>_614 (Mmux__n0074<1>_614)
+     MUXF5:I1->O           1   0.321   0.000  Mmux__n0074<1>_5_f5_8 (Mmux__n0074<1>_5_f59)
+     MUXF6:I1->O           1   0.521   0.424  Mmux__n0074<1>_4_f6_3 (Mmux__n0074<1>_4_f64)
+     LUT4:I3->O            5   0.704   0.633  FSL_M_Data_mux0000<20>1 (FSL_M_Data_mux0000<20>)
+     RAMB16_S36:ADDR0          0.377          Mrom_slice0090_rom00001
+    ----------------------------------------
+    Total                      7.141ns (4.243ns logic, 2.898ns route)
+                                       (59.4% logic, 40.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'FSL_Clk'
+  Total number of paths / destination ports: 32 / 32
+-------------------------------------------------------------------------
+Offset:              5.156ns (Levels of Logic = 1)
+  Source:            FSL_M_Data_0 (FF)
+  Destination:       FSL_M_Data<0> (PAD)
+  Source Clock:      FSL_Clk rising
+
+  Data Path: FSL_M_Data_0 to FSL_M_Data<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q            129   0.591   1.293  FSL_M_Data_0 (FSL_M_Data_0)
+     OBUF:I->O                 3.272          FSL_M_Data_0_OBUF (FSL_M_Data<0>)
+    ----------------------------------------
+    Total                      5.156ns (3.863ns logic, 1.293ns route)
+                                       (74.9% logic, 25.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 74.00 secs
+Total CPU time to Xst completion: 74.48 secs
+ 
+--> 
+
+Total memory usage is 371648 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   71 (   0 filtered)
+Number of infos    :   45 (   0 filtered)
+
