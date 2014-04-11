@@ -3,13 +3,13 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.18 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.18 secs
  
 --> Reading design: aes.prj
@@ -203,16 +203,37 @@ WARNING:Xst:1780 - Signal <cypher_key<2>> is never used or assigned. This unconn
 WARNING:Xst:1780 - Signal <cypher_key<1>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <cypher_key<0>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
     Using one-hot encoding for signal <fsl_state>.
+    Found 16x128-bit ROM for signal <slice0002$rom0000>.
+    Found 16x128-bit ROM for signal <slice0004$rom0000>.
+    Found 16x128-bit ROM for signal <slice0006$rom0000>.
+    Found 16x128-bit ROM for signal <slice0016$rom0000>.
+    Found 16x128-bit ROM for signal <slice0018$rom0000>.
+    Found 16x128-bit ROM for signal <slice0020$rom0000>.
+    Found 16x128-bit ROM for signal <slice0022$rom0000>.
+    Found 16x128-bit ROM for signal <slice0008$rom0000>.
+    Found 16x128-bit ROM for signal <slice0010$rom0000>.
+    Found 16x128-bit ROM for signal <slice0012$rom0000>.
+    Found 16x128-bit ROM for signal <slice0014$rom0000>.
+    Found 16x128-bit ROM for signal <slice0024$rom0000>.
+    Found 16x128-bit ROM for signal <slice0026$rom0000>.
+    Found 16x128-bit ROM for signal <slice0028$rom0000>.
+    Found 16x128-bit ROM for signal <slice0000$rom0000>.
+    Found 16x128-bit ROM for signal <slice0030$rom0000>.
     Found 32-bit register for signal <FSL_M_Data>.
-    Found 8-bit 4-to-1 multiplexer for signal <n0000$mux0000>.
-    Found 8-bit 4-to-1 multiplexer for signal <n0000$mux0001>.
-    Found 8-bit 4-to-1 multiplexer for signal <n0000$mux0002>.
-    Found 8-bit 4-to-1 multiplexer for signal <n0000$mux0003>.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0000<31:28>>.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0001<31:28>>.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0002<31:28>>.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0003<31:28>>.
+    Found 8-bit 4-to-1 multiplexer for signal <n0004$mux0000>.
+    Found 8-bit 4-to-1 multiplexer for signal <n0004$mux0001>.
+    Found 8-bit 4-to-1 multiplexer for signal <n0004$mux0002>.
+    Found 8-bit 4-to-1 multiplexer for signal <n0004$mux0003>.
     Found 2-bit up counter for signal <nr_of_writes>.
     Summary:
+	inferred  16 ROM(s).
 	inferred   1 Counter(s).
 	inferred  32 D-type flip-flop(s).
-	inferred  32 Multiplexer(s).
+	inferred 160 Multiplexer(s).
 Unit <aes> synthesized.
 
 
@@ -220,11 +241,14 @@ Unit <aes> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
+# ROMs                                                 : 16
+ 16x128-bit ROM                                        : 16
 # Counters                                             : 1
  2-bit up counter                                      : 1
 # Registers                                            : 1
  32-bit register                                       : 1
-# Multiplexers                                         : 4
+# Multiplexers                                         : 20
+ 8-bit 16-to-1 multiplexer                             : 16
  8-bit 4-to-1 multiplexer                              : 4
 
 =========================================================================
@@ -238,11 +262,14 @@ Macro Statistics
 Advanced HDL Synthesis Report
 
 Macro Statistics
+# ROMs                                                 : 16
+ 16x128-bit ROM                                        : 16
 # Counters                                             : 1
  2-bit up counter                                      : 1
 # Registers                                            : 32
  Flip-Flops                                            : 32
-# Multiplexers                                         : 4
+# Multiplexers                                         : 20
+ 8-bit 16-to-1 multiplexer                             : 16
  8-bit 4-to-1 multiplexer                              : 4
 
 =========================================================================
@@ -250,20 +277,21 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <FSL_M_Data_29> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_24> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_16> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <FSL_M_Data_31> in Unit <aes> is equivalent to the following 3 FFs/Latches, which will be removed : <FSL_M_Data_5> <FSL_M_Data_4> <FSL_M_Data_2> 
-INFO:Xst:2261 - The FF/Latch <FSL_M_Data_30> in Unit <aes> is equivalent to the following 3 FFs/Latches, which will be removed : <FSL_M_Data_22> <FSL_M_Data_10> <FSL_M_Data_0> 
-INFO:Xst:2261 - The FF/Latch <FSL_M_Data_25> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <FSL_M_Data_3> 
-INFO:Xst:2261 - The FF/Latch <FSL_M_Data_18> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <FSL_M_Data_6> 
-INFO:Xst:2261 - The FF/Latch <nr_of_writes_0> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <FSL_M_Data_23> 
-INFO:Xst:2261 - The FF/Latch <nr_of_writes_1> in Unit <aes> is equivalent to the following 3 FFs/Latches, which will be removed : <FSL_M_Data_28> <FSL_M_Data_7> <FSL_M_Data_1> 
-INFO:Xst:2261 - The FF/Latch <FSL_M_Data_19> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <FSL_M_Data_11> 
-INFO:Xst:2261 - The FF/Latch <FSL_M_Data_26> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <FSL_M_Data_17> 
-INFO:Xst:2261 - The FF/Latch <FSL_M_Data_21> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <FSL_M_Data_8> 
-INFO:Xst:2261 - The FF/Latch <FSL_M_Data_27> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <FSL_M_Data_9> 
-INFO:Xst:2261 - The FF/Latch <FSL_M_Data_20> in Unit <aes> is equivalent to the following 2 FFs/Latches, which will be removed : <FSL_M_Data_15> <FSL_M_Data_14> 
+INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0002_rom0000> <Mrom_slice0006_rom0000> <Mrom_slice0026_rom0000> <Mrom_slice0030_rom0000> are equivalent, XST will keep only <Mrom_slice0002_rom0000>.
+INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0004_rom0000> <Mrom_slice0022_rom0000> are equivalent, XST will keep only <Mrom_slice0004_rom0000>.
+INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0018_rom0000> <Mrom_slice0000_rom0000> are equivalent, XST will keep only <Mrom_slice0018_rom0000>.
+INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0012_rom0000> <Mrom_slice0010_rom0000> are equivalent, XST will keep only <Mrom_slice0012_rom0000>.
+WARNING:Xst:1710 - FF/Latch <FSL_M_Data_18> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_28> in Unit <aes> is equivalent to the following 2 FFs/Latches, which will be removed : <FSL_M_Data_24> <FSL_M_Data_20> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_4> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <FSL_M_Data_2> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_29> in Unit <aes> is equivalent to the following 3 FFs/Latches, which will be removed : <FSL_M_Data_23> <FSL_M_Data_7> <FSL_M_Data_3> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_13> in Unit <aes> is equivalent to the following 2 FFs/Latches, which will be removed : <FSL_M_Data_6> <FSL_M_Data_5> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_30> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <FSL_M_Data_16> 
+INFO:Xst:2261 - The FF/Latch <nr_of_writes_0> in Unit <aes> is equivalent to the following 2 FFs/Latches, which will be removed : <FSL_M_Data_31> <FSL_M_Data_12> 
+INFO:Xst:2261 - The FF/Latch <nr_of_writes_1> in Unit <aes> is equivalent to the following 3 FFs/Latches, which will be removed : <FSL_M_Data_27> <FSL_M_Data_22> <FSL_M_Data_9> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_25> in Unit <aes> is equivalent to the following 2 FFs/Latches, which will be removed : <FSL_M_Data_15> <FSL_M_Data_1> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_26> in Unit <aes> is equivalent to the following 2 FFs/Latches, which will be removed : <FSL_M_Data_19> <FSL_M_Data_14> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_11> in Unit <aes> is equivalent to the following 2 FFs/Latches, which will be removed : <FSL_M_Data_10> <FSL_M_Data_0> 
 
 Optimizing unit <aes> ...
 
@@ -307,15 +335,15 @@ Design Statistics
 # IOs                              : 74
 
 Cell Usage :
-# BELS                             : 7
+# BELS                             : 6
 #      GND                         : 1
-#      INV                         : 2
+#      INV                         : 1
 #      LUT2                        : 3
 #      VCC                         : 1
 # FlipFlops/Latches                : 13
 #      FD                          : 5
-#      FDR                         : 6
-#      FDS                         : 2
+#      FDR                         : 7
+#      FDS                         : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 34
@@ -329,7 +357,7 @@ Selected Device : 3s1600efg320-4
 
  Number of Slices:                        9  out of  14752     0%  
  Number of Slice Flip Flops:             13  out of  29504     0%  
- Number of 4 input LUTs:                  5  out of  29504     0%  
+ Number of 4 input LUTs:                  4  out of  29504     0%  
  Number of IOs:                          74
  Number of bonded IOBs:                  35  out of    250    14%  
  Number of GCLKs:                         1  out of     24     4%  
@@ -366,7 +394,7 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 3.665ns (Maximum Frequency: 272.851MHz)
+   Minimum period: 3.710ns (Maximum Frequency: 269.542MHz)
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: 4.796ns
    Maximum combinational path delay: No path found
@@ -377,41 +405,41 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'FSL_Clk'
-  Clock period: 3.665ns (frequency: 272.851MHz)
+  Clock period: 3.710ns (frequency: 269.542MHz)
   Total number of paths / destination ports: 22 / 16
 -------------------------------------------------------------------------
-Delay:               3.665ns (Levels of Logic = 1)
-  Source:            nr_of_writes_1 (FF)
-  Destination:       FSL_M_Data_26 (FF)
+Delay:               3.710ns (Levels of Logic = 1)
+  Source:            nr_of_writes_0 (FF)
+  Destination:       FSL_M_Data_11 (FF)
   Source Clock:      FSL_Clk rising
   Destination Clock: FSL_Clk rising
 
-  Data Path: nr_of_writes_1 to FSL_M_Data_26
+  Data Path: nr_of_writes_0 to FSL_M_Data_11
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             11   0.591   1.012  nr_of_writes_1 (nr_of_writes_1)
-     LUT2:I1->O            2   0.704   0.447  n0000_mux0001<0>1 (n0000_mux0001<0>)
-     FDR:R                     0.911          FSL_M_Data_12
+     FDR:C->Q             10   0.591   1.057  nr_of_writes_0 (nr_of_writes_0)
+     LUT2:I0->O            2   0.704   0.447  n0004_mux0001<6>1 (n0004_mux0001<6>)
+     FDR:R                     0.911          FSL_M_Data_4
     ----------------------------------------
-    Total                      3.665ns (2.206ns logic, 1.459ns route)
-                                       (60.2% logic, 39.8% route)
+    Total                      3.710ns (2.206ns logic, 1.504ns route)
+                                       (59.5% logic, 40.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'FSL_Clk'
-  Total number of paths / destination ports: 29 / 29
+  Total number of paths / destination ports: 31 / 31
 -------------------------------------------------------------------------
 Offset:              4.796ns (Levels of Logic = 1)
   Source:            nr_of_writes_1 (FF)
-  Destination:       FSL_M_Data<1> (PAD)
+  Destination:       FSL_M_Data<9> (PAD)
   Source Clock:      FSL_Clk rising
 
-  Data Path: nr_of_writes_1 to FSL_M_Data<1>
+  Data Path: nr_of_writes_1 to FSL_M_Data<9>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDR:C->Q             11   0.591   0.933  nr_of_writes_1 (nr_of_writes_1)
-     OBUF:I->O                 3.272          FSL_M_Data_1_OBUF (FSL_M_Data<1>)
+     OBUF:I->O                 3.272          FSL_M_Data_9_OBUF (FSL_M_Data<9>)
     ----------------------------------------
     Total                      4.796ns (3.863ns logic, 0.933ns route)
                                        (80.5% logic, 19.5% route)
@@ -419,14 +447,14 @@ Offset:              4.796ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 7.48 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.22 secs
  
 --> 
 
-Total memory usage is 245220 kilobytes
+Total memory usage is 259620 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   75 (   0 filtered)
-Number of infos    :   11 (   0 filtered)
+Number of warnings :   73 (   0 filtered)
+Number of infos    :   14 (   0 filtered)
 
