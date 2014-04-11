@@ -3,14 +3,14 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.19 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.19 secs
  
 --> Reading design: aes.prj
 
@@ -107,7 +107,8 @@ Slice Utilization Ratio Delta      : 5
 Compiling vhdl file "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/utils.vhd" in Library aes_v1_00_a.
 Architecture utils of Entity utils is up to date.
 Compiling vhdl file "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/aes.vhd" in Library aes_v1_00_a.
-Architecture example of Entity aes is up to date.
+Entity <aes> compiled.
+Entity <aes> (Architecture <example>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -203,37 +204,100 @@ WARNING:Xst:1780 - Signal <cypher_key<2>> is never used or assigned. This unconn
 WARNING:Xst:1780 - Signal <cypher_key<1>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <cypher_key<0>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
     Using one-hot encoding for signal <fsl_state>.
-    Found 16x128-bit ROM for signal <slice0002$rom0000>.
-    Found 16x128-bit ROM for signal <slice0004$rom0000>.
-    Found 16x128-bit ROM for signal <slice0006$rom0000>.
-    Found 16x128-bit ROM for signal <slice0016$rom0000>.
-    Found 16x128-bit ROM for signal <slice0018$rom0000>.
-    Found 16x128-bit ROM for signal <slice0020$rom0000>.
-    Found 16x128-bit ROM for signal <slice0022$rom0000>.
-    Found 16x128-bit ROM for signal <slice0008$rom0000>.
-    Found 16x128-bit ROM for signal <slice0010$rom0000>.
-    Found 16x128-bit ROM for signal <slice0012$rom0000>.
-    Found 16x128-bit ROM for signal <slice0014$rom0000>.
-    Found 16x128-bit ROM for signal <slice0024$rom0000>.
-    Found 16x128-bit ROM for signal <slice0026$rom0000>.
-    Found 16x128-bit ROM for signal <slice0028$rom0000>.
-    Found 16x128-bit ROM for signal <slice0000$rom0000>.
-    Found 16x128-bit ROM for signal <slice0030$rom0000>.
     Found 32-bit register for signal <FSL_M_Data>.
-    Found 32-bit 16-to-1 multiplexer for signal <$n0000<31:28>>.
-    Found 32-bit 16-to-1 multiplexer for signal <$n0001<31:28>>.
-    Found 32-bit 16-to-1 multiplexer for signal <$n0002<31:28>>.
-    Found 32-bit 16-to-1 multiplexer for signal <$n0003<31:28>>.
+    Found 8-bit xor5 for signal <$n0000<31>>.
+    Found 8-bit xor6 for signal <$n0000<30>>.
+    Found 8-bit xor5 for signal <$n0000<29>>.
+    Found 8-bit xor6 for signal <$n0000<28>>.
+    Found 16-bit xor5 for signal <$n0001<31:30>>.
+    Found 16-bit xor5 for signal <$n0001<29>>.
+    Found 8-bit xor5 for signal <$n0001<28>>.
+    Found 8-bit xor6 for signal <$n0002<31>>.
+    Found 8-bit xor5 for signal <$n0002<30>>.
+    Found 16-bit xor6 for signal <$n0002<29:28>>.
+    Found 8-bit xor6 for signal <$n0003<31>>.
+    Found 8-bit xor5 for signal <$n0003<30>>.
+    Found 8-bit xor6 for signal <$n0003<29>>.
+    Found 8-bit xor5 for signal <$n0003<28>>.
+    Found 8-bit xor2 for signal <accum109$xor0000> created at line 228.
+    Found 1-bit xor2 for signal <accum109$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum11$xor0000> created at line 226.
+    Found 1-bit xor2 for signal <accum11$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum113$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum117$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum129$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum133$xor0000> created at line 228.
+    Found 1-bit xor2 for signal <accum133$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum134$xor0000> created at line 228.
+    Found 1-bit xor2 for signal <accum134$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum138$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum141$xor0000> created at line 226.
+    Found 1-bit xor2 for signal <accum141$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum153$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum154$xor0000> created at line 228.
+    Found 1-bit xor2 for signal <accum154$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum158$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum158$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum161$xor0000> created at line 226.
+    Found 1-bit xor2 for signal <accum161$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum174$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum178$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum178$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum182$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum194$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum198$xor0000> created at line 228.
+    Found 1-bit xor2 for signal <accum198$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum199$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum203$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum203$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum206$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum218$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum219$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum223$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum223$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum226$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum23$xor0000> created at line 228.
+    Found 1-bit xor2 for signal <accum23$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum239$xor0000> created at line 228.
+    Found 1-bit xor2 for signal <accum239$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum24$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum243$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum247$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum259$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum28$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum3$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum31$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum4$xor0000> created at line 228.
+    Found 1-bit xor2 for signal <accum4$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum44$xor0000> created at line 228.
+    Found 1-bit xor2 for signal <accum44$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum48$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum52$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum64$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum68$xor0000> created at line 228.
+    Found 1-bit xor2 for signal <accum68$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum69$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum73$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum73$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum76$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum8$xor0005> created at line 203.
+    Found 1-bit xor2 for signal <accum88$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum89$xor0000> created at line 228.
+    Found 1-bit xor2 for signal <accum89$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum93$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum93$xor0005> created at line 203.
+    Found 8-bit xor2 for signal <accum96$xor0000> created at line 226.
+    Found 1-bit xor2 for signal <accum96$xor0005> created at line 203.
     Found 8-bit 4-to-1 multiplexer for signal <n0004$mux0000>.
     Found 8-bit 4-to-1 multiplexer for signal <n0004$mux0001>.
     Found 8-bit 4-to-1 multiplexer for signal <n0004$mux0002>.
     Found 8-bit 4-to-1 multiplexer for signal <n0004$mux0003>.
     Found 2-bit up counter for signal <nr_of_writes>.
     Summary:
-	inferred  16 ROM(s).
 	inferred   1 Counter(s).
 	inferred  32 D-type flip-flop(s).
-	inferred 160 Multiplexer(s).
+	inferred  32 Multiplexer(s).
+	inferred 128 Xor(s).
 Unit <aes> synthesized.
 
 
@@ -241,15 +305,17 @@ Unit <aes> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# ROMs                                                 : 16
- 16x128-bit ROM                                        : 16
 # Counters                                             : 1
  2-bit up counter                                      : 1
 # Registers                                            : 1
  32-bit register                                       : 1
-# Multiplexers                                         : 20
- 8-bit 16-to-1 multiplexer                             : 16
+# Multiplexers                                         : 4
  8-bit 4-to-1 multiplexer                              : 4
+# Xors                                                 : 85
+ 1-bit xor2                                            : 48
+ 8-bit xor2                                            : 21
+ 8-bit xor5                                            : 7
+ 8-bit xor6                                            : 9
 
 =========================================================================
 
@@ -262,42 +328,49 @@ Macro Statistics
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# ROMs                                                 : 16
- 16x128-bit ROM                                        : 16
 # Counters                                             : 1
  2-bit up counter                                      : 1
 # Registers                                            : 32
  Flip-Flops                                            : 32
-# Multiplexers                                         : 20
- 8-bit 16-to-1 multiplexer                             : 16
+# Multiplexers                                         : 4
  8-bit 4-to-1 multiplexer                              : 4
+# Xors                                                 : 85
+ 1-bit xor2                                            : 48
+ 8-bit xor2                                            : 21
+ 8-bit xor5                                            : 7
+ 8-bit xor6                                            : 9
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0002_rom0000> <Mrom_slice0006_rom0000> <Mrom_slice0026_rom0000> <Mrom_slice0030_rom0000> are equivalent, XST will keep only <Mrom_slice0002_rom0000>.
-INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0004_rom0000> <Mrom_slice0022_rom0000> are equivalent, XST will keep only <Mrom_slice0004_rom0000>.
-INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0018_rom0000> <Mrom_slice0000_rom0000> are equivalent, XST will keep only <Mrom_slice0018_rom0000>.
-INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0012_rom0000> <Mrom_slice0010_rom0000> are equivalent, XST will keep only <Mrom_slice0012_rom0000>.
-WARNING:Xst:1710 - FF/Latch <FSL_M_Data_18> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <FSL_M_Data_28> in Unit <aes> is equivalent to the following 2 FFs/Latches, which will be removed : <FSL_M_Data_24> <FSL_M_Data_20> 
-INFO:Xst:2261 - The FF/Latch <FSL_M_Data_4> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <FSL_M_Data_2> 
-INFO:Xst:2261 - The FF/Latch <FSL_M_Data_29> in Unit <aes> is equivalent to the following 3 FFs/Latches, which will be removed : <FSL_M_Data_23> <FSL_M_Data_7> <FSL_M_Data_3> 
-INFO:Xst:2261 - The FF/Latch <FSL_M_Data_13> in Unit <aes> is equivalent to the following 2 FFs/Latches, which will be removed : <FSL_M_Data_6> <FSL_M_Data_5> 
-INFO:Xst:2261 - The FF/Latch <FSL_M_Data_30> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <FSL_M_Data_16> 
-INFO:Xst:2261 - The FF/Latch <nr_of_writes_0> in Unit <aes> is equivalent to the following 2 FFs/Latches, which will be removed : <FSL_M_Data_31> <FSL_M_Data_12> 
-INFO:Xst:2261 - The FF/Latch <nr_of_writes_1> in Unit <aes> is equivalent to the following 3 FFs/Latches, which will be removed : <FSL_M_Data_27> <FSL_M_Data_22> <FSL_M_Data_9> 
-INFO:Xst:2261 - The FF/Latch <FSL_M_Data_25> in Unit <aes> is equivalent to the following 2 FFs/Latches, which will be removed : <FSL_M_Data_15> <FSL_M_Data_1> 
-INFO:Xst:2261 - The FF/Latch <FSL_M_Data_26> in Unit <aes> is equivalent to the following 2 FFs/Latches, which will be removed : <FSL_M_Data_19> <FSL_M_Data_14> 
-INFO:Xst:2261 - The FF/Latch <FSL_M_Data_11> in Unit <aes> is equivalent to the following 2 FFs/Latches, which will be removed : <FSL_M_Data_10> <FSL_M_Data_0> 
+WARNING:Xst:1710 - FF/Latch <FSL_M_Data_10> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <aes> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_30> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <FSL_M_Data_21> 
 Found area constraint ratio of 100 (+ 5) on block aes, actual ratio is 0.
+INFO:Xst:2260 - The FF/Latch <FSL_M_Data_9> in Unit <aes> is equivalent to the following FF/Latch : <FSL_M_Data_0> 
+INFO:Xst:2260 - The FF/Latch <FSL_M_Data_29> in Unit <aes> is equivalent to the following 3 FFs/Latches : <FSL_M_Data_28> <FSL_M_Data_27> <FSL_M_Data_26> 
+INFO:Xst:2260 - The FF/Latch <nr_of_writes_1> in Unit <aes> is equivalent to the following FF/Latch : <FSL_M_Data_3> 
+INFO:Xst:2260 - The FF/Latch <FSL_M_Data_17> in Unit <aes> is equivalent to the following 2 FFs/Latches : <FSL_M_Data_14> <FSL_M_Data_6> 
+INFO:Xst:2260 - The FF/Latch <FSL_M_Data_25> in Unit <aes> is equivalent to the following FF/Latch : <FSL_M_Data_18> 
+INFO:Xst:2260 - The FF/Latch <FSL_M_Data_31> in Unit <aes> is equivalent to the following 2 FFs/Latches : <FSL_M_Data_22> <FSL_M_Data_2> 
+INFO:Xst:2260 - The FF/Latch <FSL_M_Data_23> in Unit <aes> is equivalent to the following 2 FFs/Latches : <FSL_M_Data_20> <FSL_M_Data_12> 
+INFO:Xst:2260 - The FF/Latch <FSL_M_Data_16> in Unit <aes> is equivalent to the following 3 FFs/Latches : <FSL_M_Data_7> <FSL_M_Data_5> <FSL_M_Data_4> 
+INFO:Xst:2260 - The FF/Latch <FSL_M_Data_13> in Unit <aes> is equivalent to the following FF/Latch : <FSL_M_Data_8> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_9> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <FSL_M_Data_0> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_29> in Unit <aes> is equivalent to the following 3 FFs/Latches, which will be removed : <FSL_M_Data_28> <FSL_M_Data_27> <FSL_M_Data_26> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_3> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <nr_of_writes_1> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_17> in Unit <aes> is equivalent to the following 2 FFs/Latches, which will be removed : <FSL_M_Data_14> <FSL_M_Data_6> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_25> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <FSL_M_Data_18> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_31> in Unit <aes> is equivalent to the following 2 FFs/Latches, which will be removed : <FSL_M_Data_22> <FSL_M_Data_2> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_23> in Unit <aes> is equivalent to the following 2 FFs/Latches, which will be removed : <FSL_M_Data_20> <FSL_M_Data_12> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_16> in Unit <aes> is equivalent to the following 3 FFs/Latches, which will be removed : <FSL_M_Data_7> <FSL_M_Data_5> <FSL_M_Data_4> 
+INFO:Xst:2261 - The FF/Latch <FSL_M_Data_13> in Unit <aes> is equivalent to the following FF/Latch, which will be removed : <FSL_M_Data_8> 
 
 Final Macro Processing ...
 
@@ -305,8 +378,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 13
- Flip-Flops                                            : 13
+# Registers                                            : 16
+ Flip-Flops                                            : 16
 
 =========================================================================
 
@@ -335,15 +408,15 @@ Design Statistics
 # IOs                              : 74
 
 Cell Usage :
-# BELS                             : 6
+# BELS                             : 15
 #      GND                         : 1
 #      INV                         : 1
-#      LUT2                        : 3
+#      LUT2                        : 10
+#      MUXF5                       : 2
 #      VCC                         : 1
-# FlipFlops/Latches                : 13
-#      FD                          : 5
-#      FDR                         : 7
-#      FDS                         : 1
+# FlipFlops/Latches                : 16
+#      FD                          : 15
+#      FDR                         : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 34
@@ -355,9 +428,9 @@ Device utilization summary:
 
 Selected Device : 3s1600efg320-4 
 
- Number of Slices:                        9  out of  14752     0%  
- Number of Slice Flip Flops:             13  out of  29504     0%  
- Number of 4 input LUTs:                  4  out of  29504     0%  
+ Number of Slices:                       10  out of  14752     0%  
+ Number of Slice Flip Flops:             16  out of  29504     0%  
+ Number of 4 input LUTs:                 11  out of  29504     0%  
  Number of IOs:                          74
  Number of bonded IOBs:                  35  out of    250    14%  
  Number of GCLKs:                         1  out of     24     4%  
@@ -383,7 +456,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-FSL_Clk                            | BUFGP                  | 13    |
+FSL_Clk                            | BUFGP                  | 16    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -394,9 +467,9 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 3.710ns (Maximum Frequency: 269.542MHz)
+   Minimum period: 3.006ns (Maximum Frequency: 332.668MHz)
    Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: 4.796ns
+   Maximum output required time after clock: 4.863ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -405,56 +478,56 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'FSL_Clk'
-  Clock period: 3.710ns (frequency: 269.542MHz)
-  Total number of paths / destination ports: 22 / 16
+  Clock period: 3.006ns (frequency: 332.668MHz)
+  Total number of paths / destination ports: 26 / 16
 -------------------------------------------------------------------------
-Delay:               3.710ns (Levels of Logic = 1)
+Delay:               3.006ns (Levels of Logic = 1)
   Source:            nr_of_writes_0 (FF)
-  Destination:       FSL_M_Data_11 (FF)
+  Destination:       FSL_M_Data_16 (FF)
   Source Clock:      FSL_Clk rising
   Destination Clock: FSL_Clk rising
 
-  Data Path: nr_of_writes_0 to FSL_M_Data_11
+  Data Path: nr_of_writes_0 to FSL_M_Data_16
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             10   0.591   1.057  nr_of_writes_0 (nr_of_writes_0)
-     LUT2:I0->O            2   0.704   0.447  n0004_mux0001<6>1 (n0004_mux0001<6>)
-     FDR:R                     0.911          FSL_M_Data_4
+     FDR:C->Q             13   0.591   0.983  nr_of_writes_0 (nr_of_writes_0)
+     INV:I->O              1   0.704   0.420  Mmux_n0004_mux0000_331_INV_0 (Mmux_n0004_mux0000_33)
+     FD:D                      0.308          FSL_M_Data_16
     ----------------------------------------
-    Total                      3.710ns (2.206ns logic, 1.504ns route)
-                                       (59.5% logic, 40.5% route)
+    Total                      3.006ns (1.603ns logic, 1.403ns route)
+                                       (53.3% logic, 46.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'FSL_Clk'
   Total number of paths / destination ports: 31 / 31
 -------------------------------------------------------------------------
-Offset:              4.796ns (Levels of Logic = 1)
-  Source:            nr_of_writes_1 (FF)
-  Destination:       FSL_M_Data<9> (PAD)
+Offset:              4.863ns (Levels of Logic = 1)
+  Source:            FSL_M_Data_3 (FF)
+  Destination:       FSL_M_Data<3> (PAD)
   Source Clock:      FSL_Clk rising
 
-  Data Path: nr_of_writes_1 to FSL_M_Data<9>
+  Data Path: FSL_M_Data_3 to FSL_M_Data<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             11   0.591   0.933  nr_of_writes_1 (nr_of_writes_1)
-     OBUF:I->O                 3.272          FSL_M_Data_9_OBUF (FSL_M_Data<9>)
+     FD:C->Q              14   0.591   1.000  FSL_M_Data_3 (FSL_M_Data_3)
+     OBUF:I->O                 3.272          FSL_M_Data_3_OBUF (FSL_M_Data<3>)
     ----------------------------------------
-    Total                      4.796ns (3.863ns logic, 0.933ns route)
-                                       (80.5% logic, 19.5% route)
+    Total                      4.863ns (3.863ns logic, 1.000ns route)
+                                       (79.4% logic, 20.6% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.22 secs
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 12.64 secs
  
 --> 
 
-Total memory usage is 259620 kilobytes
+Total memory usage is 259168 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   73 (   0 filtered)
-Number of infos    :   14 (   0 filtered)
+Number of infos    :   19 (   0 filtered)
 

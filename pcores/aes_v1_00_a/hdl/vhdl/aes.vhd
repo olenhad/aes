@@ -284,7 +284,7 @@ begin
 	
 	
     if FSL_Clk'event and FSL_Clk = '1' then 
-			 FSL_M_Data <= word_to_vector(inv_subs_block(test_decrypt_input)(nr_of_writes));
+			 FSL_M_Data <= word_to_vector(inv_mix_column_block(test_decrypt_input)(nr_of_writes));
 			 nr_of_writes <= (nr_of_writes + 1) mod 4;
     -- Rising clock edge
       -- if FSL_Rst = '1' then               -- Synchronous reset (active high)
