@@ -169,7 +169,7 @@ architecture EXAMPLE of aes is
 -- 	signal test_key_expand : AES_ExpandedKey ;
 	
 	
-	signal expanded_key : AES_ExpandedKey;	
+
 	signal verify_decrypt : AES_Block := 
 	(
 	0 => (0 => x"03", 1 => x"05", 2 => x"07", 3 => x"03"),
@@ -270,7 +270,7 @@ variable verify_key_expand : AES_ExpandedKey :=
 	2 => ( 0 => x"f3", 1 => x"07", 2 => x"a7", 3 => x"8b"), 
 	3 => ( 0 => x"4d", 1 => x"2b", 2 => x"30", 3 => x"c5")));
 	variable state : AES_Block;	
-   
+   variable expanded_key : AES_ExpandedKey;	
 	begin  -- process The_SW_accelerator
 
 	--result_block <= inv_shift_rows(test_block);
@@ -287,9 +287,9 @@ variable verify_key_expand : AES_ExpandedKey :=
     if FSL_Clk'event and FSL_Clk = '1' then 
 			 
 			 
-			 expanded_key <= key_expansion(cypher_key);	
+			-- expanded_key := key_expansion(cypher_key);	
 			 
-			 FSL_M_Data  <= word_to_vector(expanded_key(10, 0));
+			 -- FSL_M_Data  <= word_to_vector(expanded_key(10, 0));
 			--verify_key_expand(nr_of_reads, nr_of_writes) := (others => (others => '0'));		
 			-- nr_of_writes <= (nr_of_writes + 1) mod NUMBER_OF_OUTPUT_WORDS;
 			 --nr_of_reads <= (nr_of_reads + 1) mod NUMBER_OF_INPUT_WORDS;
@@ -303,28 +303,26 @@ variable verify_key_expand : AES_ExpandedKey :=
       --   sum          <= (others => '0');
       -- else
 		
-		-- if (step_num = 0) then
-		-- 			--expanded_key <= key_expansion(cypher_key);	
-		-- 			step_num := 1;
-		-- 		elsif (step_num = 1) then
-		-- 			state := add_round_key(test_decrypt_input, verify_key_expand(10));
-		-- 			step_num := 2;
-		-- 		elsif (step_num > 1 and step_num <= 9) then
-		-- 			state := inv_shift_rows(state);
-		-- 			state := inv_subs_block(state);
-		-- 			state := add_round_key(state, verify_key_expand(10 - step_num));
-		-- 			state := inv_mix_column_block(state);
-		-- 			step_num := step_num + 1;
-		-- 		else 
-		-- 			state := inv_shift_rows(state);
-		-- 			state := inv_subs_block(state);
-		-- 			state := add_round_key(state, verify_key_expand(0));
-		-- 			--result <= state;
-		-- 			 FSL_M_Data <= word_to_vector(state(0));
-		-- 			--assert (state = verify_decrypt) report "DECRYPT DOESNT WORK  :(" severity warning;
-		-- 			step_num := 0;
+		if (step_num = 0) then
+			expanded_key := key_expansion(cypher_key);	
+			state := add_round_key(test_decrypt_input, block_from_expkey(expanded_key,10));
+			step_num := 1;
+		elsif (step_num > 1 and step_num <= 9) then
+			state := inv_shift_rows(state);
+			state := inv_subs_block(state);
+			state := add_round_key(state, block_from_expkey(expanded_key, (10 - step_num)));
+			state := inv_mix_column_block(state);
+			step_num := step_num + 1;
+		else 
+			state := inv_shift_rows(state);
+			state := inv_subs_block(state);
+			state := add_round_key(state, block_from_expkey(expanded_key,0));
+					--result <= state;
+			FSL_M_Data <= word_to_vector(state(0));
+					--assert (state = verify_decrypt) report "DECRYPT DOESNT WORK  :(" severity warning;
+			--step_num := 0;
 					
-		-- 		end if;
+		end if;
 	
 		
 

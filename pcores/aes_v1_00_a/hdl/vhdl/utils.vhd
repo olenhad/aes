@@ -33,6 +33,7 @@ package utils is
 	subtype AES_Byte is std_logic_vector(0 to 7);
 	subtype AES_32 is std_logic_vector(0 to 31);
 	subtype AES_Int is integer range 0 to 127;
+	subtype AES_ExpandedKey_Index is Integer range 0 to 10;
 	
 	type AES_Word is array(0 to 3) of AES_Byte;
 -- Word is a column!!!
@@ -47,6 +48,7 @@ package utils is
 	function i2v (arg : AES_Int) return AES_Byte;
 	
 	function word_to_vector ( w:  AES_Word) return AES_32;
+	function block_from_expkey (k : AES_ExpandedKey; i : AES_ExpandedKey_Index) return AES_Block;
 	
 	function inv_subs_byte ( b: AES_Byte) return AES_Byte;
 	function inv_subs_word ( w :  AES_Word) return AES_Word;
@@ -243,6 +245,16 @@ package body utils is
 		
 		return accum;
 	end word_to_vector;
+	
+	function block_from_expkey (k : AES_ExpandedKey; i : AES_ExpandedKey_Index) return AES_Block is
+	variable accum : AES_Block;
+	begin
+		accum(0) := k(i,0);
+		accum(1) := k(i,1);
+		accum(2) := k(i,2);
+		accum(3) := k(i,3);
+		return accum;
+	end block_from_expkey;
 
 	function inv_subs_byte ( b: AES_Byte) return AES_Byte is
 	variable upper : std_logic_vector(0 to 3);
