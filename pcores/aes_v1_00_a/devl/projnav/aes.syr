@@ -4,13 +4,13 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.17 secs
+Total CPU time to Xst completion: 0.21 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total CPU time to Xst completion: 0.21 secs
  
 --> Reading design: aes.prj
 
@@ -140,7 +140,6 @@ WARNING:Xst:647 - Input <FSL_S_Clk> is never used. This port will be preserved a
 WARNING:Xst:647 - Input <FSL_S_Control> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <FSL_Rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:1306 - Output <FSL_M_Control> is never assigned.
-WARNING:Xst:1781 - Signal <verify_key_expand<0><0>> is used but never assigned. Tied to default value.
 WARNING:Xst:1780 - Signal <verify_decrypt<3>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <verify_decrypt<2>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <verify_decrypt<1>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
@@ -157,14 +156,146 @@ WARNING:Xst:1780 - Signal <sum> is never used or assigned. This unconnected sign
 WARNING:Xst:1780 - Signal <nr_of_writes> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <nr_of_reads> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <fsl_state> is used but never assigned. This sourceless signal will be automatically connected to value 00.
-WARNING:Xst:1780 - Signal <cypher_key<3>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <cypher_key<2>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <cypher_key<1>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <cypher_key<0>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<9><3>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<9><2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<9><1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<9><0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<8><3>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<8><2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<8><1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<8><0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<7><3>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<7><2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<7><1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<7><0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<6><3>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<6><2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<6><1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<6><0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<5><3>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<5><2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<5><1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<5><0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<4><3>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<4><2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<4><1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<4><0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<3><3>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<3><2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<3><1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<3><0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<2><3>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<2><2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<2><1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<2><0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<1><3>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<1><2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<1><1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<1><0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<10><3>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<10><2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<10><1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<0><3>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<0><2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<0><1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <expanded_key<0><0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1781 - Signal <cypher_key<3>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <cypher_key<2>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <cypher_key<1>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <cypher_key<0>> is used but never assigned. Tied to default value.
     Using one-hot encoding for signal <fsl_state>.
+    Found 16x128-bit ROM for signal <slice0074$rom0000>.
+    Found 16x128-bit ROM for signal <slice0076$rom0000>.
+    Found 16x128-bit ROM for signal <slice0078$rom0000>.
+    Found 16x128-bit ROM for signal <slice0016$rom0000>.
+    Found 16x128-bit ROM for signal <slice0018$rom0000>.
+    Found 16x128-bit ROM for signal <slice0020$rom0000>.
+    Found 16x128-bit ROM for signal <slice0022$rom0000>.
+    Found 16x128-bit ROM for signal <slice0048$rom0000>.
+    Found 16x128-bit ROM for signal <slice0050$rom0000>.
+    Found 16x128-bit ROM for signal <slice0052$rom0000>.
+    Found 16x128-bit ROM for signal <slice0054$rom0000>.
+    Found 16x128-bit ROM for signal <slice0024$rom0000>.
+    Found 16x128-bit ROM for signal <slice0026$rom0000>.
+    Found 16x128-bit ROM for signal <slice0028$rom0000>.
+    Found 16x128-bit ROM for signal <slice0030$rom0000>.
+    Found 16x128-bit ROM for signal <slice0056$rom0000>.
+    Found 16x128-bit ROM for signal <slice0058$rom0000>.
+    Found 16x128-bit ROM for signal <slice0060$rom0000>.
+    Found 16x128-bit ROM for signal <slice0062$rom0000>.
+    Found 16x128-bit ROM for signal <slice0032$rom0000>.
+    Found 16x128-bit ROM for signal <slice0034$rom0000>.
+    Found 16x128-bit ROM for signal <slice0036$rom0000>.
+    Found 16x128-bit ROM for signal <slice0038$rom0000>.
+    Found 16x128-bit ROM for signal <slice0000$rom0000>.
+    Found 16x128-bit ROM for signal <slice0002$rom0000>.
+    Found 16x128-bit ROM for signal <slice0004$rom0000>.
+    Found 16x128-bit ROM for signal <slice0006$rom0000>.
+    Found 16x128-bit ROM for signal <slice0064$rom0000>.
+    Found 16x128-bit ROM for signal <slice0066$rom0000>.
+    Found 16x128-bit ROM for signal <slice0068$rom0000>.
+    Found 16x128-bit ROM for signal <slice0070$rom0000>.
+    Found 16x128-bit ROM for signal <slice0008$rom0000>.
+    Found 16x128-bit ROM for signal <slice0010$rom0000>.
+    Found 16x128-bit ROM for signal <slice0012$rom0000>.
+    Found 16x128-bit ROM for signal <slice0014$rom0000>.
+    Found 16x128-bit ROM for signal <slice0040$rom0000>.
+    Found 16x128-bit ROM for signal <slice0042$rom0000>.
+    Found 16x128-bit ROM for signal <slice0044$rom0000>.
+    Found 16x128-bit ROM for signal <slice0046$rom0000>.
+    Found 16x128-bit ROM for signal <slice0072$rom0000>.
     Found 32-bit register for signal <FSL_M_Data>.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0001<31:28>>.
+    Found 8-bit xor2 for signal <$n0003<29>>.
+    Found 8-bit xor2 for signal <$n0004<30>>.
+    Found 8-bit xor2 for signal <$n0004<28>>.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0008<31:28>>.
+    Found 32-bit xor2 for signal <$n0010<31:28>>.
+    Found 32-bit xor2 for signal <$n0011<31:28>>.
+    Found 32-bit xor2 for signal <$n0012<31:28>>.
+    Found 32-bit xor2 for signal <$n0013<31:28>>.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0015<31:28>>.
+    Found 32-bit xor2 for signal <$n0017<31:28>>.
+    Found 32-bit xor2 for signal <$n0018<31:28>>.
+    Found 32-bit xor2 for signal <$n0019<31:28>>.
+    Found 32-bit xor2 for signal <$n0020<31:28>>.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0022<31:28>>.
+    Found 32-bit xor2 for signal <$n0024<31:28>>.
+    Found 32-bit xor2 for signal <$n0025<31:28>>.
+    Found 32-bit xor2 for signal <$n0026<31:28>>.
+    Found 32-bit xor2 for signal <$n0027<31:28>>.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0029<31:28>>.
+    Found 32-bit xor2 for signal <$n0031<31:28>>.
+    Found 32-bit xor2 for signal <$n0032<31:28>>.
+    Found 32-bit xor2 for signal <$n0033<31:28>>.
+    Found 32-bit xor2 for signal <$n0034<31:28>>.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0036<31:28>>.
+    Found 32-bit xor2 for signal <$n0038<31:28>>.
+    Found 32-bit xor2 for signal <$n0039<31:28>>.
+    Found 32-bit xor2 for signal <$n0040<31:28>>.
+    Found 32-bit xor2 for signal <$n0041<31:28>>.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0043<31:28>>.
+    Found 32-bit xor2 for signal <$n0045<31:28>>.
+    Found 32-bit xor2 for signal <$n0046<31:28>>.
+    Found 32-bit xor2 for signal <$n0047<31:28>>.
+    Found 32-bit xor2 for signal <$n0048<31:28>>.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0050<31:28>>.
+    Found 32-bit xor2 for signal <$n0052<31:28>>.
+    Found 32-bit xor2 for signal <$n0053<31:28>>.
+    Found 32-bit xor2 for signal <$n0054<31:28>>.
+    Found 32-bit xor2 for signal <$n0055<31:28>>.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0057<31:28>>.
+    Found 32-bit xor2 for signal <$n0059<31:28>>.
+    Found 32-bit xor2 for signal <$n0060<31:28>>.
+    Found 32-bit xor2 for signal <$n0061<31:28>>.
+    Found 32-bit xor2 for signal <$n0062<31:28>>.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0064<31:28>>.
+    Found 32-bit xor2 for signal <$n0066<31:28>>.
+    Found 32-bit register for signal <expanded_key<10><0>>.
     Summary:
-	inferred  32 D-type flip-flop(s).
+	inferred  40 ROM(s).
+	inferred  64 D-type flip-flop(s).
+	inferred 320 Multiplexer(s).
 Unit <aes> synthesized.
 
 
@@ -172,8 +303,15 @@ Unit <aes> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Registers                                            : 1
+# ROMs                                                 : 40
+ 16x128-bit ROM                                        : 40
+# Registers                                            : 5
  32-bit register                                       : 1
+ 8-bit register                                        : 4
+# Multiplexers                                         : 40
+ 8-bit 16-to-1 multiplexer                             : 40
+# Xors                                                 : 135
+ 8-bit xor2                                            : 135
 
 =========================================================================
 
@@ -181,69 +319,90 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1710 - FF/Latch <FSL_M_Data_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_4> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_5> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_6> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_7> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_8> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_9> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_10> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_11> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_12> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_13> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_14> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_15> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_16> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_17> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_18> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_19> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_20> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_21> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_22> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_23> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_24> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_25> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_26> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_27> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_28> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_29> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_30> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_31> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2404 -  FFs/Latches <FSL_M_Data<0:16>> (without init value) have a constant value of 0 in block <aes>.
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Registers                                            : 17
- Flip-Flops                                            : 17
+# ROMs                                                 : 40
+ 16x128-bit ROM                                        : 40
+# Registers                                            : 64
+ Flip-Flops                                            : 64
+# Multiplexers                                         : 40
+ 8-bit 16-to-1 multiplexer                             : 40
+# Xors                                                 : 135
+ 8-bit xor2                                            : 135
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <FSL_M_Data_0> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_4> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_5> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_6> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_7> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_8> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_9> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_10> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_11> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_12> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_13> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_14> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0000_rom0000> <Mrom_slice0002_rom0000> <Mrom_slice0004_rom0000> <Mrom_slice0006_rom0000> are equivalent, XST will keep only <Mrom_slice0000_rom0000>.
+WARNING:Xst:1710 - FF/Latch <expanded_key<10><0>_2_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_2_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_2_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_2_3> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_2_4> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_2_5> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_2_6> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_2_7> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_1_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_1_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_1_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_1_3> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_1_4> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_1_5> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_1_6> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_1_7> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_3_7> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_3_6> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_3_5> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_3_4> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_3_3> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_3_2> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_3_1> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_3_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_0_7> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_0_6> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_0_5> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_0_4> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_0_3> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_0_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_0_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<10><0>_0_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_15> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_16> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_14> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_13> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_12> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_11> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_10> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_9> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_8> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_7> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_6> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_5> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_4> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_3> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_16> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_17> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_18> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_19> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_20> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_21> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_22> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_23> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_24> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_25> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_26> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_27> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_28> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_29> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_30> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSL_M_Data_31> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <aes> ...
 
@@ -340,14 +499,14 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.43 secs
+Total REAL time to Xst completion: 32.00 secs
+Total CPU time to Xst completion: 31.77 secs
  
 --> 
 
-Total memory usage is 244328 kilobytes
+Total memory usage is 338072 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   80 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of warnings :  136 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
 

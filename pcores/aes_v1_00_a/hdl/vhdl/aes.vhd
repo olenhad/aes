@@ -169,7 +169,7 @@ architecture EXAMPLE of aes is
 -- 	signal test_key_expand : AES_ExpandedKey ;
 	
 	
-	--signal expanded_key : AES_ExpandedKey;	
+	signal expanded_key : AES_ExpandedKey;	
 	signal verify_decrypt : AES_Block := 
 	(
 	0 => (0 => x"03", 1 => x"05", 2 => x"07", 3 => x"03"),
@@ -285,7 +285,11 @@ variable verify_key_expand : AES_ExpandedKey :=
 	
 	
     if FSL_Clk'event and FSL_Clk = '1' then 
-			 FSL_M_Data  <= word_to_vector(verify_key_expand(0, 0));
+			 
+			 
+			 expanded_key <= key_expansion(cypher_key);	
+			 
+			 FSL_M_Data  <= word_to_vector(expanded_key(10, 0));
 			--verify_key_expand(nr_of_reads, nr_of_writes) := (others => (others => '0'));		
 			-- nr_of_writes <= (nr_of_writes + 1) mod NUMBER_OF_OUTPUT_WORDS;
 			 --nr_of_reads <= (nr_of_reads + 1) mod NUMBER_OF_INPUT_WORDS;
