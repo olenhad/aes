@@ -136,8 +136,8 @@ architecture EXAMPLE of aes is
    signal sum          : std_logic_vector(0 to 31);
 
    -- Counters to store the number inputs read & outputs written
-   signal nr_of_reads  : natural range 0 to NUMBER_OF_INPUT_WORDS - 1;
-   signal nr_of_writes : natural range 0 to NUMBER_OF_OUTPUT_WORDS - 1;
+   signal nr_of_reads  : natural range 0 to NUMBER_OF_INPUT_WORDS - 1 := 0;
+   signal nr_of_writes : natural range 0 to NUMBER_OF_OUTPUT_WORDS - 1 := 0;
 	
 -- 	signal test : AES_Byte := x"50";
 -- 	signal test_word : AES_Word := (0 => x"50", 1 => x"52", 2 => x"53", 3 => x"54");
@@ -167,7 +167,42 @@ architecture EXAMPLE of aes is
  	3 => ( 0 => x"0c", 1 => x"0d", 2 => x"0e", 3 => x"0f"));
 	
 -- 	signal test_key_expand : AES_ExpandedKey ;
-	signal verify_key_expand : AES_ExpandedKey := 
+	
+	
+	--signal expanded_key : AES_ExpandedKey;	
+	signal verify_decrypt : AES_Block := 
+	(
+	0 => (0 => x"03", 1 => x"05", 2 => x"07", 3 => x"03"),
+	1 => (0 => x"00", 1 => x"05", 2 => x"66", 3 => x"77"),
+	2 => (0 => x"88", 1 => x"99", 2 => x"aa", 3 => x"bb"), 
+	3 => (0 => x"cc", 1 => x"dd", 2 => x"ee", 3 => x"ff")
+	);
+	signal test_decrypt_result : AES_Block;
+	signal test_decrypt_input : AES_Block := 
+	(
+	0  => (0 => x"12", 1 => x"c4", 2 => x"97", 3 => x"c5"), 
+	1  => (0 => x"6f", 1 => x"b4", 2 => x"b8", 3 => x"f4"), 
+	2  => (0 => x"d1", 1 => x"1f", 2 => x"ed", 3 => x"9d"), 
+	3  => (0 => x"3e", 1 => x"c3", 2 => x"a4", 3 => x"ce")
+	);
+	
+begin
+   -- CAUTION:
+   -- The sequence in which data are read in and written out should be
+   -- consistent with the sequence they are written and read in the
+   -- driver's aes.c file
+
+   FSL_S_Read  <= FSL_S_Exists   when fsl_state = Read_Inputs   else '0';
+   FSL_M_Write <= not FSL_M_Full when fsl_state = Write_Outputs else '0';
+
+  
+	--inter <= inv_subs_word(test_word);
+	--FSL_M_Data <= word_to_vector(inter);
+	
+   The_SW_accelerator : process (FSL_Clk) is
+	variable step_num : Integer range 0 to 11 := 0;
+
+variable verify_key_expand : AES_ExpandedKey := 
 	(
 0 => (
 	0 => ( 0 => x"00", 1 => x"01", 2 => x"02", 3 => x"03"), 
@@ -234,40 +269,6 @@ architecture EXAMPLE of aes is
 	1 => ( 0 => x"e3", 1 => x"94", 2 => x"4a", 3 => x"17"), 
 	2 => ( 0 => x"f3", 1 => x"07", 2 => x"a7", 3 => x"8b"), 
 	3 => ( 0 => x"4d", 1 => x"2b", 2 => x"30", 3 => x"c5")));
-	
-	--signal expanded_key : AES_ExpandedKey;	
-	signal verify_decrypt : AES_Block := 
-	(
-	0 => (0 => x"03", 1 => x"05", 2 => x"07", 3 => x"03"),
-	1 => (0 => x"00", 1 => x"05", 2 => x"66", 3 => x"77"),
-	2 => (0 => x"88", 1 => x"99", 2 => x"aa", 3 => x"bb"), 
-	3 => (0 => x"cc", 1 => x"dd", 2 => x"ee", 3 => x"ff")
-	);
-	signal test_decrypt_result : AES_Block;
-	signal test_decrypt_input : AES_Block := 
-	(
-	0  => (0 => x"12", 1 => x"c4", 2 => x"97", 3 => x"c5"), 
-	1  => (0 => x"6f", 1 => x"b4", 2 => x"b8", 3 => x"f4"), 
-	2  => (0 => x"d1", 1 => x"1f", 2 => x"ed", 3 => x"9d"), 
-	3  => (0 => x"3e", 1 => x"c3", 2 => x"a4", 3 => x"ce")
-	);
-	
-begin
-   -- CAUTION:
-   -- The sequence in which data are read in and written out should be
-   -- consistent with the sequence they are written and read in the
-   -- driver's aes.c file
-
-   FSL_S_Read  <= FSL_S_Exists   when fsl_state = Read_Inputs   else '0';
-   FSL_M_Write <= not FSL_M_Full when fsl_state = Write_Outputs else '0';
-
-  
-	--inter <= inv_subs_word(test_word);
-	--FSL_M_Data <= word_to_vector(inter);
-	
-   The_SW_accelerator : process (FSL_Clk) is
-	variable step_num : Integer range 0 to 11 := 0;
-
 	variable state : AES_Block;	
    
 	begin  -- process The_SW_accelerator
@@ -280,13 +281,14 @@ begin
 	
 	--test_key_expand <= key_expansion(cypher_key);
 	--assert (test_key_expand = verify_key_expand) report "key exp fucked!!!!" severity warning;
-	
+	 
 	
 	
     if FSL_Clk'event and FSL_Clk = '1' then 
-			 FSL_M_Data <= word_to_vector(verify_key_expand(nr_of_reads)(nr_of_writes));
-			 nr_of_writes <= (nr_of_writes + 1) mod NUMBER_OF_OUTPUT_WORDS;
-			 nr_of_reads <= (nr_of_reads + 1) mod NUMBER_OF_INPUT_WORDS;
+			 FSL_M_Data  <= word_to_vector(verify_key_expand(0, 0));
+			--verify_key_expand(nr_of_reads, nr_of_writes) := (others => (others => '0'));		
+			-- nr_of_writes <= (nr_of_writes + 1) mod NUMBER_OF_OUTPUT_WORDS;
+			 --nr_of_reads <= (nr_of_reads + 1) mod NUMBER_OF_INPUT_WORDS;
     -- Rising clock edge
       -- if FSL_Rst = '1' then               -- Synchronous reset (active high)
       --   -- CAUTION: make sure your reset polarity is consistent with the

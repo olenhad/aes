@@ -40,13 +40,7 @@ package utils is
 	type AES_SBox is array (0 to 15, 0 to 15) of AES_Byte;
 	
 	type AES_RCons is array (0 to 10) of AES_Byte;
-	type AES_ExpandedKey is array(0 to 10) of AES_Block;
-	
-	
-	procedure decrypt (signal clk: in std_logic; 
-							 signal key: in AES_Block;
-							 signal cypher: in AES_Block;
-							 signal result: out AES_Block);
+	type AES_ExpandedKey is array(0 to 10, 0 to 3) of AES_Word;
 	
 	function v2i (arg : AES_Byte) return AES_Int;
 	
@@ -379,46 +373,21 @@ package body utils is
 	variable t : AES_Word;
 	variable padded_rcons : AES_Word;
 	begin
-		expanded_key(0) := cipher_key;
+		expanded_key(0,0) := cipher_key(0);
+		expanded_key(0,1) := cipher_key(1);
+		expanded_key(0,2) := cipher_key(2);
+		expanded_key(0,3) := cipher_key(3);
+		
 		for i in 1 to 10 loop
 			padded_rcons := ( 0 => round_cons(i), others => x"00");
-			t :=  xor_word( padded_rcons, subs_word(rot_word(expanded_key(i - 1)(3))));
-			expanded_key(i)(0) := xor_word(t, expanded_key(i-1)(0));
-			expanded_key(i)(1) := xor_word(expanded_key(i)(0), expanded_key(i-1)(1));
-			expanded_key(i)(2) := xor_word(expanded_key(i)(1), expanded_key(i-1)(2));
-			expanded_key(i)(3) := xor_word(expanded_key(i)(2),expanded_key(i-1)(3));			
+			t :=  xor_word( padded_rcons, subs_word(rot_word(expanded_key(i - 1,3))));
+			expanded_key(i,0) := xor_word(t, expanded_key(i-1,0));
+			expanded_key(i,1) := xor_word(expanded_key(i,0), expanded_key(i-1,1));
+			expanded_key(i,2) := xor_word(expanded_key(i,1), expanded_key(i-1,2));
+			expanded_key(i,3) := xor_word(expanded_key(i,2),expanded_key(i-1,3));			
 		end loop;
 		return expanded_key;
 	end key_expansion;
 	
 		
-		
-		procedure decrypt (signal clk: in std_logic; 
-							    signal key: in AES_Block;
-							    signal cypher: in AES_Block;
-							    signal result: out AES_Block) is
-		variable step_num : Integer range 0 to 10 := 0;
-		variable expanded_key : AES_ExpandedKey;
-		variable state : AES_Block;	
-		begin
-			if rising_edge(CLK) then
-				if (step_num = 0) then
-					expanded_key := key_expansion(key);	
-					state := add_round_key(cypher, expanded_key(10));
-					step_num := 1;											
-				elsif (step_num > 0 and step_num <= 9) then
-					state := inv_shift_rows(state);
-					state := inv_subs_block(state);
-					state := add_round_key(state, expanded_key(10 - step_num));
-					state := inv_mix_column_block(state);
-					step_num := step_num + 1;
-				else 
-					state := inv_shift_rows(state);
-					state := inv_subs_block(state);
-					state := add_round_key(state, expanded_key(0));
-					result <= state;
-					step_num := 0;
-				end if;
-			end if;
-		end decrypt;
 end utils;
