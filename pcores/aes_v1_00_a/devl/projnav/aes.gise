@@ -174,8 +174,8 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1397202520" xil_pn:in_ck="4102240855125195643" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-4425365365294459562" xil_pn:start_ts="1397202504">
-      <status xil_pn:value="SuccessfullyRun"/>
+    <transform xil_pn:end_ts="1397203452" xil_pn:in_ck="4102240855125195643" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-4425365365294459562" xil_pn:start_ts="1397203439">
+      <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name=".lso"/>
@@ -184,7 +184,6 @@
       <outfile xil_pn:name="aes.ngc"/>
       <outfile xil_pn:name="aes.ngr"/>
       <outfile xil_pn:name="aes.prj"/>
-      <outfile xil_pn:name="aes.stx"/>
       <outfile xil_pn:name="aes.syr"/>
       <outfile xil_pn:name="aes.xst"/>
       <outfile xil_pn:name="aes_vhdl.prj"/>
@@ -200,6 +199,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>

@@ -123,7 +123,7 @@ end aes;
 architecture EXAMPLE of aes is
 
    -- Total number of input data.
-   constant NUMBER_OF_INPUT_WORDS  : natural := 4;
+   constant NUMBER_OF_INPUT_WORDS  : natural := 11;
 
    -- Total number of output data
    constant NUMBER_OF_OUTPUT_WORDS : natural := 4;
@@ -284,8 +284,9 @@ begin
 	
 	
     if FSL_Clk'event and FSL_Clk = '1' then 
-			 FSL_M_Data <= word_to_vector(inv_mix_column_block(test_decrypt_input)(nr_of_writes));
-			 nr_of_writes <= (nr_of_writes + 1) mod 4;
+			 FSL_M_Data <= word_to_vector(verify_key_expand(nr_of_reads)(nr_of_writes));
+			 nr_of_writes <= (nr_of_writes + 1) mod NUMBER_OF_OUTPUT_WORDS;
+			 nr_of_reads <= (nr_of_reads + 1) mod NUMBER_OF_INPUT_WORDS;
     -- Rising clock edge
       -- if FSL_Rst = '1' then               -- Synchronous reset (active high)
       --   -- CAUTION: make sure your reset polarity is consistent with the
