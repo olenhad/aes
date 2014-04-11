@@ -1,2 +1,3 @@
 vhdl aes_v1_00_a "C:\ee4218-aes\aes2\pcores\aes_v1_00_a\hdl\vhdl\utils.vhd"
 vhdl aes_v1_00_a "C:\ee4218-aes\aes2\pcores\aes_v1_00_a\hdl\vhdl\aes.vhd"
+vhdl work "C:\ee4218-aes\aes2\hdl\aes_0_wrapper.vhd"

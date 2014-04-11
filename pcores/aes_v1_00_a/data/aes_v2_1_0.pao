@@ -4,4 +4,6 @@
 ## Date:              Thu Apr 10 01:52:46 2014 (by Create and Import Peripheral Wizard)
 ##############################################################################
 
+lib aes_v1_00_a utils vhdl
 lib aes_v1_00_a aes vhdl
+

@@ -3507,6 +3507,65 @@ architecture STRUCTURE of system is
     );
   end component;
 
+  component aes_0_to_microblaze_0_wrapper is
+    port (
+      FSL_Clk : in std_logic;
+      SYS_Rst : in std_logic;
+      FSL_Rst : out std_logic;
+      FSL_M_Clk : in std_logic;
+      FSL_M_Data : in std_logic_vector(0 to 31);
+      FSL_M_Control : in std_logic;
+      FSL_M_Write : in std_logic;
+      FSL_M_Full : out std_logic;
+      FSL_S_Clk : in std_logic;
+      FSL_S_Data : out std_logic_vector(0 to 31);
+      FSL_S_Control : out std_logic;
+      FSL_S_Read : in std_logic;
+      FSL_S_Exists : out std_logic;
+      FSL_Full : out std_logic;
+      FSL_Has_Data : out std_logic;
+      FSL_Control_IRQ : out std_logic
+    );
+  end component;
+
+  component aes_0_wrapper is
+    port (
+      FSL_Clk : in std_logic;
+      FSL_Rst : in std_logic;
+      FSL_S_Clk : in std_logic;
+      FSL_S_Read : out std_logic;
+      FSL_S_Data : in std_logic_vector(0 to 31);
+      FSL_S_Control : in std_logic;
+      FSL_S_Exists : in std_logic;
+      FSL_M_Clk : in std_logic;
+      FSL_M_Write : out std_logic;
+      FSL_M_Data : out std_logic_vector(0 to 31);
+      FSL_M_Control : out std_logic;
+      FSL_M_Full : in std_logic
+    );
+  end component;
+
+  component microblaze_0_to_aes_0_wrapper is
+    port (
+      FSL_Clk : in std_logic;
+      SYS_Rst : in std_logic;
+      FSL_Rst : out std_logic;
+      FSL_M_Clk : in std_logic;
+      FSL_M_Data : in std_logic_vector(0 to 31);
+      FSL_M_Control : in std_logic;
+      FSL_M_Write : in std_logic;
+      FSL_M_Full : out std_logic;
+      FSL_S_Clk : in std_logic;
+      FSL_S_Data : out std_logic_vector(0 to 31);
+      FSL_S_Control : out std_logic;
+      FSL_S_Read : in std_logic;
+      FSL_S_Exists : out std_logic;
+      FSL_Full : out std_logic;
+      FSL_Has_Data : out std_logic;
+      FSL_Control_IRQ : out std_logic
+    );
+  end component;
+
   -- Internal signals
 
   signal CLK_S : std_logic;
@@ -3514,6 +3573,14 @@ architecture STRUCTURE of system is
   signal Debug_SYS_Rst : std_logic;
   signal Ext_BRK : std_logic;
   signal Ext_NM_BRK : std_logic;
+  signal aes_0_to_microblaze_0_FSL_M_Control : std_logic;
+  signal aes_0_to_microblaze_0_FSL_M_Data : std_logic_vector(0 to 31);
+  signal aes_0_to_microblaze_0_FSL_M_Full : std_logic;
+  signal aes_0_to_microblaze_0_FSL_M_Write : std_logic;
+  signal aes_0_to_microblaze_0_FSL_S_Control : std_logic;
+  signal aes_0_to_microblaze_0_FSL_S_Data : std_logic_vector(0 to 31);
+  signal aes_0_to_microblaze_0_FSL_S_Exists : std_logic;
+  signal aes_0_to_microblaze_0_FSL_S_Read : std_logic;
   signal clk_25_0000MHz : std_logic;
   signal clk_50_0000MHz : std_logic;
   signal clk_100_0000MHz90DCM0 : std_logic;
@@ -3657,6 +3724,14 @@ architecture STRUCTURE of system is
   signal microblaze_0_mdm_bus_Dbg_TDO : std_logic;
   signal microblaze_0_mdm_bus_Dbg_Update : std_logic;
   signal microblaze_0_mdm_bus_Debug_Rst : std_logic;
+  signal microblaze_0_to_aes_0_FSL_M_Control : std_logic;
+  signal microblaze_0_to_aes_0_FSL_M_Data : std_logic_vector(0 to 31);
+  signal microblaze_0_to_aes_0_FSL_M_Full : std_logic;
+  signal microblaze_0_to_aes_0_FSL_M_Write : std_logic;
+  signal microblaze_0_to_aes_0_FSL_S_Control : std_logic;
+  signal microblaze_0_to_aes_0_FSL_S_Data : std_logic_vector(0 to 31);
+  signal microblaze_0_to_aes_0_FSL_S_Exists : std_logic;
+  signal microblaze_0_to_aes_0_FSL_S_Read : std_logic;
   signal net_gnd0 : std_logic;
   signal net_gnd1 : std_logic_vector(0 downto 0);
   signal net_gnd2 : std_logic_vector(1 downto 0);
@@ -3710,6 +3785,9 @@ architecture STRUCTURE of system is
   attribute BOX_TYPE of proc_sys_reset_0_wrapper : component is "user_black_box";
   attribute BOX_TYPE of xps_intc_0_wrapper : component is "user_black_box";
   attribute BOX_TYPE of xps_tft_0_wrapper : component is "user_black_box";
+  attribute BOX_TYPE of aes_0_to_microblaze_0_wrapper : component is "user_black_box";
+  attribute BOX_TYPE of aes_0_wrapper : component is "user_black_box";
+  attribute BOX_TYPE of microblaze_0_to_aes_0_wrapper : component is "user_black_box";
 
 begin
 
@@ -4035,15 +4113,15 @@ begin
       Trace_MB_Halted => open,
       Trace_Jump_Hit => open,
       FSL0_S_CLK => open,
-      FSL0_S_READ => open,
-      FSL0_S_DATA => net_gnd32,
-      FSL0_S_CONTROL => net_gnd0,
-      FSL0_S_EXISTS => net_gnd0,
+      FSL0_S_READ => aes_0_to_microblaze_0_FSL_S_Read,
+      FSL0_S_DATA => aes_0_to_microblaze_0_FSL_S_Data,
+      FSL0_S_CONTROL => aes_0_to_microblaze_0_FSL_S_Control,
+      FSL0_S_EXISTS => aes_0_to_microblaze_0_FSL_S_Exists,
       FSL0_M_CLK => open,
-      FSL0_M_WRITE => open,
-      FSL0_M_DATA => open,
-      FSL0_M_CONTROL => open,
-      FSL0_M_FULL => net_gnd0,
+      FSL0_M_WRITE => microblaze_0_to_aes_0_FSL_M_Write,
+      FSL0_M_DATA => microblaze_0_to_aes_0_FSL_M_Data,
+      FSL0_M_CONTROL => microblaze_0_to_aes_0_FSL_M_Control,
+      FSL0_M_FULL => microblaze_0_to_aes_0_FSL_M_Full,
       FSL1_S_CLK => open,
       FSL1_S_READ => open,
       FSL1_S_DATA => net_gnd32,
@@ -7188,6 +7266,62 @@ begin
       TFT_IIC_SDA_I => net_gnd0,
       TFT_IIC_SDA_O => open,
       TFT_IIC_SDA_T => open
+    );
+
+  aes_0_to_microblaze_0 : aes_0_to_microblaze_0_wrapper
+    port map (
+      FSL_Clk => clk_50_0000MHz,
+      SYS_Rst => sys_bus_reset(0),
+      FSL_Rst => open,
+      FSL_M_Clk => net_gnd0,
+      FSL_M_Data => aes_0_to_microblaze_0_FSL_M_Data,
+      FSL_M_Control => aes_0_to_microblaze_0_FSL_M_Control,
+      FSL_M_Write => aes_0_to_microblaze_0_FSL_M_Write,
+      FSL_M_Full => aes_0_to_microblaze_0_FSL_M_Full,
+      FSL_S_Clk => net_gnd0,
+      FSL_S_Data => aes_0_to_microblaze_0_FSL_S_Data,
+      FSL_S_Control => aes_0_to_microblaze_0_FSL_S_Control,
+      FSL_S_Read => aes_0_to_microblaze_0_FSL_S_Read,
+      FSL_S_Exists => aes_0_to_microblaze_0_FSL_S_Exists,
+      FSL_Full => open,
+      FSL_Has_Data => open,
+      FSL_Control_IRQ => open
+    );
+
+  aes_0 : aes_0_wrapper
+    port map (
+      FSL_Clk => clk_50_0000MHz,
+      FSL_Rst => net_gnd0,
+      FSL_S_Clk => net_gnd0,
+      FSL_S_Read => microblaze_0_to_aes_0_FSL_S_Read,
+      FSL_S_Data => microblaze_0_to_aes_0_FSL_S_Data,
+      FSL_S_Control => microblaze_0_to_aes_0_FSL_S_Control,
+      FSL_S_Exists => microblaze_0_to_aes_0_FSL_S_Exists,
+      FSL_M_Clk => net_gnd0,
+      FSL_M_Write => aes_0_to_microblaze_0_FSL_M_Write,
+      FSL_M_Data => aes_0_to_microblaze_0_FSL_M_Data,
+      FSL_M_Control => aes_0_to_microblaze_0_FSL_M_Control,
+      FSL_M_Full => aes_0_to_microblaze_0_FSL_M_Full
+    );
+
+  microblaze_0_to_aes_0 : microblaze_0_to_aes_0_wrapper
+    port map (
+      FSL_Clk => clk_50_0000MHz,
+      SYS_Rst => sys_bus_reset(0),
+      FSL_Rst => open,
+      FSL_M_Clk => net_gnd0,
+      FSL_M_Data => microblaze_0_to_aes_0_FSL_M_Data,
+      FSL_M_Control => microblaze_0_to_aes_0_FSL_M_Control,
+      FSL_M_Write => microblaze_0_to_aes_0_FSL_M_Write,
+      FSL_M_Full => microblaze_0_to_aes_0_FSL_M_Full,
+      FSL_S_Clk => net_gnd0,
+      FSL_S_Data => microblaze_0_to_aes_0_FSL_S_Data,
+      FSL_S_Control => microblaze_0_to_aes_0_FSL_S_Control,
+      FSL_S_Read => microblaze_0_to_aes_0_FSL_S_Read,
+      FSL_S_Exists => microblaze_0_to_aes_0_FSL_S_Exists,
+      FSL_Full => open,
+      FSL_Has_Data => open,
+      FSL_Control_IRQ => open
     );
 
 end architecture STRUCTURE;
