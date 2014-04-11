@@ -161,82 +161,80 @@ WARNING:Xst:1781 - Signal <cypher_key<2>> is used but never assigned. Tied to de
 WARNING:Xst:1781 - Signal <cypher_key<1>> is used but never assigned. Tied to default value.
 WARNING:Xst:1781 - Signal <cypher_key<0>> is used but never assigned. Tied to default value.
     Using one-hot encoding for signal <fsl_state>.
-    Found 16x128-bit ROM for signal <slice0074$rom0000>.
-    Found 16x128-bit ROM for signal <slice0076$rom0000>.
-    Found 16x128-bit ROM for signal <slice0078$rom0000>.
-    Found 16x128-bit ROM for signal <slice0016$rom0000>.
-    Found 16x128-bit ROM for signal <slice0018$rom0000>.
-    Found 16x128-bit ROM for signal <slice0020$rom0000>.
-    Found 16x128-bit ROM for signal <slice0022$rom0000>.
-    Found 16x128-bit ROM for signal <slice0120$rom0000>.
-    Found 16x128-bit ROM for signal <slice0096$rom0000>.
-    Found 16x128-bit ROM for signal <slice0122$rom0000>.
-    Found 16x128-bit ROM for signal <slice0098$rom0000>.
-    Found 16x128-bit ROM for signal <slice0124$rom0000>.
-    Found 16x128-bit ROM for signal <slice0100$rom0000>.
-    Found 16x128-bit ROM for signal <slice0126$rom0000>.
-    Found 16x128-bit ROM for signal <slice0102$rom0000>.
-    Found 16x128-bit ROM for signal <slice0048$rom0000>.
-    Found 16x128-bit ROM for signal <slice0050$rom0000>.
-    Found 16x128-bit ROM for signal <slice0052$rom0000>.
-    Found 16x128-bit ROM for signal <slice0054$rom0000>.
-    Found 16x128-bit ROM for signal <slice0128$rom0000>.
-    Found 16x128-bit ROM for signal <slice0104$rom0000>.
-    Found 16x128-bit ROM for signal <slice0130$rom0000>.
-    Found 16x128-bit ROM for signal <slice0106$rom0000>.
-    Found 16x128-bit ROM for signal <slice0108$rom0000>.
-    Found 16x128-bit ROM for signal <slice0132$rom0000>.
-    Found 16x128-bit ROM for signal <slice0110$rom0000>.
-    Found 16x128-bit ROM for signal <slice0134$rom0000>.
-    Found 16x128-bit ROM for signal <slice0024$rom0000>.
     Found 16x128-bit ROM for signal <slice0026$rom0000>.
     Found 16x128-bit ROM for signal <slice0028$rom0000>.
     Found 16x128-bit ROM for signal <slice0030$rom0000>.
-    Found 16x128-bit ROM for signal <slice0136$rom0000>.
-    Found 16x128-bit ROM for signal <slice0138$rom0000>.
-    Found 16x128-bit ROM for signal <slice0140$rom0000>.
-    Found 16x128-bit ROM for signal <slice0142$rom0000>.
     Found 16x128-bit ROM for signal <slice0056$rom0000>.
     Found 16x128-bit ROM for signal <slice0058$rom0000>.
     Found 16x128-bit ROM for signal <slice0060$rom0000>.
     Found 16x128-bit ROM for signal <slice0062$rom0000>.
-    Found 16x128-bit ROM for signal <slice0032$rom0000>.
-    Found 16x128-bit ROM for signal <slice0034$rom0000>.
-    Found 16x128-bit ROM for signal <slice0036$rom0000>.
-    Found 16x128-bit ROM for signal <slice0038$rom0000>.
     Found 16x128-bit ROM for signal <slice0000$rom0000>.
     Found 16x128-bit ROM for signal <slice0002$rom0000>.
     Found 16x128-bit ROM for signal <slice0004$rom0000>.
     Found 16x128-bit ROM for signal <slice0006$rom0000>.
-    Found 16x128-bit ROM for signal <slice0064$rom0000>.
-    Found 16x128-bit ROM for signal <slice0066$rom0000>.
-    Found 16x128-bit ROM for signal <slice0068$rom0000>.
-    Found 16x128-bit ROM for signal <slice0070$rom0000>.
-    Found 16x128-bit ROM for signal <slice0008$rom0000>.
-    Found 16x128-bit ROM for signal <slice0010$rom0000>.
-    Found 16x128-bit ROM for signal <slice0012$rom0000>.
-    Found 16x128-bit ROM for signal <slice0014$rom0000>.
     Found 16x128-bit ROM for signal <slice0080$rom0000>.
     Found 16x128-bit ROM for signal <slice0082$rom0000>.
     Found 16x128-bit ROM for signal <slice0084$rom0000>.
     Found 16x128-bit ROM for signal <slice0086$rom0000>.
+    Found 16x128-bit ROM for signal <slice0088$rom0000>.
+    Found 16x128-bit ROM for signal <slice0090$rom0000>.
+    Found 16x128-bit ROM for signal <slice0092$rom0000>.
+    Found 16x128-bit ROM for signal <slice0094$rom0000>.
+    Found 16x128-bit ROM for signal <slice0096$rom0000>.
+    Found 16x128-bit ROM for signal <slice0098$rom0000>.
+    Found 16x128-bit ROM for signal <slice0100$rom0000>.
+    Found 16x128-bit ROM for signal <slice0102$rom0000>.
+    Found 16x128-bit ROM for signal <slice0104$rom0000>.
+    Found 16x128-bit ROM for signal <slice0106$rom0000>.
+    Found 16x128-bit ROM for signal <slice0108$rom0000>.
+    Found 16x128-bit ROM for signal <slice0110$rom0000>.
+    Found 16x128-bit ROM for signal <slice0032$rom0000>.
+    Found 16x128-bit ROM for signal <slice0034$rom0000>.
+    Found 16x128-bit ROM for signal <slice0036$rom0000>.
+    Found 16x128-bit ROM for signal <slice0038$rom0000>.
+    Found 16x128-bit ROM for signal <slice0064$rom0000>.
+    Found 16x128-bit ROM for signal <slice0066$rom0000>.
+    Found 16x128-bit ROM for signal <slice0068$rom0000>.
+    Found 16x128-bit ROM for signal <slice0070$rom0000>.
+    Found 16x128-bit ROM for signal <slice0112$rom0000>.
+    Found 16x128-bit ROM for signal <slice0008$rom0000>.
+    Found 16x128-bit ROM for signal <slice0114$rom0000>.
+    Found 16x128-bit ROM for signal <slice0010$rom0000>.
+    Found 16x128-bit ROM for signal <slice0116$rom0000>.
+    Found 16x128-bit ROM for signal <slice0012$rom0000>.
+    Found 16x128-bit ROM for signal <slice0118$rom0000>.
+    Found 16x128-bit ROM for signal <slice0014$rom0000>.
     Found 16x128-bit ROM for signal <slice0040$rom0000>.
     Found 16x128-bit ROM for signal <slice0042$rom0000>.
     Found 16x128-bit ROM for signal <slice0044$rom0000>.
     Found 16x128-bit ROM for signal <slice0046$rom0000>.
-    Found 16x128-bit ROM for signal <slice0088$rom0000>.
-    Found 16x128-bit ROM for signal <slice0112$rom0000>.
-    Found 16x128-bit ROM for signal <slice0090$rom0000>.
-    Found 16x128-bit ROM for signal <slice0114$rom0000>.
-    Found 16x128-bit ROM for signal <slice0092$rom0000>.
-    Found 16x128-bit ROM for signal <slice0116$rom0000>.
-    Found 16x128-bit ROM for signal <slice0094$rom0000>.
-    Found 16x128-bit ROM for signal <slice0118$rom0000>.
+    Found 16x128-bit ROM for signal <slice0120$rom0000>.
+    Found 16x128-bit ROM for signal <slice0122$rom0000>.
+    Found 16x128-bit ROM for signal <slice0124$rom0000>.
+    Found 16x128-bit ROM for signal <slice0126$rom0000>.
     Found 16x128-bit ROM for signal <slice0072$rom0000>.
+    Found 16x128-bit ROM for signal <slice0074$rom0000>.
+    Found 16x128-bit ROM for signal <slice0076$rom0000>.
+    Found 16x128-bit ROM for signal <slice0078$rom0000>.
+    Found 16x128-bit ROM for signal <slice0128$rom0000>.
+    Found 16x128-bit ROM for signal <slice0016$rom0000>.
+    Found 16x128-bit ROM for signal <slice0130$rom0000>.
+    Found 16x128-bit ROM for signal <slice0018$rom0000>.
+    Found 16x128-bit ROM for signal <slice0132$rom0000>.
+    Found 16x128-bit ROM for signal <slice0020$rom0000>.
+    Found 16x128-bit ROM for signal <slice0134$rom0000>.
+    Found 16x128-bit ROM for signal <slice0022$rom0000>.
+    Found 16x128-bit ROM for signal <slice0048$rom0000>.
+    Found 16x128-bit ROM for signal <slice0050$rom0000>.
+    Found 16x128-bit ROM for signal <slice0052$rom0000>.
+    Found 16x128-bit ROM for signal <slice0054$rom0000>.
+    Found 16x128-bit ROM for signal <slice0136$rom0000>.
+    Found 16x128-bit ROM for signal <slice0138$rom0000>.
+    Found 16x128-bit ROM for signal <slice0140$rom0000>.
+    Found 16x128-bit ROM for signal <slice0142$rom0000>.
+    Found 16x128-bit ROM for signal <slice0024$rom0000>.
     Found 32-bit register for signal <FSL_M_Data>.
     Found 32-bit 16-to-1 multiplexer for signal <$n0001<31:28>>.
-    Found 16-bit xor2 for signal <$n0003<30:29>>.
-    Found 8-bit xor2 for signal <$n0004<30>>.
     Found 32-bit 16-to-1 multiplexer for signal <$n0008<31:28>>.
     Found 32-bit xor2 for signal <$n0010<31:28>>.
     Found 32-bit xor2 for signal <$n0011<31:28>>.
@@ -286,15 +284,115 @@ WARNING:Xst:1781 - Signal <cypher_key<0>> is used but never assigned. Tied to de
     Found 32-bit 16-to-1 multiplexer for signal <$n0075<31:28>>.
     Found 32-bit 16-to-1 multiplexer for signal <$n0076<31:28>>.
     Found 32-bit 16-to-1 multiplexer for signal <$n0077<31:28>>.
-    Found 32-bit 16-to-1 multiplexer for signal <$n0080<31:28>>.
-    Found 32-bit 16-to-1 multiplexer for signal <$n0081<31:28>>.
-    Found 32-bit 16-to-1 multiplexer for signal <$n0082<31:28>>.
-    Found 32-bit 16-to-1 multiplexer for signal <$n0083<31:28>>.
+    Found 32-bit xor7 for signal <$n0079<31:28>>.
+    Found 32-bit xor7 for signal <$n0080<31:28>>.
+    Found 32-bit xor7 for signal <$n0081<31:28>>.
+    Found 32-bit xor7 for signal <$n0082<31:28>>.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0085<31:28>>.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0086<31:28>>.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0087<31:28>>.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0088<31:28>>.
+    Found 8-bit xor2 for signal <accum102$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum102$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum103$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum103$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum107$xor0000> created at line 220.
+    Found 1-bit xor2 for signal <accum107$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum110$xor0000> created at line 222.
+    Found 1-bit xor2 for signal <accum110$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum123$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum123$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum127$xor0000> created at line 220.
+    Found 1-bit xor2 for signal <accum127$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum131$xor0000> created at line 220.
+    Found 1-bit xor2 for signal <accum131$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum143$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum143$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum147$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum147$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum148$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum148$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum152$xor0000> created at line 220.
+    Found 1-bit xor2 for signal <accum152$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum155$xor0000> created at line 222.
+    Found 1-bit xor2 for signal <accum155$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum167$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum167$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum168$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum168$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum172$xor0000> created at line 220.
+    Found 1-bit xor2 for signal <accum172$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum175$xor0000> created at line 222.
+    Found 1-bit xor2 for signal <accum175$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum188$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum188$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum192$xor0000> created at line 220.
+    Found 1-bit xor2 for signal <accum192$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum196$xor0000> created at line 220.
+    Found 1-bit xor2 for signal <accum196$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum208$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum208$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum212$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum212$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum213$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum213$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum217$xor0000> created at line 220.
+    Found 1-bit xor2 for signal <accum217$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum220$xor0000> created at line 222.
+    Found 1-bit xor2 for signal <accum220$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum232$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum232$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum233$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum233$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum237$xor0000> created at line 220.
+    Found 1-bit xor2 for signal <accum237$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum240$xor0000> created at line 222.
+    Found 1-bit xor2 for signal <accum240$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum253$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum253$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum257$xor0000> created at line 220.
+    Found 1-bit xor2 for signal <accum257$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum261$xor0000> created at line 220.
+    Found 1-bit xor2 for signal <accum261$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum273$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum273$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum277$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum277$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum278$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum278$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum282$xor0000> created at line 220.
+    Found 1-bit xor2 for signal <accum282$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum285$xor0000> created at line 222.
+    Found 1-bit xor2 for signal <accum285$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum297$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum297$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum298$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum298$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum302$xor0000> created at line 220.
+    Found 1-bit xor2 for signal <accum302$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum305$xor0000> created at line 222.
+    Found 1-bit xor2 for signal <accum305$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum318$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum318$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum322$xor0000> created at line 220.
+    Found 1-bit xor2 for signal <accum322$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum326$xor0000> created at line 220.
+    Found 1-bit xor2 for signal <accum326$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum338$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum338$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum82$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum82$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum83$xor0000> created at line 224.
+    Found 1-bit xor2 for signal <accum83$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum87$xor0000> created at line 220.
+    Found 1-bit xor2 for signal <accum87$xor0005> created at line 199.
+    Found 8-bit xor2 for signal <accum90$xor0000> created at line 222.
+    Found 1-bit xor2 for signal <accum90$xor0005> created at line 199.
+    Found 4-bit comparator greater for signal <FSL_M_Data$cmp_gt0000> created at line 310.
+    Found 4-bit comparator lessequal for signal <FSL_M_Data$cmp_le0000> created at line 310.
     Found 32-bit register for signal <state<0>>.
     Found 32-bit register for signal <state<1>>.
     Found 32-bit register for signal <state<2>>.
-    Found 4-bit comparator greater for signal <state<2>_0$cmp_gt0000> created at line 310.
-    Found 4-bit comparator lessequal for signal <state<2>_0$cmp_le0000> created at line 310.
     Found 32-bit register for signal <state<3>>.
     Found 4-bit up counter for signal <step_num>.
     Summary:
@@ -303,6 +401,7 @@ WARNING:Xst:1781 - Signal <cypher_key<0>> is used but never assigned. Tied to de
 	inferred 160 D-type flip-flop(s).
 	inferred   2 Comparator(s).
 	inferred 576 Multiplexer(s).
+	inferred 128 Xor(s).
 Unit <aes> synthesized.
 
 
@@ -322,8 +421,10 @@ Macro Statistics
  4-bit comparator lessequal                            : 1
 # Multiplexers                                         : 72
  8-bit 16-to-1 multiplexer                             : 72
-# Xors                                                 : 151
- 8-bit xor2                                            : 151
+# Xors                                                 : 261
+ 1-bit xor2                                            : 48
+ 8-bit xor2                                            : 197
+ 8-bit xor7                                            : 16
 
 =========================================================================
 
@@ -333,29 +434,39 @@ Macro Statistics
 
 
 Synthesizing (advanced) Unit <aes>.
+INFO:Xst:3045 - The ROM description <Mrom_slice0082_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0080_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0084_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0088_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0086_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0090_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0092_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0094_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0096_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
 INFO:Xst:3045 - The ROM description <Mrom_slice0098_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
-INFO:Xst:3044 - The ROM <Mrom_slice0122_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<0>_1>.
-INFO:Xst:3045 - The ROM description <Mrom_slice0100_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
-INFO:Xst:3044 - The ROM <Mrom_slice0126_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<2>_3>.
 INFO:Xst:3045 - The ROM description <Mrom_slice0102_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0100_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0104_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
 INFO:Xst:3045 - The ROM description <Mrom_slice0106_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0108_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0110_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0112_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0114_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0116_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0118_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0120_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0124_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0122_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3044 - The ROM <Mrom_slice0126_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<2>_3>.
+INFO:Xst:3044 - The ROM <Mrom_slice0128_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<2>_0>.
 INFO:Xst:3044 - The ROM <Mrom_slice0130_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<1>_1>.
 INFO:Xst:3044 - The ROM <Mrom_slice0132_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<0>_2>.
-INFO:Xst:3045 - The ROM description <Mrom_slice0110_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
 INFO:Xst:3044 - The ROM <Mrom_slice0134_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<3>_3>.
-INFO:Xst:3044 - The ROM <Mrom_slice0142_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<0>_3>.
 INFO:Xst:3044 - The ROM <Mrom_slice0138_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<2>_1>.
-INFO:Xst:3045 - The ROM description <Mrom_slice0080_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
-INFO:Xst:3045 - The ROM description <Mrom_slice0082_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
-INFO:Xst:3045 - The ROM description <Mrom_slice0084_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
-INFO:Xst:3045 - The ROM description <Mrom_slice0086_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
-INFO:Xst:3045 - The ROM description <Mrom_slice0112_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
-INFO:Xst:3045 - The ROM description <Mrom_slice0090_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
-INFO:Xst:3045 - The ROM description <Mrom_slice0114_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
-INFO:Xst:3044 - The ROM <Mrom_slice0116_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<2>_2>.
-INFO:Xst:3045 - The ROM description <Mrom_slice0094_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
-INFO:Xst:3044 - The ROM <Mrom_slice0118_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<1>_3>.
-INFO:Xst:3225 - The RAM <Mrom_slice0122_rom0000> will be implemented as BLOCK RAM
+INFO:Xst:3044 - The ROM <Mrom_slice0136_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<3>_0>.
+INFO:Xst:3044 - The ROM <Mrom_slice0140_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<1>_2>.
+INFO:Xst:3044 - The ROM <Mrom_slice0142_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<0>_3>.
+INFO:Xst:3225 - The RAM <Mrom_slice0126_rom0000> will be implemented as BLOCK RAM
     -----------------------------------------------------------------------
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
@@ -370,7 +481,7 @@ INFO:Xst:3225 - The RAM <Mrom_slice0122_rom0000> will be implemented as BLOCK RA
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
-INFO:Xst:3225 - The RAM <Mrom_slice0126_rom0000> will be implemented as BLOCK RAM
+INFO:Xst:3225 - The RAM <Mrom_slice0128_rom0000> will be implemented as BLOCK RAM
     -----------------------------------------------------------------------
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
@@ -430,21 +541,6 @@ INFO:Xst:3225 - The RAM <Mrom_slice0134_rom0000> will be implemented as BLOCK RA
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
-INFO:Xst:3225 - The RAM <Mrom_slice0142_rom0000> will be implemented as BLOCK RAM
-    -----------------------------------------------------------------------
-    | ram_type           | Block                               |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 16-word x 128-bit                   |          |
-    |     mode           | write-first                         |          |
-    |     clkA           | connected to signal <FSL_Clk>       | rise     |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to internal node          |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to internal node          |          |
-    -----------------------------------------------------------------------
-    | optimization       | speed                               |          |
-    -----------------------------------------------------------------------
 INFO:Xst:3225 - The RAM <Mrom_slice0138_rom0000> will be implemented as BLOCK RAM
     -----------------------------------------------------------------------
     | ram_type           | Block                               |          |
@@ -460,7 +556,7 @@ INFO:Xst:3225 - The RAM <Mrom_slice0138_rom0000> will be implemented as BLOCK RA
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
-INFO:Xst:3225 - The RAM <Mrom_slice0116_rom0000> will be implemented as BLOCK RAM
+INFO:Xst:3225 - The RAM <Mrom_slice0136_rom0000> will be implemented as BLOCK RAM
     -----------------------------------------------------------------------
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
@@ -475,7 +571,22 @@ INFO:Xst:3225 - The RAM <Mrom_slice0116_rom0000> will be implemented as BLOCK RA
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
-INFO:Xst:3225 - The RAM <Mrom_slice0118_rom0000> will be implemented as BLOCK RAM
+INFO:Xst:3225 - The RAM <Mrom_slice0140_rom0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 128-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <FSL_Clk>       | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <Mrom_slice0142_rom0000> will be implemented as BLOCK RAM
     -----------------------------------------------------------------------
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
@@ -498,19 +609,21 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 9
  16x128-bit single-port block RAM                      : 9
-# ROMs                                                 : 53
- 16x128-bit ROM                                        : 53
+# ROMs                                                 : 63
+ 16x128-bit ROM                                        : 63
 # Counters                                             : 1
  4-bit up counter                                      : 1
-# Registers                                            : 120
- Flip-Flops                                            : 120
+# Registers                                            : 160
+ Flip-Flops                                            : 160
 # Comparators                                          : 2
  4-bit comparator greater                              : 1
  4-bit comparator lessequal                            : 1
-# Multiplexers                                         : 62
- 8-bit 16-to-1 multiplexer                             : 62
-# Xors                                                 : 151
- 8-bit xor2                                            : 151
+# Multiplexers                                         : 72
+ 8-bit 16-to-1 multiplexer                             : 72
+# Xors                                                 : 261
+ 1-bit xor2                                            : 48
+ 8-bit xor2                                            : 197
+ 8-bit xor7                                            : 16
 
 =========================================================================
 
@@ -519,33 +632,42 @@ Macro Statistics
 =========================================================================
 INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0000_rom0000> <Mrom_slice0002_rom0000> <Mrom_slice0004_rom0000> <Mrom_slice0006_rom0000> are equivalent, XST will keep only <Mrom_slice0000_rom0000>.
 INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0080_rom0000> <Mrom_slice0112_rom0000> are equivalent, XST will keep only <Mrom_slice0080_rom0000>.
+INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0086_rom0000> <Mrom_slice0118_rom0000> are equivalent, XST will keep only <Mrom_slice0086_rom0000>.
 INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0082_rom0000> <Mrom_slice0114_rom0000> are equivalent, XST will keep only <Mrom_slice0082_rom0000>.
-INFO:Xst:2697 - Unit <aes> : the RAMs <Mrom_slice0122_rom0000>, <Mrom_slice0126_rom0000> are packed into the single block RAM <Mrom_slice0122_rom00001>
+INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0084_rom0000> <Mrom_slice0116_rom0000> are equivalent, XST will keep only <Mrom_slice0084_rom0000>.
+INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0092_rom0000> <Mrom_slice0124_rom0000> are equivalent, XST will keep only <Mrom_slice0092_rom0000>.
+INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0088_rom0000> <Mrom_slice0120_rom0000> are equivalent, XST will keep only <Mrom_slice0088_rom0000>.
+INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0090_rom0000> <Mrom_slice0122_rom0000> are equivalent, XST will keep only <Mrom_slice0090_rom0000>.
+INFO:Xst:2697 - Unit <aes> : the RAMs <Mrom_slice0128_rom0000>, <Mrom_slice0126_rom0000> are packed into the single block RAM <Mrom_slice0128_rom00001>
 INFO:Xst:2697 - Unit <aes> : the RAMs <Mrom_slice0130_rom0000>, <Mrom_slice0132_rom0000> are packed into the single block RAM <Mrom_slice0130_rom00001>
-INFO:Xst:2697 - Unit <aes> : the RAMs <Mrom_slice0134_rom0000>, <Mrom_slice0142_rom0000> are packed into the single block RAM <Mrom_slice0134_rom00001>
-INFO:Xst:2697 - Unit <aes> : the RAMs <Mrom_slice0118_rom0000>, <Mrom_slice0138_rom0000> are packed into the single block RAM <Mrom_slice0118_rom00001>
+INFO:Xst:2697 - Unit <aes> : the RAMs <Mrom_slice0136_rom0000>, <Mrom_slice0134_rom0000> are packed into the single block RAM <Mrom_slice0136_rom00001>
+INFO:Xst:2697 - Unit <aes> : the RAMs <Mrom_slice0138_rom0000>, <Mrom_slice0140_rom0000> are packed into the single block RAM <Mrom_slice0138_rom00001>
 
 Optimizing unit <aes> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block aes, actual ratio is 12.
-FlipFlop state<0>_1_0 has been replicated 1 time(s)
-FlipFlop state<0>_1_1 has been replicated 1 time(s)
-FlipFlop state<0>_1_2 has been replicated 2 time(s)
-FlipFlop state<0>_1_3 has been replicated 2 time(s)
-FlipFlop state<0>_3_0 has been replicated 1 time(s)
-FlipFlop state<0>_3_1 has been replicated 1 time(s)
-FlipFlop state<0>_3_2 has been replicated 2 time(s)
-FlipFlop state<0>_3_3 has been replicated 1 time(s)
-FlipFlop state<0>_3_7 has been replicated 1 time(s)
-FlipFlop state<1>_3_0 has been replicated 1 time(s)
-FlipFlop state<1>_3_1 has been replicated 2 time(s)
-FlipFlop state<1>_3_2 has been replicated 1 time(s)
-FlipFlop state<2>_3_0 has been replicated 1 time(s)
-FlipFlop state<2>_3_1 has been replicated 1 time(s)
-FlipFlop state<2>_3_2 has been replicated 2 time(s)
-FlipFlop state<2>_3_3 has been replicated 2 time(s)
+Found area constraint ratio of 100 (+ 5) on block aes, actual ratio is 21.
+FlipFlop state<0>_2_0 has been replicated 2 time(s)
+FlipFlop state<0>_2_1 has been replicated 2 time(s)
+FlipFlop state<0>_2_2 has been replicated 2 time(s)
+FlipFlop state<0>_2_3 has been replicated 2 time(s)
+FlipFlop state<1>_1_3 has been replicated 2 time(s)
+FlipFlop state<1>_2_0 has been replicated 1 time(s)
+FlipFlop state<1>_2_1 has been replicated 1 time(s)
+FlipFlop state<1>_2_2 has been replicated 1 time(s)
+FlipFlop state<1>_2_3 has been replicated 1 time(s)
+FlipFlop state<2>_0_0 has been replicated 2 time(s)
+FlipFlop state<2>_0_1 has been replicated 2 time(s)
+FlipFlop state<2>_0_2 has been replicated 2 time(s)
+FlipFlop state<2>_1_0 has been replicated 1 time(s)
+FlipFlop state<2>_1_1 has been replicated 1 time(s)
+FlipFlop state<2>_1_2 has been replicated 1 time(s)
+FlipFlop state<2>_1_3 has been replicated 1 time(s)
+FlipFlop state<3>_3_0 has been replicated 1 time(s)
+FlipFlop state<3>_3_1 has been replicated 1 time(s)
+FlipFlop state<3>_3_2 has been replicated 1 time(s)
+FlipFlop state<3>_3_3 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -553,8 +675,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 146
- Flip-Flops                                            : 146
+# Registers                                            : 192
+ Flip-Flops                                            : 192
 
 =========================================================================
 
@@ -583,23 +705,27 @@ Design Statistics
 # IOs                              : 74
 
 Cell Usage :
-# BELS                             : 4196
+# BELS                             : 6749
 #      GND                         : 1
 #      INV                         : 1
-#      LUT2                        : 36
-#      LUT3                        : 1432
-#      LUT3_L                      : 3
-#      LUT4                        : 1492
+#      LUT2                        : 107
+#      LUT2_D                      : 20
+#      LUT2_L                      : 22
+#      LUT3                        : 2200
+#      LUT3_D                      : 18
+#      LUT3_L                      : 44
+#      LUT4                        : 2457
 #      LUT4_D                      : 1
-#      MUXF5                       : 713
-#      MUXF6                       : 349
-#      MUXF7                       : 167
+#      LUT4_L                      : 126
+#      MUXF5                       : 1026
+#      MUXF6                       : 512
+#      MUXF7                       : 213
 #      VCC                         : 1
-# FlipFlops/Latches                : 146
-#      FD                          : 89
+# FlipFlops/Latches                : 192
+#      FD                          : 64
 #      FDE                         : 32
 #      FDRE                        : 3
-#      FDS                         : 21
+#      FDS                         : 92
 #      FDSE                        : 1
 # RAMS                             : 20
 #      RAMB16_S36                  : 4
@@ -615,9 +741,9 @@ Device utilization summary:
 
 Selected Device : 3s1600efg320-4 
 
- Number of Slices:                     1594  out of  14752    10%  
- Number of Slice Flip Flops:            146  out of  29504     0%  
- Number of 4 input LUTs:               2965  out of  29504    10%  
+ Number of Slices:                     2683  out of  14752    18%  
+ Number of Slice Flip Flops:            192  out of  29504     0%  
+ Number of 4 input LUTs:               4996  out of  29504    16%  
  Number of IOs:                          74
  Number of bonded IOBs:                  35  out of    250    14%  
  Number of BRAMs:                        20  out of     36    55%  
@@ -644,7 +770,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-FSL_Clk                            | BUFGP                  | 166   |
+FSL_Clk                            | BUFGP                  | 212   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -655,7 +781,7 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 8.101ns (Maximum Frequency: 123.442MHz)
+   Minimum period: 11.373ns (Maximum Frequency: 87.931MHz)
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: 4.283ns
    Maximum combinational path delay: No path found
@@ -666,31 +792,33 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'FSL_Clk'
-  Clock period: 8.101ns (frequency: 123.442MHz)
-  Total number of paths / destination ports: 34644 / 351
+  Clock period: 11.373ns (frequency: 87.931MHz)
+  Total number of paths / destination ports: 401441 / 468
 -------------------------------------------------------------------------
-Delay:               8.101ns (Levels of Logic = 7)
-  Source:            state<0>_3_2_1 (FF)
-  Destination:       Mrom_slice0134_rom000011 (RAM)
+Delay:               11.373ns (Levels of Logic = 9)
+  Source:            state<2>_0_3 (FF)
+  Destination:       Mrom_slice0138_rom000011 (RAM)
   Source Clock:      FSL_Clk rising
   Destination Clock: FSL_Clk rising
 
-  Data Path: state<0>_3_2_1 to Mrom_slice0134_rom000011
+  Data Path: state<2>_0_3 to Mrom_slice0138_rom000011
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              18   0.591   1.072  state<0>_3_2_1 (state<0>_3_2_1)
-     LUT4:I3->O            1   0.704   0.499  Mrom_slice0110_rom00007621 (Mrom_slice0110_rom000076)
-     LUT3:I1->O            1   0.704   0.000  Mmux__n0077<3>_614 (Mmux__n0077<3>_614)
-     MUXF5:I1->O           1   0.321   0.000  Mmux__n0077<3>_5_f5_8 (Mmux__n0077<3>_5_f59)
-     MUXF6:I1->O           2   0.521   0.526  Mmux__n0077<3>_4_f6_3 (Mmux__n0077<3>_4_f64)
-     LUT4:I1->O            1   0.704   0.000  state<3>_3_mux0002<3>1_SW0_F (N637)
-     MUXF5:I0->O           1   0.321   0.424  state<3>_3_mux0002<3>1_SW0 (N544)
-     LUT4:I3->O            5   0.704   0.633  state<3>_3_mux0002<3>1 (state<3>_3_mux0002<3>)
-     RAMB16_S36_S36:ADDRA0        0.377          Mrom_slice0134_rom000011
+     FD:C->Q             128   0.591   1.468  state<2>_0_3 (state<2>_0_3)
+     LUT4:I0->O            1   0.704   0.499  Mrom_slice0096_rom000010911 (Mrom_slice0096_rom0000109)
+     LUT3:I1->O            1   0.704   0.000  Mmux__n0076<0>_717 (Mmux__n0076<0>_717)
+     MUXF5:I1->O           1   0.321   0.000  Mmux__n0076<0>_6_f5_4 (Mmux__n0076<0>_6_f55)
+     MUXF6:I0->O           1   0.521   0.000  Mmux__n0076<0>_4_f6_4 (Mmux__n0076<0>_4_f65)
+     MUXF7:I0->O          22   0.521   1.199  Mmux__n0076<0>_2_f7_4 (Mmux__index0019<5>)
+     LUT3:I2->O            1   0.704   0.424  state<2>_1_mux0002<3>25_SW0 (N842)
+     LUT4_L:I3->LO         1   0.704   0.135  state<2>_1_mux0002<3>25 (state<2>_1_mux0002<3>25)
+     LUT4:I2->O            1   0.704   0.424  state<2>_1_mux0002<3>67 (state<2>_1_mux0002<3>67)
+     LUT4:I3->O            6   0.704   0.669  state<2>_1_mux0002<3>115 (state<2>_1_mux0002<3>)
+     RAMB16_S36_S36:ADDRA0        0.377          Mrom_slice0138_rom000011
     ----------------------------------------
-    Total                      8.101ns (4.947ns logic, 3.154ns route)
-                                       (61.1% logic, 38.9% route)
+    Total                     11.373ns (6.555ns logic, 4.818ns route)
+                                       (57.6% logic, 42.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'FSL_Clk'
@@ -714,14 +842,14 @@ Offset:              4.283ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 108.00 secs
-Total CPU time to Xst completion: 108.64 secs
+Total REAL time to Xst completion: 195.00 secs
+Total CPU time to Xst completion: 194.81 secs
  
 --> 
 
-Total memory usage is 373224 kilobytes
+Total memory usage is 396852 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   29 (   0 filtered)
-Number of infos    :   38 (   0 filtered)
+Number of infos    :   53 (   0 filtered)
 
