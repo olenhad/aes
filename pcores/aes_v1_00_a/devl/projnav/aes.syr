@@ -4,13 +4,13 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.17 secs
+Total CPU time to Xst completion: 0.20 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.17 secs
+Total CPU time to Xst completion: 0.21 secs
  
 --> Reading design: aes.prj
 
@@ -107,8 +107,7 @@ Slice Utilization Ratio Delta      : 5
 Compiling vhdl file "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/utils.vhd" in Library aes_v1_00_a.
 Architecture utils of Entity utils is up to date.
 Compiling vhdl file "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/aes.vhd" in Library aes_v1_00_a.
-Entity <aes> compiled.
-Entity <aes> (Architecture <example>) compiled.
+Architecture example of Entity aes is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -388,6 +387,10 @@ WARNING:Xst:1781 - Signal <cypher_key<0>> is used but never assigned. Tied to de
     Found 1-bit xor2 for signal <accum87$xor0005> created at line 199.
     Found 8-bit xor2 for signal <accum90$xor0000> created at line 222.
     Found 1-bit xor2 for signal <accum90$xor0005> created at line 199.
+    Found 32-bit register for signal <expanded_key<0><0>>.
+    Found 32-bit register for signal <expanded_key<0><1>>.
+    Found 32-bit register for signal <expanded_key<0><2>>.
+    Found 32-bit register for signal <expanded_key<0><3>>.
     Found 4-bit comparator greater for signal <FSL_M_Data$cmp_gt0000> created at line 310.
     Found 4-bit comparator lessequal for signal <FSL_M_Data$cmp_le0000> created at line 310.
     Found 32-bit register for signal <state<0>>.
@@ -398,7 +401,7 @@ WARNING:Xst:1781 - Signal <cypher_key<0>> is used but never assigned. Tied to de
     Summary:
 	inferred  72 ROM(s).
 	inferred   1 Counter(s).
-	inferred 160 D-type flip-flop(s).
+	inferred 288 D-type flip-flop(s).
 	inferred   2 Comparator(s).
 	inferred 576 Multiplexer(s).
 	inferred 128 Xor(s).
@@ -413,17 +416,17 @@ Macro Statistics
  16x128-bit ROM                                        : 72
 # Counters                                             : 1
  4-bit up counter                                      : 1
-# Registers                                            : 17
+# Registers                                            : 33
  32-bit register                                       : 1
- 8-bit register                                        : 16
+ 8-bit register                                        : 32
 # Comparators                                          : 2
  4-bit comparator greater                              : 1
  4-bit comparator lessequal                            : 1
 # Multiplexers                                         : 72
  8-bit 16-to-1 multiplexer                             : 72
-# Xors                                                 : 261
+# Xors                                                 : 277
  1-bit xor2                                            : 48
- 8-bit xor2                                            : 197
+ 8-bit xor2                                            : 213
  8-bit xor7                                            : 16
 
 =========================================================================
@@ -432,10 +435,154 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:1710 - FF/Latch <expanded_key<0><3>_2_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_2_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_2_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_2_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_2_4> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_2_5> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_2_6> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_2_7> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_1_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_1_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_1_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_1_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_1_4> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_1_5> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_1_6> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_1_7> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_3_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_3_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_3_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_3_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_3_4> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_3_5> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_3_6> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_3_7> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_0_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_0_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_0_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_0_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_0_4> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_0_5> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_0_6> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_0_7> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_3_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_3_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_3_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_3_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_3_4> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_3_5> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_3_6> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_3_7> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_2_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_2_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_2_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_2_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_2_4> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_2_5> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_2_6> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_2_7> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_0_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_0_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_0_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_0_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_0_4> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_0_5> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_0_6> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_0_7> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_1_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_1_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_1_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_1_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_1_4> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_1_5> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_1_6> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_1_7> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_3_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_3_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_3_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_3_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_3_4> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_3_5> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_3_6> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_3_7> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_2_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_2_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_2_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_2_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_2_4> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_2_5> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_2_6> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_2_7> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_1_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_1_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_1_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_1_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_1_4> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_1_5> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_1_6> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_1_7> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_0_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_0_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_0_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_0_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_0_4> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_0_5> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_0_6> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_0_7> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_3_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_3_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_3_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_3_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_3_4> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_3_5> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_3_6> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_3_7> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_1_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_1_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_1_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_1_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_1_4> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_1_5> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_1_6> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_1_7> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_0_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_0_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_0_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_0_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_0_4> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_0_5> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_0_6> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_0_7> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_2_0> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_2_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_2_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_2_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_2_4> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_2_5> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_2_6> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_2_7> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2404 -  FFs/Latches <expanded_key<0><2>_0<0:3>> (without init value) have a constant value of 0 in block <aes>.
+WARNING:Xst:2404 -  FFs/Latches <expanded_key<0><2>_1<0:3>> (without init value) have a constant value of 0 in block <aes>.
+WARNING:Xst:2404 -  FFs/Latches <expanded_key<0><2>_2<0:3>> (without init value) have a constant value of 0 in block <aes>.
+WARNING:Xst:2404 -  FFs/Latches <expanded_key<0><2>_3<0:3>> (without init value) have a constant value of 0 in block <aes>.
+WARNING:Xst:2404 -  FFs/Latches <expanded_key<0><0>_0<0:-1>> (without init value) have a constant value of 0 in block <aes>.
+WARNING:Xst:2404 -  FFs/Latches <expanded_key<0><0>_1<0:0>> (without init value) have a constant value of 0 in block <aes>.
+WARNING:Xst:2404 -  FFs/Latches <expanded_key<0><0>_3<0:1>> (without init value) have a constant value of 0 in block <aes>.
+WARNING:Xst:2404 -  FFs/Latches <expanded_key<0><0>_2<0:1>> (without init value) have a constant value of 0 in block <aes>.
+WARNING:Xst:2404 -  FFs/Latches <expanded_key<0><3>_0<0:3>> (without init value) have a constant value of 0 in block <aes>.
+WARNING:Xst:2404 -  FFs/Latches <expanded_key<0><3>_2<0:3>> (without init value) have a constant value of 0 in block <aes>.
+WARNING:Xst:2404 -  FFs/Latches <expanded_key<0><3>_1<0:3>> (without init value) have a constant value of 0 in block <aes>.
+WARNING:Xst:2404 -  FFs/Latches <expanded_key<0><3>_3<0:3>> (without init value) have a constant value of 0 in block <aes>.
+WARNING:Xst:2404 -  FFs/Latches <expanded_key<0><1>_1<0:2>> (without init value) have a constant value of 0 in block <aes>.
+WARNING:Xst:2404 -  FFs/Latches <expanded_key<0><1>_0<0:2>> (without init value) have a constant value of 0 in block <aes>.
+WARNING:Xst:2404 -  FFs/Latches <expanded_key<0><1>_2<0:2>> (without init value) have a constant value of 0 in block <aes>.
+WARNING:Xst:2404 -  FFs/Latches <expanded_key<0><1>_3<0:2>> (without init value) have a constant value of 0 in block <aes>.
 
 Synthesizing (advanced) Unit <aes>.
-INFO:Xst:3045 - The ROM description <Mrom_slice0082_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
 INFO:Xst:3045 - The ROM description <Mrom_slice0080_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0082_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
 INFO:Xst:3045 - The ROM description <Mrom_slice0084_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
 INFO:Xst:3045 - The ROM description <Mrom_slice0088_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
 INFO:Xst:3045 - The ROM description <Mrom_slice0086_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
@@ -455,15 +602,15 @@ INFO:Xst:3045 - The ROM description <Mrom_slice0114_rom0000> will be implemented
 INFO:Xst:3045 - The ROM description <Mrom_slice0116_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
 INFO:Xst:3045 - The ROM description <Mrom_slice0118_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
 INFO:Xst:3045 - The ROM description <Mrom_slice0120_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
-INFO:Xst:3045 - The ROM description <Mrom_slice0124_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
 INFO:Xst:3045 - The ROM description <Mrom_slice0122_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <Mrom_slice0124_rom0000> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
 INFO:Xst:3044 - The ROM <Mrom_slice0126_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<2>_3>.
 INFO:Xst:3044 - The ROM <Mrom_slice0128_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<2>_0>.
 INFO:Xst:3044 - The ROM <Mrom_slice0130_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<1>_1>.
 INFO:Xst:3044 - The ROM <Mrom_slice0132_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<0>_2>.
 INFO:Xst:3044 - The ROM <Mrom_slice0134_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<3>_3>.
-INFO:Xst:3044 - The ROM <Mrom_slice0138_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<2>_1>.
 INFO:Xst:3044 - The ROM <Mrom_slice0136_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<3>_0>.
+INFO:Xst:3044 - The ROM <Mrom_slice0138_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<2>_1>.
 INFO:Xst:3044 - The ROM <Mrom_slice0140_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<1>_2>.
 INFO:Xst:3044 - The ROM <Mrom_slice0142_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <state<0>_3>.
 INFO:Xst:3225 - The RAM <Mrom_slice0126_rom0000> will be implemented as BLOCK RAM
@@ -541,7 +688,7 @@ INFO:Xst:3225 - The RAM <Mrom_slice0134_rom0000> will be implemented as BLOCK RA
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
-INFO:Xst:3225 - The RAM <Mrom_slice0138_rom0000> will be implemented as BLOCK RAM
+INFO:Xst:3225 - The RAM <Mrom_slice0136_rom0000> will be implemented as BLOCK RAM
     -----------------------------------------------------------------------
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
@@ -556,7 +703,7 @@ INFO:Xst:3225 - The RAM <Mrom_slice0138_rom0000> will be implemented as BLOCK RA
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
-INFO:Xst:3225 - The RAM <Mrom_slice0136_rom0000> will be implemented as BLOCK RAM
+INFO:Xst:3225 - The RAM <Mrom_slice0138_rom0000> will be implemented as BLOCK RAM
     -----------------------------------------------------------------------
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
@@ -613,16 +760,16 @@ Macro Statistics
  16x128-bit ROM                                        : 63
 # Counters                                             : 1
  4-bit up counter                                      : 1
-# Registers                                            : 160
- Flip-Flops                                            : 160
+# Registers                                            : 209
+ Flip-Flops                                            : 209
 # Comparators                                          : 2
  4-bit comparator greater                              : 1
  4-bit comparator lessequal                            : 1
 # Multiplexers                                         : 72
  8-bit 16-to-1 multiplexer                             : 72
-# Xors                                                 : 261
+# Xors                                                 : 277
  1-bit xor2                                            : 48
- 8-bit xor2                                            : 197
+ 8-bit xor2                                            : 213
  8-bit xor7                                            : 16
 
 =========================================================================
@@ -630,6 +777,55 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1710 - FF/Latch <expanded_key<0><3>_0_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_0_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_0_1> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_0_0> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_2_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_2_2> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_2_1> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_2_0> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_3_3> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_3_2> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_3_1> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_3_0> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_1_2> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_1_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_1_0> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_0_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_0_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_0_0> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_2_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_2_1> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_2_0> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_3_2> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_3_1> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><1>_3_0> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_2_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_2_2> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_2_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_2_0> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_0_3> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_0_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_0_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_0_0> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_1_3> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_1_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_1_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_1_0> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_3_3> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_3_2> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_3_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><2>_3_0> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_1> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_3_1> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_3_0> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_2_1> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><0>_2_0> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_1_3> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_1_2> (without init value) has a constant value of 0 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_1_1> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <expanded_key<0><3>_1_0> (without init value) has a constant value of 1 in block <aes>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0000_rom0000> <Mrom_slice0002_rom0000> <Mrom_slice0004_rom0000> <Mrom_slice0006_rom0000> are equivalent, XST will keep only <Mrom_slice0000_rom0000>.
 INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0080_rom0000> <Mrom_slice0112_rom0000> are equivalent, XST will keep only <Mrom_slice0080_rom0000>.
 INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0086_rom0000> <Mrom_slice0118_rom0000> are equivalent, XST will keep only <Mrom_slice0086_rom0000>.
@@ -640,8 +836,8 @@ INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0088_rom0000> <Mrom_slice0120_rom
 INFO:Xst:2146 - In block <aes>, ROM <Mrom_slice0090_rom0000> <Mrom_slice0122_rom0000> are equivalent, XST will keep only <Mrom_slice0090_rom0000>.
 INFO:Xst:2697 - Unit <aes> : the RAMs <Mrom_slice0128_rom0000>, <Mrom_slice0126_rom0000> are packed into the single block RAM <Mrom_slice0128_rom00001>
 INFO:Xst:2697 - Unit <aes> : the RAMs <Mrom_slice0130_rom0000>, <Mrom_slice0132_rom0000> are packed into the single block RAM <Mrom_slice0130_rom00001>
-INFO:Xst:2697 - Unit <aes> : the RAMs <Mrom_slice0136_rom0000>, <Mrom_slice0134_rom0000> are packed into the single block RAM <Mrom_slice0136_rom00001>
-INFO:Xst:2697 - Unit <aes> : the RAMs <Mrom_slice0138_rom0000>, <Mrom_slice0140_rom0000> are packed into the single block RAM <Mrom_slice0138_rom00001>
+INFO:Xst:2697 - Unit <aes> : the RAMs <Mrom_slice0138_rom0000>, <Mrom_slice0134_rom0000> are packed into the single block RAM <Mrom_slice0138_rom00001>
+INFO:Xst:2697 - Unit <aes> : the RAMs <Mrom_slice0136_rom0000>, <Mrom_slice0140_rom0000> are packed into the single block RAM <Mrom_slice0136_rom00001>
 
 Optimizing unit <aes> ...
 
@@ -842,14 +1038,14 @@ Offset:              4.283ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 195.00 secs
-Total CPU time to Xst completion: 194.81 secs
+Total REAL time to Xst completion: 222.00 secs
+Total CPU time to Xst completion: 222.18 secs
  
 --> 
 
-Total memory usage is 396852 kilobytes
+Total memory usage is 399020 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   29 (   0 filtered)
+Number of warnings :  222 (   0 filtered)
 Number of infos    :   53 (   0 filtered)
 

@@ -317,7 +317,7 @@ variable verify_key_expand : AES_ExpandedKey :=
 		else 
 		 	state := inv_shift_rows(state);
 		 	state := inv_subs_block(state);
-		-- 	state := add_round_key(state, block_from_expkey(expanded_key,0));
+		 	state := add_round_key(state, block_from_expkey(expanded_key,0));
 		-- 			--result <= state;
 		 	FSL_M_Data <= word_to_vector(state(0));
 					--assert (state = verify_decrypt) report "DECRYPT DOESNT WORK  :(" severity warning;

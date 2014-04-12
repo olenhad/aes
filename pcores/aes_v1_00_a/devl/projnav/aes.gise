@@ -32,16 +32,86 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="aes.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="aes.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="aes.xst"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="aes_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="aes_envsettings.html"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="aes_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="aes_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="aes_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="aes_summary.html"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="aes_vhdl.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="aes_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="testbench_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1397280009" xil_pn:in_ck="-2941439748462328925" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1397280009">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="../../hdl/vhdl/aes.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/utils.vhd"/>
+      <outfile xil_pn:name="aes_t.vhd"/>
+      <outfile xil_pn:name="test_aes.vhd"/>
+      <outfile xil_pn:name="utils.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1397232163" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="9214042389098990261" xil_pn:start_ts="1397232163">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+    </transform>
+    <transform xil_pn:end_ts="1397232163" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-575248304167076297" xil_pn:start_ts="1397232163">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+    </transform>
+    <transform xil_pn:end_ts="1397232163" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-851041356896010161" xil_pn:start_ts="1397232163">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1397232163" xil_pn:in_ck="-2941439748462328925" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1397232163">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="../../hdl/vhdl/aes.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/utils.vhd"/>
+      <outfile xil_pn:name="aes_t.vhd"/>
+      <outfile xil_pn:name="test_aes.vhd"/>
+      <outfile xil_pn:name="utils.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1397232173" xil_pn:in_ck="-2941439748462328925" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-2779923198806363263" xil_pn:start_ts="1397232163">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="aes_beh.prj"/>
+      <outfile xil_pn:name="aes_isim_beh.exe"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1397232174" xil_pn:in_ck="-7022820183341292856" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-6026502266246887991" xil_pn:start_ts="1397232173">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="aes_isim_beh.wdb"/>
+      <outfile xil_pn:name="isim.cmd"/>
+    </transform>
     <transform xil_pn:end_ts="1397206588" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="4314528604464032823" xil_pn:start_ts="1397206588">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -66,7 +136,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1397219655" xil_pn:in_ck="4102240855125195643" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-4425365365294459562" xil_pn:start_ts="1397219457">
+    <transform xil_pn:end_ts="1397280267" xil_pn:in_ck="4102240855125195643" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-4425365365294459562" xil_pn:start_ts="1397280042">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -79,6 +149,7 @@
       <outfile xil_pn:name="aes.stx"/>
       <outfile xil_pn:name="aes.syr"/>
       <outfile xil_pn:name="aes.xst"/>
+      <outfile xil_pn:name="aes_beh.prj"/>
       <outfile xil_pn:name="aes_vhdl.prj"/>
       <outfile xil_pn:name="aes_xst.xrpt"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
