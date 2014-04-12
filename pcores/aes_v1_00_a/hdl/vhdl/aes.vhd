@@ -144,30 +144,26 @@ architecture EXAMPLE of aes is
 	-- );
 	component aes_loop_iter is
 	port
-		(
-			state : in AES_Block;
-			key : in AES_Block;
-			result : out AES_Block
-		);
+	(
+		clk : in std_logic;
+		state : in AES_Block;
+		key : in AES_Block;
+		result : out AES_Block;
+		done : out std_logic
+	);
 	end component;
-	
---	component block_from_expanded_key is
---	port
---	(
---		expanded_key : in AES_ExpandedKey;
---		index : in AES_ExpandedKey_Index;
---		result : out AES_Block; 
---	)
---	end component;
-	
+
 	signal loop_iter_state : AES_Block;
 	signal loop_iter_key : AES_Block;
 	signal loop_iter_result : AES_Block;
-	
+	signal loop_iter_done : std_logic;
 begin
-	loop_iter: aes_loop_iter port map (state => loop_iter_state,
+	-- 8 RAMS
+	loop_iter: aes_loop_iter port map (clk => FSL_Clk,
+												  state => loop_iter_state,
 												  key => loop_iter_key,
-												  result => loop_iter_result);
+												  result => loop_iter_result,
+												  done => loop_iter_done);
    -- CAUTION:
    -- The sequence in which data are read in and written out should be
    -- consistent with the sequence they are written and read in the
@@ -183,7 +179,7 @@ begin
 	FSL_M_Data <= word_to_vector(decrypt_result(control_index));
 	
    The_SW_accelerator : process (FSL_Clk) is
-	variable step_num : Integer range 0 to 11 := 0;
+	variable step_num : Integer range -1 to 11 := -1;
 	variable state : AES_Block;	
    variable expanded_key : AES_ExpandedKey;	
 	variable postAdd : AES_Block;
@@ -224,8 +220,10 @@ begin
 					when InputIdle =>
 					-- do nothing
 					when InputKey =>
+					-- cypher key is 32 bit registers
 						cypher_key(control_index) <= vector_to_word(FSL_S_Data);
 					when InputState =>
+					-- decrypt_input is 32 bit registers
 						decrypt_input(control_index) <= vector_to_word(FSL_S_Data);	
 					when InputStart =>
 						enable_decrypt <= '1';
@@ -233,57 +231,91 @@ begin
 			end if;
 		
 			if (enable_decrypt = '1') then
-				if (step_num = 0) then
+				if (step_num = -1) then
+					-- expanded key is 32 bit registers...
 					expanded_key := key_expansion(cypher_key);	
-					state := add_round_key(decrypt_input, expanded_key(10));
-					step_num := 1;
 					
+					-- 16 RAMS
+					-- expanded_key(10) and expanded_key(9) are accessed in the same cycle. HEnce 2x16
+					state := add_round_key(decrypt_input, expanded_key(10));
+					step_num := 0;
+				
+				elsif (step_num = 0) then
 					loop_iter_state <= state;
 					loop_iter_key <= expanded_key(9);
 				
 				elsif (step_num = 1) then
-				
-					loop_iter_state <= loop_iter_result;
-					loop_iter_key <= expanded_key(8);
-					step_num := step_num + 1;
-				elsif (step_num = 2) then
-				 
-					loop_iter_state <= loop_iter_result;
-					loop_iter_key <= expanded_key(7);
-					step_num := step_num + 1;
+					if loop_iter_done = '1' then
+						loop_iter_state <= loop_iter_result;
+						loop_iter_key <= expanded_key(8);
+						step_num := step_num + 1;
+					end if ;
 					
+					
+				elsif (step_num = 2) then
+					if loop_iter_done = '1' then
+						loop_iter_state <= loop_iter_result;
+						loop_iter_key <= expanded_key(7);
+						step_num := step_num + 1;
+						
+					end if ;
+				 		
 				elsif (step_num = 3) then
-					loop_iter_state <= loop_iter_result;
-					loop_iter_key <= expanded_key(6);
-					step_num := step_num + 1;
+					if loop_iter_done = '1' then
+						loop_iter_state <= loop_iter_result;
+						loop_iter_key <= expanded_key(6);
+						step_num := step_num + 1;	
+					end if ;
+					
 				elsif (step_num = 4) then
-					loop_iter_state <= loop_iter_result;
-					loop_iter_key <= expanded_key(5);
-					step_num := step_num + 1;
+					if loop_iter_done = '1' then
+						loop_iter_state <= loop_iter_result;
+						loop_iter_key <= expanded_key(5);
+						step_num := step_num + 1;
+					end if ;
+					
 				elsif (step_num = 5) then
-					loop_iter_state <= loop_iter_result;
-					loop_iter_key <= expanded_key(4);
-					step_num := step_num + 1;
+					if loop_iter_done = '1' then
+						loop_iter_state <= loop_iter_result;
+						loop_iter_key <= expanded_key(4);
+						step_num := step_num + 1;						
+					end if ;
+
 				elsif (step_num = 6) then
-					loop_iter_state <= loop_iter_result;
-					loop_iter_key <= expanded_key(3);
-					step_num := step_num + 1;
+					if loop_iter_done = '1' then
+						loop_iter_state <= loop_iter_result;
+						loop_iter_key <= expanded_key(3);
+						step_num := step_num + 1;	
+					end if ;
+				
 				elsif (step_num = 7) then
-					loop_iter_state <= loop_iter_result;
-					loop_iter_key <= expanded_key(2);
-					step_num := step_num + 1;
+					if loop_iter_done = '1' then
+						loop_iter_state <= loop_iter_result;
+						loop_iter_key <= expanded_key(2);
+						step_num := step_num + 1;
+					end if ;
+					
 				elsif (step_num = 8) then
-					loop_iter_state <= loop_iter_result;
-					loop_iter_key <= expanded_key(1);
-					step_num := step_num + 1;
+					if loop_iter_done = '1' then
+						loop_iter_state <= loop_iter_result;
+						loop_iter_key <= expanded_key(1);
+						step_num := step_num + 1;
+					end if ;
+					
 				elsif (step_num = 9) then
-					loop_iter_state <= loop_iter_result;
-					loop_iter_key <= expanded_key(0);
-					step_num := step_num + 1;
+					if loop_iter_done = '1' then
+						loop_iter_state <= loop_iter_result;
+						loop_iter_key <= expanded_key(0);
+						step_num := step_num + 1;
+					end if ;
+					
 				else 
+					
+					-- 16 RAMS more here
 					state := inv_shift_rows(loop_iter_state);
 					state := inv_subs_block(state);
 					state := add_round_key(state, loop_iter_key);
+					-- decrypt_result is a register
 				 	decrypt_result <= state;
 					decryption_finished <= '1';
 					enable_output <= '1';

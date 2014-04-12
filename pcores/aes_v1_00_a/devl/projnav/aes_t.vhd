@@ -384,6 +384,7 @@ variable verify_key_expand : AES_ExpandedKey :=
 		
 
       --   case fsl_state is
+		
       --     when Idle =>
       --       if (FSL_S_Exists = '1') then
       --         fsl_state       <= Read_Inputs;
