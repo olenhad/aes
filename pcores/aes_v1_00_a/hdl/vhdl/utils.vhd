@@ -50,6 +50,8 @@ package utils is
 	type AES_ExpandedKey is array(0 to 10) of AES_Block;
 
 	type AES_IndexTuple is array(0 to 1) of AES_Block_Index;
+
+	type AES_Decrypt_Stage is (DecryptInitial, DecryptNineLoop, DecryptEnd);
 	
 	function v2i (arg : AES_Byte) return AES_Int;
 	function i2v (arg : AES_Int) return AES_Byte;
