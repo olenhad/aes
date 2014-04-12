@@ -271,6 +271,7 @@ variable verify_key_expand : AES_ExpandedKey :=
 	3 => ( 0 => x"4d", 1 => x"2b", 2 => x"30", 3 => x"c5")));
 	variable state : AES_Block;	
    variable expanded_key : AES_ExpandedKey;	
+	variable postAdd : AES_Block;
 	begin  -- process The_SW_accelerator
 
 	--result_block <= inv_shift_rows(test_block);
@@ -311,7 +312,9 @@ variable verify_key_expand : AES_ExpandedKey :=
 		elsif (step_num > 1 and step_num <= 9) then
 		 	state := inv_shift_rows(state);
 		 	state := inv_subs_block(state);
-		--	state := add_round_key(state, block_from_expkey(expanded_key, (10 - step_num)));
+			-- postAdd := block_from_expkey(expanded_key, (10 - step_num));
+			postAdd := block_from_expkey(expanded_key, 5);
+			state := add_round_key(state, postAdd);
 		 	state := inv_mix_column_block(state);
 		   step_num := step_num + 1;
 		else 
