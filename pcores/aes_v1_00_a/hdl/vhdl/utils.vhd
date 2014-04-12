@@ -41,7 +41,8 @@ package utils is
 	type AES_SBox is array (0 to 15, 0 to 15) of AES_Byte;
 	
 	type AES_RCons is array (0 to 10) of AES_Byte;
-	type AES_ExpandedKey is array(0 to 10, 0 to 3) of AES_Word;
+--	type AES_ExpandedKey is array(0 to 10, 0 to 3) of AES_Word;
+	type AES_ExpandedKey is array(0 to 10) of AES_Block;
 	
 	function v2i (arg : AES_Byte) return AES_Int;
 	function i2v (arg : AES_Int) return AES_Byte;
@@ -49,7 +50,7 @@ package utils is
 	function word_to_vector ( w:  AES_Word) return AES_32;
 	function vector_to_word (v : AES_32) return AES_Word;
 	
-	function block_from_expkey (k : AES_ExpandedKey; i : AES_ExpandedKey_Index) return AES_Block;
+	--function block_from_expkey (k : AES_ExpandedKey; i : AES_ExpandedKey_Index) return AES_Block;
 	
 	function inv_subs_byte ( b: AES_Byte) return AES_Byte;
 	function inv_subs_word ( w :  AES_Word) return AES_Word;
@@ -256,15 +257,15 @@ package body utils is
 		return accum;
 	end vector_to_word;
 	
-	function block_from_expkey (k : AES_ExpandedKey; i : AES_ExpandedKey_Index) return AES_Block is
-	variable accum : AES_Block;
-	begin
-		accum(0) := k(i,0);
-		accum(1) := k(i,1);
-		accum(2) := k(i,2);
-		accum(3) := k(i,3);
-		return accum;
-	end block_from_expkey;
+	-- function block_from_expkey (k : AES_ExpandedKey; i : AES_ExpandedKey_Index) return AES_Block is
+	-- variable accum : AES_Block;
+	-- begin
+	-- 	accum(0) := k(i)(0);
+	-- 	accum(1) := k(i)(1);
+	-- 	accum(2) := k(i)(2);
+	-- 	accum(3) := k(i)(3);
+	-- 	return accum;
+	-- end block_from_expkey;
 
 	function inv_subs_byte ( b: AES_Byte) return AES_Byte is
 	variable upper : std_logic_vector(0 to 3);
@@ -395,18 +396,18 @@ package body utils is
 	variable t : AES_Word;
 	variable padded_rcons : AES_Word;
 	begin
-		expanded_key(0,0) := cipher_key(0);
-		expanded_key(0,1) := cipher_key(1);
-		expanded_key(0,2) := cipher_key(2);
-		expanded_key(0,3) := cipher_key(3);
+		expanded_key(0)(0) := cipher_key(0);
+		expanded_key(0)(1) := cipher_key(1);
+		expanded_key(0)(2) := cipher_key(2);
+		expanded_key(0)(3) := cipher_key(3);
 		
 		for i in 1 to 10 loop
 			padded_rcons := ( 0 => round_cons(i), others => x"00");
-			t :=  xor_word( padded_rcons, subs_word(rot_word(expanded_key(i - 1,3))));
-			expanded_key(i,0) := xor_word(t, expanded_key(i-1,0));
-			expanded_key(i,1) := xor_word(expanded_key(i,0), expanded_key(i-1,1));
-			expanded_key(i,2) := xor_word(expanded_key(i,1), expanded_key(i-1,2));
-			expanded_key(i,3) := xor_word(expanded_key(i,2),expanded_key(i-1,3));			
+			t :=  xor_word( padded_rcons, subs_word(rot_word(expanded_key(i - 1)(3))));
+			expanded_key(i)(0) := xor_word(t, expanded_key(i-1)(0));
+			expanded_key(i)(1) := xor_word(expanded_key(i)(0), expanded_key(i-1)(1));
+			expanded_key(i)(2) := xor_word(expanded_key(i)(1), expanded_key(i-1)(2));
+			expanded_key(i)(3) := xor_word(expanded_key(i)(2),expanded_key(i-1)(3));			
 		end loop;
 		return expanded_key;
 	end key_expansion;

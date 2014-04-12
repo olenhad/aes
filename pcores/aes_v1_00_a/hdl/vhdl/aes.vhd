@@ -151,6 +151,15 @@ architecture EXAMPLE of aes is
 		);
 	end component;
 	
+--	component block_from_expanded_key is
+--	port
+--	(
+--		expanded_key : in AES_ExpandedKey;
+--		index : in AES_ExpandedKey_Index;
+--		result : out AES_Block; 
+--	)
+--	end component;
+	
 	signal loop_iter_state : AES_Block;
 	signal loop_iter_key : AES_Block;
 	signal loop_iter_result : AES_Block;
@@ -226,50 +235,50 @@ begin
 			if (enable_decrypt = '1') then
 				if (step_num = 0) then
 					expanded_key := key_expansion(cypher_key);	
-					state := add_round_key(decrypt_input, block_from_expkey(expanded_key,10));
+					state := add_round_key(decrypt_input, expanded_key(10));
 					step_num := 1;
 					
 					loop_iter_state <= state;
-					loop_iter_key <= block_from_expkey(expanded_key, 9);
+					loop_iter_key <= expanded_key(9);
 				
 				elsif (step_num = 1) then
 				
 					loop_iter_state <= loop_iter_result;
-					loop_iter_key <= block_from_expkey(expanded_key, 8);
+					loop_iter_key <= expanded_key(8);
 					step_num := step_num + 1;
 				elsif (step_num = 2) then
 				 
 					loop_iter_state <= loop_iter_result;
-					loop_iter_key <= block_from_expkey(expanded_key, 7);
+					loop_iter_key <= expanded_key(7);
 					step_num := step_num + 1;
 					
 				elsif (step_num = 3) then
 					loop_iter_state <= loop_iter_result;
-					loop_iter_key <= block_from_expkey(expanded_key, 6);
+					loop_iter_key <= expanded_key(6);
 					step_num := step_num + 1;
 				elsif (step_num = 4) then
 					loop_iter_state <= loop_iter_result;
-					loop_iter_key <= block_from_expkey(expanded_key, 5);
+					loop_iter_key <= expanded_key(5);
 					step_num := step_num + 1;
 				elsif (step_num = 5) then
 					loop_iter_state <= loop_iter_result;
-					loop_iter_key <= block_from_expkey(expanded_key, 4);
+					loop_iter_key <= expanded_key(4);
 					step_num := step_num + 1;
 				elsif (step_num = 6) then
 					loop_iter_state <= loop_iter_result;
-					loop_iter_key <= block_from_expkey(expanded_key, 3);
+					loop_iter_key <= expanded_key(3);
 					step_num := step_num + 1;
 				elsif (step_num = 7) then
 					loop_iter_state <= loop_iter_result;
-					loop_iter_key <= block_from_expkey(expanded_key, 2);
+					loop_iter_key <= expanded_key(2);
 					step_num := step_num + 1;
 				elsif (step_num = 8) then
 					loop_iter_state <= loop_iter_result;
-					loop_iter_key <= block_from_expkey(expanded_key, 1);
+					loop_iter_key <= expanded_key(1);
 					step_num := step_num + 1;
 				elsif (step_num = 9) then
 					loop_iter_state <= loop_iter_result;
-					loop_iter_key <= block_from_expkey(expanded_key, 0);
+					loop_iter_key <= expanded_key(0);
 					step_num := step_num + 1;
 				else 
 					state := inv_shift_rows(loop_iter_state);

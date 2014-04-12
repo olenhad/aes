@@ -1,4 +1,0 @@
-vhdl work "utils.vhd"
-vhdl work "aes_loop_iter.vhd"
-vhdl work "aes_t.vhd"
-vhdl work "test_aes.vhd"
