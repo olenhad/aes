@@ -34,7 +34,7 @@ package utils is
 	subtype AES_32 is std_logic_vector(0 to 31);
 	subtype AES_Int is integer range 0 to 127;
 	subtype AES_ExpandedKey_Index is Integer range 0 to 10;
-	subtype AES_Stage is integer range 0 to 1;
+	subtype AES_Stage is integer range 0 to 3;
 	subtype AES_Block_Index is integer range 0 to 3;
 
 	type AES_Word is array(0 to 3) of AES_Byte;

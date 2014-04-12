@@ -1,4 +1,10 @@
-PH utils NULL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/utils.vhd sub00/vhpl00 1397334350
-AR aes example C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/aes.vhd sub00/vhpl03 1397334353
-EN aes NULL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/aes.vhd sub00/vhpl02 1397334352
-PB utils utils C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/utils.vhd sub00/vhpl01 1397334351
+PH utils NULL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/utils.vhd sub00/vhpl00 1397337164
+AR add_round_key_box arch C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/add_round_key_box.vhd sub00/vhpl07 1397337171
+AR inv_mix_cols_box arch C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/inv_mix_cols_box.vhd sub00/vhpl05 1397337169
+AR inv_subs_box arch C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/inv_subs_box.vhd sub00/vhpl03 1397337167
+EN inv_mix_cols_box NULL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/inv_mix_cols_box.vhd sub00/vhpl04 1397337168
+EN inv_subs_box NULL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/inv_subs_box.vhd sub00/vhpl02 1397337166
+AR aes example C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/aes.vhd sub00/vhpl09 1397337173
+EN aes NULL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/aes.vhd sub00/vhpl08 1397337172
+PB utils utils C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/utils.vhd sub00/vhpl01 1397337165
+EN add_round_key_box NULL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/add_round_key_box.vhd sub00/vhpl06 1397337170

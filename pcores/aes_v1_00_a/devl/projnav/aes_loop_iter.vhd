@@ -145,7 +145,7 @@ round_key_box: add_round_key_box port map (add_round_key_state, add_round_key_ke
 
 mix_cols : inv_mix_cols_box port map (inv_mix_cols_box_state, inv_mix_cols_box_result);
 
-shift_rows : inv_shift_rows_box port map (inv_shift_rows_state, inv_shift_rows_result);
+shift_rows : inv_shift_rows_box map (inv_shift_rows_state, inv_shift_rows_result);
 
 process(clk)
 	variable cur_state : AES_Block;
@@ -203,8 +203,6 @@ process(clk)
 						iter_stage <= 0;
 						done <= '1';
 						result <= cur_state;
-					when others =>
-					
 				end case;		
 			end if;
 		-- cur_state := state
