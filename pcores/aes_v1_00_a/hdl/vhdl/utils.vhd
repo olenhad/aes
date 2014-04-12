@@ -44,10 +44,11 @@ package utils is
 	type AES_ExpandedKey is array(0 to 10, 0 to 3) of AES_Word;
 	
 	function v2i (arg : AES_Byte) return AES_Int;
-	
 	function i2v (arg : AES_Int) return AES_Byte;
 	
 	function word_to_vector ( w:  AES_Word) return AES_32;
+	function vector_to_word (v : AES_32) return AES_Word;
+	
 	function block_from_expkey (k : AES_ExpandedKey; i : AES_ExpandedKey_Index) return AES_Block;
 	
 	function inv_subs_byte ( b: AES_Byte) return AES_Byte;
@@ -242,9 +243,18 @@ package body utils is
 		accum(8 to 15) := w(1);
 		accum(16 to 23) := w(2);
 		accum(24 to 31) := w(3);
-		
 		return accum;
 	end word_to_vector;
+	
+	function vector_to_word (v : AES_32) return AES_Word is
+	variable accum : AES_Word;
+	begin
+		accum(0) := v(0 to 7);
+		accum(1) := v(8 to 15);
+		accum(2) := v(16 to 23);
+		accum(3) := v(24 to 31);
+		return accum;
+	end vector_to_word;
 	
 	function block_from_expkey (k : AES_ExpandedKey; i : AES_ExpandedKey_Index) return AES_Block is
 	variable accum : AES_Block;

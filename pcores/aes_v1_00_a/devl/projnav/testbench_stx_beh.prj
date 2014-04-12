@@ -1,3 +1,4 @@
 vhdl isim_temp "utils.vhd"
+vhdl isim_temp "aes_loop_iter.vhd"
 vhdl isim_temp "aes_t.vhd"
 vhdl isim_temp "test_aes.vhd"

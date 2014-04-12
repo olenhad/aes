@@ -5,17 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="HDLCompiler" num="540" delta="unknown" >"C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes_t.vhd" Line 299: Indexed name prefix type <arg fmt="%s" index="1">aes_expandedkey</arg> expects <arg fmt="%d" index="2">2</arg> dimensions
-</msg>
-
-<msg type="error" file="HDLCompiler" num="540" delta="unknown" >"C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes_t.vhd" Line 304: Indexed name prefix type <arg fmt="%s" index="1">aes_expandedkey</arg> expects <arg fmt="%d" index="2">2</arg> dimensions
-</msg>
-
-<msg type="error" file="HDLCompiler" num="540" delta="unknown" >"C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes_t.vhd" Line 310: Indexed name prefix type <arg fmt="%s" index="1">aes_expandedkey</arg> expects <arg fmt="%d" index="2">2</arg> dimensions
-</msg>
-
-<msg type="error" file="HDLCompiler" num="854" delta="unknown" >"C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes_t.vhd" Line 123: Unit &lt;<arg fmt="%s" index="1">example</arg>&gt; ignored due to previous errors.
-</msg>
-
 </messages>
 

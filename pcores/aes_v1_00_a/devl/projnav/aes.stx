@@ -1,0 +1,37 @@
+Release 13.2 - xst O.61xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.25 secs
+ 
+--> Parameter xsthdpdir set to C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.25 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/utils.vhd" in Library aes_v1_00_a.
+Architecture utils of Entity utils is up to date.
+Compiling vhdl file "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/aes.vhd" in Library aes_v1_00_a.
+Entity <aes> compiled.
+ERROR:HDLParsers:813 - "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/aes.vhd" Line 346. Enumerated value inputidle is missing in case.
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.47 secs
+ 
+--> 
+
+Total memory usage is 200524 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

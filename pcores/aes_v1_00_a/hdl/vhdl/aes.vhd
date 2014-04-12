@@ -125,13 +125,11 @@ architecture EXAMPLE of aes is
 
 
 
-   -- Total number of input data.
-   constant NUMBER_OF_INPUT_WORDS  : natural := 11;
-
-   -- Total number of output data
-   constant NUMBER_OF_OUTPUT_WORDS : natural := 4;
+ 
 
    type STATE_TYPE is (Idle, Read_Inputs, Write_Outputs);
+	
+	type INPUT_TYPE is (InputIdle, InputKey, InputState, InputStart);
 
    signal fsl_state        : STATE_TYPE;
 
@@ -139,8 +137,8 @@ architecture EXAMPLE of aes is
    signal sum          : std_logic_vector(0 to 31);
 
    -- Counters to store the number inputs read & outputs written
-   signal nr_of_reads  : natural range 0 to NUMBER_OF_INPUT_WORDS - 1 := 0;
-   signal nr_of_writes : natural range 0 to NUMBER_OF_OUTPUT_WORDS - 1 := 0;
+  -- signal nr_of_reads  : natural range 0 to NUMBER_OF_INPUT_WORDS - 1 := 0;
+  -- signal nr_of_writes : natural range 0 to NUMBER_OF_OUTPUT_WORDS - 1 := 0;
 	
 -- 	signal test : AES_Byte := x"50";
 -- 	signal test_word : AES_Word := (0 => x"50", 1 => x"52", 2 => x"53", 3 => x"54");
@@ -169,9 +167,16 @@ architecture EXAMPLE of aes is
  	2 => ( 0 => x"08", 1 => x"09", 2 => x"0a", 3 => x"0b"), 
  	3 => ( 0 => x"0c", 1 => x"0d", 2 => x"0e", 3 => x"0f"));
 	
+	signal decrypt_input: AES_Block;
+	
+	signal enable_decrypt : std_logic := '0';
+	
+	signal decryption_finished : std_logic := '0';
 -- 	signal test_key_expand : AES_ExpandedKey ;
 	
+	signal decrypt_result : AES_Block;
 	
+	signal control_index : Integer range 0 to 3;
 
 	signal verify_decrypt : AES_Block := 
 	(
@@ -210,12 +215,14 @@ begin
    -- consistent with the sequence they are written and read in the
    -- driver's aes.c file
 
-   FSL_S_Read  <= FSL_S_Exists   when fsl_state = Read_Inputs   else '0';
-   FSL_M_Write <= not FSL_M_Full when fsl_state = Write_Outputs else '0';
+   FSL_S_Read  <= FSL_S_Exists ;
+   -- FSL_M_Write <= not FSL_M_Full when fsl_state = Write_Outputs else '0';
 
   
 	--inter <= inv_subs_word(test_word);
 	--FSL_M_Data <= word_to_vector(inter);
+	
+	FSL_M_Data <= word_to_vector(decrypt_result(control_index));
 	
    The_SW_accelerator : process (FSL_Clk) is
 	variable step_num : Integer range 0 to 11 := 0;
@@ -290,6 +297,11 @@ variable verify_key_expand : AES_ExpandedKey :=
 	variable state : AES_Block;	
    variable expanded_key : AES_ExpandedKey;	
 	variable postAdd : AES_Block;
+	
+
+	variable input_state : INPUT_TYPE := InputIdle;
+	
+	
 	begin  -- process The_SW_accelerator
 
 	--result_block <= inv_shift_rows(test_block);
@@ -313,106 +325,107 @@ variable verify_key_expand : AES_ExpandedKey :=
 			-- nr_of_writes <= (nr_of_writes + 1) mod NUMBER_OF_OUTPUT_WORDS;
 			 --nr_of_reads <= (nr_of_reads + 1) mod NUMBER_OF_INPUT_WORDS;
     -- Rising clock edge
-      -- if FSL_Rst = '1' then               -- Synchronous reset (active high)
-      --   -- CAUTION: make sure your reset polarity is consistent with the
-      --   -- system reset polarity
+      if FSL_Rst = '1' then               -- Synchronous reset (active high)
+         -- CAUTION: make sure your reset polarity is consistent with the
+         -- system reset polarity
       --   fsl_state        <= Idle;
       --   nr_of_reads  <= 0;
       --   nr_of_writes <= 0;
       --   sum          <= (others => '0');
-      -- else
+			input_state := InputIdle;
+      else
 		
-		if (step_num = 0) then
-			expanded_key := key_expansion(cypher_key);	
-			state := add_round_key(test_decrypt_input, block_from_expkey(expanded_key,10));
-			FSL_M_Data <= word_to_vector(state(0));
-			step_num := 1;
+			if FSL_M_Write = '1' then
+				FSL_M_Write <= '0';
+			end if;
 			
-			loop_iter_state <= state;
-			loop_iter_key <= block_from_expkey(expanded_key, 9);
+			if FSL_S_Control = '1' then
+				control_index := to_integer(unsigned(FSL_S_Data(30 to 31)));
+				
+				if FSL_S_Data(29) = '1' then
+					input_state := InputKey;
+				
+				elsif FSL_S_Data(28) = '1' then
+					input_state := InputState;
+				
+				elsif FSL_S_Data(27) = '1' then
+					input_state := InputStart;
+				end if;
+			else
+				case input_state is
+					when InputIdle =>
+					-- do nothing
+					when InputKey =>
+						cypher_key(control_index) <= vector_to_word(FSL_S_Data);
+					when InputState =>
+						decrypt_input(control_index) <= vector_to_word(FSL_S_Data);	
+					when InputStart =>
+						enable_decrypt <= '1';
+				end case;
+			end if;
 		
-		elsif (step_num = 1) then
-		
-		 	loop_iter_state <= loop_iter_result;
-			loop_iter_key <= block_from_expkey(expanded_key, 8);
-		   step_num := step_num + 1;
-		elsif (step_num = 2) then
-		 
-			loop_iter_state <= loop_iter_result;
-			loop_iter_key <= block_from_expkey(expanded_key, 7);
-		   step_num := step_num + 1;
-			
-		elsif (step_num = 3) then
-		 	loop_iter_state <= loop_iter_result;
-			loop_iter_key <= block_from_expkey(expanded_key, 6);
-		   step_num := step_num + 1;
-		elsif (step_num = 4) then
-		 	loop_iter_state <= loop_iter_result;
-			loop_iter_key <= block_from_expkey(expanded_key, 5);
-		   step_num := step_num + 1;
-		elsif (step_num = 5) then
-		 	loop_iter_state <= loop_iter_result;
-			loop_iter_key <= block_from_expkey(expanded_key, 4);
-		   step_num := step_num + 1;
-		elsif (step_num = 6) then
-		 	loop_iter_state <= loop_iter_result;
-			loop_iter_key <= block_from_expkey(expanded_key, 3);
-		   step_num := step_num + 1;
-		elsif (step_num = 7) then
-		 	loop_iter_state <= loop_iter_result;
-			loop_iter_key <= block_from_expkey(expanded_key, 2);
-		   step_num := step_num + 1;
-		elsif (step_num = 8) then
-		 	loop_iter_state <= loop_iter_result;
-			loop_iter_key <= block_from_expkey(expanded_key, 1);
-		   step_num := step_num + 1;
-		elsif (step_num = 9) then
-		 	loop_iter_state <= loop_iter_result;
-			loop_iter_key <= block_from_expkey(expanded_key, 0);
-		   step_num := step_num + 1;
-		else 
-		 	state := inv_shift_rows(loop_iter_state);
-		 	state := inv_subs_block(state);
-		 	state := add_round_key(state, loop_iter_key);
-		-- 			--result <= state;
-		 	FSL_M_Data <= word_to_vector(state(0));
-					--assert (state = verify_decrypt) report "DECRYPT DOESNT WORK  :(" severity warning;
-			--step_num := 0;
+			if (enable_decrypt = '1') then
+				if (step_num = 0) then
+					expanded_key := key_expansion(cypher_key);	
+					state := add_round_key(test_decrypt_input, block_from_expkey(expanded_key,10));
+					FSL_M_Data <= word_to_vector(state(0));
+					step_num := 1;
 					
-		end if;
-	
-		
-
-      --   case fsl_state is
-      --     when Idle =>
-      --       if (FSL_S_Exists = '1') then
-      --         fsl_state       <= Read_Inputs;
-      --         nr_of_reads <= NUMBER_OF_INPUT_WORDS - 1;
-      --         sum         <= (others => '0');
-      --       end if;
-
-      --     when Read_Inputs =>
-      --       if (FSL_S_Exists = '1') then
-      --         -- Coprocessor function (Adding) happens here
-      --         sum         <= std_logic_vector(unsigned(sum) + unsigned(FSL_S_Data));
-      --         if (nr_of_reads = 0) then
-      --           fsl_state        <= Write_Outputs;
-      --           nr_of_writes <= NUMBER_OF_OUTPUT_WORDS - 1;
-      --         else
-      --           nr_of_reads <= nr_of_reads - 1;
-      --         end if;
-      --       end if;
-
-      --     when Write_Outputs =>
-      --       if (nr_of_writes = 0) then
-      --         fsl_state <= Idle;
-      --       else
-      --         if (FSL_M_Full = '0') then
-      --           nr_of_writes <= nr_of_writes - 1;
-      --         end if;
-      --       end if;
-      --   end case;
-      -- end if;
+					loop_iter_state <= state;
+					loop_iter_key <= block_from_expkey(expanded_key, 9);
+				
+				elsif (step_num = 1) then
+				
+					loop_iter_state <= loop_iter_result;
+					loop_iter_key <= block_from_expkey(expanded_key, 8);
+					step_num := step_num + 1;
+				elsif (step_num = 2) then
+				 
+					loop_iter_state <= loop_iter_result;
+					loop_iter_key <= block_from_expkey(expanded_key, 7);
+					step_num := step_num + 1;
+					
+				elsif (step_num = 3) then
+					loop_iter_state <= loop_iter_result;
+					loop_iter_key <= block_from_expkey(expanded_key, 6);
+					step_num := step_num + 1;
+				elsif (step_num = 4) then
+					loop_iter_state <= loop_iter_result;
+					loop_iter_key <= block_from_expkey(expanded_key, 5);
+					step_num := step_num + 1;
+				elsif (step_num = 5) then
+					loop_iter_state <= loop_iter_result;
+					loop_iter_key <= block_from_expkey(expanded_key, 4);
+					step_num := step_num + 1;
+				elsif (step_num = 6) then
+					loop_iter_state <= loop_iter_result;
+					loop_iter_key <= block_from_expkey(expanded_key, 3);
+					step_num := step_num + 1;
+				elsif (step_num = 7) then
+					loop_iter_state <= loop_iter_result;
+					loop_iter_key <= block_from_expkey(expanded_key, 2);
+					step_num := step_num + 1;
+				elsif (step_num = 8) then
+					loop_iter_state <= loop_iter_result;
+					loop_iter_key <= block_from_expkey(expanded_key, 1);
+					step_num := step_num + 1;
+				elsif (step_num = 9) then
+					loop_iter_state <= loop_iter_result;
+					loop_iter_key <= block_from_expkey(expanded_key, 0);
+					step_num := step_num + 1;
+				else 
+					state := inv_shift_rows(loop_iter_state);
+					state := inv_subs_block(state);
+					state := add_round_key(state, loop_iter_key);
+				 	decrypt_result <= state;
+					decryption_finished <= '1';
+					FSL_M_Write <= '1';
+							
+				end if;
+			
+			end if;
+			
+       end if;
     end if;
    end process The_SW_accelerator;
 end architecture EXAMPLE;

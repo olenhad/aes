@@ -3,14 +3,14 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.29 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.24 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.29 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.24 secs
  
 --> Reading design: aes.prj
 
@@ -107,8 +107,7 @@ Slice Utilization Ratio Delta      : 5
 Compiling vhdl file "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/utils.vhd" in Library aes_v1_00_a.
 Architecture utils of Entity utils is up to date.
 Compiling vhdl file "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/aes.vhd" in Library aes_v1_00_a.
-Entity <aes> compiled.
-Entity <aes> (Architecture <example>) compiled.
+Architecture example of Entity aes is up to date.
 Compiling vhdl file "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes_loop_iter.vhd" in Library work.
 Architecture behavioral of Entity aes_loop_iter is up to date.
 Compiling vhdl file "C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/utils.vhd" in Library work.
@@ -2082,12 +2081,12 @@ Offset:              4.310ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 201.00 secs
-Total CPU time to Xst completion: 200.95 secs
+Total REAL time to Xst completion: 257.00 secs
+Total CPU time to Xst completion: 256.10 secs
  
 --> 
 
-Total memory usage is 385464 kilobytes
+Total memory usage is 385828 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings : 1165 (   0 filtered)
