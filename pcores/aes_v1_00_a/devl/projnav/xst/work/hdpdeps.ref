@@ -1,40 +1,9 @@
-V3 23
+V3 28
 FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/add_round_key_s0_box.vhd 2014/04/13.02:52:10 O.61xd
-EN work/add_round_key_s0_box 1397332472 \
-      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/add_round_key_s0_box.vhd \
-      PB ieee/std_logic_1164 1308643377 LB aes_v1_00_a PB aes_v1_00_a/utils 1397332465
-AR work/add_round_key_s0_box/add_round_key_s0_b 1397332473 \
-      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/add_round_key_s0_box.vhd \
-      EN work/add_round_key_s0_box 1397332472
 FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/add_round_key_s1_box.vhd 2014/04/13.02:52:15 O.61xd
-EN work/add_round_key_s1_box 1397332474 \
-      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/add_round_key_s1_box.vhd \
-      PB ieee/std_logic_1164 1308643377 LB aes_v1_00_a PB aes_v1_00_a/utils 1397332465
-AR work/add_round_key_s1_box/add_round_key_s1_b 1397332475 \
-      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/add_round_key_s1_box.vhd \
-      EN work/add_round_key_s1_box 1397332474
 FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes_loop_iter.vhd 2014/04/13.03:34:28 O.61xd
-EN work/aes_loop_iter 1397332476 \
-      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes_loop_iter.vhd \
-      PB ieee/std_logic_1164 1308643377 LB aes_v1_00_a PB aes_v1_00_a/utils 1397332465
-AR work/aes_loop_iter/Behavioral 1397332477 \
-      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/aes_loop_iter.vhd \
-      EN work/aes_loop_iter 1397332476 CP inv_subs_box_s0 CP inv_subs_box_s1 \
-      CP add_round_key_s0_box CP add_round_key_s1_box
 FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/inv_subs_box_s0.vhd 2014/04/13.03:22:34 O.61xd
-EN work/inv_subs_box_s0 1397332468 \
-      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/inv_subs_box_s0.vhd \
-      PB ieee/std_logic_1164 1308643377 LB aes_v1_00_a PB aes_v1_00_a/utils 1397332465
-AR work/inv_subs_box_s0/arch 1397332469 \
-      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/inv_subs_box_s0.vhd \
-      EN work/inv_subs_box_s0 1397332468
 FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/inv_subs_box_s1.vhd 2014/04/13.03:22:40 O.61xd
-EN work/inv_subs_box_s1 1397332470 \
-      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/inv_subs_box_s1.vhd \
-      PB ieee/std_logic_1164 1308643377 LB aes_v1_00_a PB aes_v1_00_a/utils 1397332465
-AR work/inv_subs_box_s1/arch 1397332471 \
-      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/inv_subs_box_s1.vhd \
-      EN work/inv_subs_box_s1 1397332470
 FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/utils.vhd 2014/04/11.16:54:28 O.61xd
 PH work/utils 1397332478 \
       FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/utils.vhd \
@@ -42,3 +11,39 @@ PH work/utils 1397332478 \
 PB work/utils 1397332479 \
       FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/devl/projnav/utils.vhd \
       PH work/utils 1397332478
+FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/add_round_key_s0_box.vhd 2014/04/13.02:52:10 O.61xd
+EN work/add_round_key_s0_box 1397334358 \
+      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/add_round_key_s0_box.vhd \
+      PB ieee/std_logic_1164 1308643377 LB aes_v1_00_a PB aes_v1_00_a/utils 1397334351
+AR work/add_round_key_s0_box/add_round_key_s0_b 1397334359 \
+      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/add_round_key_s0_box.vhd \
+      EN work/add_round_key_s0_box 1397334358
+FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/add_round_key_s1_box.vhd 2014/04/13.02:52:15 O.61xd
+EN work/add_round_key_s1_box 1397334360 \
+      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/add_round_key_s1_box.vhd \
+      PB ieee/std_logic_1164 1308643377 LB aes_v1_00_a PB aes_v1_00_a/utils 1397334351
+AR work/add_round_key_s1_box/add_round_key_s1_b 1397334361 \
+      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/add_round_key_s1_box.vhd \
+      EN work/add_round_key_s1_box 1397334360
+FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/aes_loop_iter.vhd 2014/04/13.03:34:28 O.61xd
+EN work/aes_loop_iter 1397334362 \
+      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/aes_loop_iter.vhd \
+      PB ieee/std_logic_1164 1308643377 LB aes_v1_00_a PB aes_v1_00_a/utils 1397334351
+AR work/aes_loop_iter/Behavioral 1397334363 \
+      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/aes_loop_iter.vhd \
+      EN work/aes_loop_iter 1397334362 CP inv_subs_box_s0 CP inv_subs_box_s1 \
+      CP add_round_key_s0_box CP add_round_key_s1_box
+FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/inv_subs_box_s0.vhd 2014/04/13.03:22:34 O.61xd
+EN work/inv_subs_box_s0 1397334354 \
+      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/inv_subs_box_s0.vhd \
+      PB ieee/std_logic_1164 1308643377 LB aes_v1_00_a PB aes_v1_00_a/utils 1397334351
+AR work/inv_subs_box_s0/arch 1397334355 \
+      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/inv_subs_box_s0.vhd \
+      EN work/inv_subs_box_s0 1397334354
+FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/inv_subs_box_s1.vhd 2014/04/13.03:22:40 O.61xd
+EN work/inv_subs_box_s1 1397334356 \
+      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/inv_subs_box_s1.vhd \
+      PB ieee/std_logic_1164 1308643377 LB aes_v1_00_a PB aes_v1_00_a/utils 1397334351
+AR work/inv_subs_box_s1/arch 1397334357 \
+      FL C:/ee4218-aes/aes2/pcores/aes_v1_00_a/hdl/vhdl/inv_subs_box_s1.vhd \
+      EN work/inv_subs_box_s1 1397334356

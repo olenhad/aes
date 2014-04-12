@@ -5,5 +5,10 @@
 ##############################################################################
 
 lib aes_v1_00_a utils vhdl
+lib aes_v1_00_a add_round_key_s0_box vhdl
+lib aes_v1_00_a add_round_key_s1_box vhdl
+lib aes_v1_00_a inv_subs_box_s0 vhdl
+lib aes_v1_00_a inv_subs_box_s1 vhdl
+lib aes_v1_00_a aes_loop_iter vhdl
 lib aes_v1_00_a aes vhdl
 
