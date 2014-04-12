@@ -104,6 +104,7 @@ attribute SIGIS of FSL_M_Clk : signal is "Clk";
 
 end aes;
 
+
 ------------------------------------------------------------------------------
 -- Architecture Section
 ------------------------------------------------------------------------------
@@ -121,6 +122,8 @@ end aes;
 -- ENTITY aes to implement your coprocessor
 
 architecture EXAMPLE of aes is
+
+
 
    -- Total number of input data.
    constant NUMBER_OF_INPUT_WORDS  : natural := 11;
@@ -185,8 +188,23 @@ architecture EXAMPLE of aes is
 	2  => (0 => x"d1", 1 => x"1f", 2 => x"ed", 3 => x"9d"), 
 	3  => (0 => x"3e", 1 => x"c3", 2 => x"a4", 3 => x"ce")
 	);
+	component aes_loop_iter is
+	port
+		(
+			state : in AES_Block;
+			key : in AES_Block;
+			result : out AES_Block
+		);
+	end component;
+	
+	signal loop_iter_state : AES_Block;
+	signal loop_iter_key : AES_Block;
+	signal loop_iter_result : AES_Block;
 	
 begin
+	loop_iter: aes_loop_iter port map (state => loop_iter_state,
+												  key => loop_iter_key,
+												  result => loop_iter_result);
    -- CAUTION:
    -- The sequence in which data are read in and written out should be
    -- consistent with the sequence they are written and read in the
@@ -309,82 +327,53 @@ variable verify_key_expand : AES_ExpandedKey :=
 			state := add_round_key(test_decrypt_input, block_from_expkey(expanded_key,10));
 			FSL_M_Data <= word_to_vector(state(0));
 			step_num := 1;
+			
+			loop_iter_state <= state;
+			loop_iter_key <= block_from_expkey(expanded_key, 9);
+		
 		elsif (step_num = 1) then
-		 	state := inv_shift_rows(state);
-		 	state := inv_subs_block(state);
-			-- postAdd := block_from_expkey(expanded_key, (10 - step_num));
-			postAdd := block_from_expkey(expanded_key, 9);
-			state := add_round_key(state, postAdd);
-		 	state := inv_mix_column_block(state);
+		
+		 	loop_iter_state <= loop_iter_result;
+			loop_iter_key <= block_from_expkey(expanded_key, 8);
 		   step_num := step_num + 1;
 		elsif (step_num = 2) then
-		 	state := inv_shift_rows(state);
-		 	state := inv_subs_block(state);
-			-- postAdd := block_from_expkey(expanded_key, (10 - step_num));
-			postAdd := block_from_expkey(expanded_key, 8);
-			state := add_round_key(state, postAdd);
-		 	state := inv_mix_column_block(state);
+		 
+			loop_iter_state <= loop_iter_result;
+			loop_iter_key <= block_from_expkey(expanded_key, 7);
 		   step_num := step_num + 1;
+			
 		elsif (step_num = 3) then
-		 	state := inv_shift_rows(state);
-		 	state := inv_subs_block(state);
-			-- postAdd := block_from_expkey(expanded_key, (10 - step_num));
-			postAdd := block_from_expkey(expanded_key, 7);
-			state := add_round_key(state, postAdd);
-		 	state := inv_mix_column_block(state);
+		 	loop_iter_state <= loop_iter_result;
+			loop_iter_key <= block_from_expkey(expanded_key, 6);
 		   step_num := step_num + 1;
 		elsif (step_num = 4) then
-		 	state := inv_shift_rows(state);
-		 	state := inv_subs_block(state);
-			-- postAdd := block_from_expkey(expanded_key, (10 - step_num));
-			postAdd := block_from_expkey(expanded_key, 6);
-			state := add_round_key(state, postAdd);
-		 	state := inv_mix_column_block(state);
+		 	loop_iter_state <= loop_iter_result;
+			loop_iter_key <= block_from_expkey(expanded_key, 5);
 		   step_num := step_num + 1;
 		elsif (step_num = 5) then
-		 	state := inv_shift_rows(state);
-		 	state := inv_subs_block(state);
-			-- postAdd := block_from_expkey(expanded_key, (10 - step_num));
-			postAdd := block_from_expkey(expanded_key, 5);
-			state := add_round_key(state, postAdd);
-		 	state := inv_mix_column_block(state);
+		 	loop_iter_state <= loop_iter_result;
+			loop_iter_key <= block_from_expkey(expanded_key, 4);
 		   step_num := step_num + 1;
 		elsif (step_num = 6) then
-		 	state := inv_shift_rows(state);
-		 	state := inv_subs_block(state);
-			-- postAdd := block_from_expkey(expanded_key, (10 - step_num));
-			postAdd := block_from_expkey(expanded_key, 4);
-			state := add_round_key(state, postAdd);
-		 	state := inv_mix_column_block(state);
+		 	loop_iter_state <= loop_iter_result;
+			loop_iter_key <= block_from_expkey(expanded_key, 3);
 		   step_num := step_num + 1;
 		elsif (step_num = 7) then
-		 	state := inv_shift_rows(state);
-		 	state := inv_subs_block(state);
-			-- postAdd := block_from_expkey(expanded_key, (10 - step_num));
-			postAdd := block_from_expkey(expanded_key, 3);
-			state := add_round_key(state, postAdd);
-		 	state := inv_mix_column_block(state);
+		 	loop_iter_state <= loop_iter_result;
+			loop_iter_key <= block_from_expkey(expanded_key, 2);
 		   step_num := step_num + 1;
 		elsif (step_num = 8) then
-		 	state := inv_shift_rows(state);
-		 	state := inv_subs_block(state);
-			-- postAdd := block_from_expkey(expanded_key, (10 - step_num));
-			postAdd := block_from_expkey(expanded_key, 2);
-			state := add_round_key(state, postAdd);
-		 	state := inv_mix_column_block(state);
+		 	loop_iter_state <= loop_iter_result;
+			loop_iter_key <= block_from_expkey(expanded_key, 1);
 		   step_num := step_num + 1;
 		elsif (step_num = 9) then
-		 	state := inv_shift_rows(state);
-		 	state := inv_subs_block(state);
-			-- postAdd := block_from_expkey(expanded_key, (10 - step_num));
-			postAdd := block_from_expkey(expanded_key, 1);
-			state := add_round_key(state, postAdd);
-		 	state := inv_mix_column_block(state);
-		   step_num := step_num + 1; 
+		 	loop_iter_state <= loop_iter_result;
+			loop_iter_key <= block_from_expkey(expanded_key, 0);
+		   step_num := step_num + 1;
 		else 
-		 	state := inv_shift_rows(state);
+		 	state := inv_shift_rows(loop_iter_state);
 		 	state := inv_subs_block(state);
-		 	state := add_round_key(state, block_from_expkey(expanded_key,0));
+		 	state := add_round_key(state, loop_iter_key);
 		-- 			--result <= state;
 		 	FSL_M_Data <= word_to_vector(state(0));
 					--assert (state = verify_decrypt) report "DECRYPT DOESNT WORK  :(" severity warning;

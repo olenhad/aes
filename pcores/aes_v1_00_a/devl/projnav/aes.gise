@@ -37,6 +37,10 @@
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="aes_guide.ncd" xil_pn:origination="imported"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="aes_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="aes_isim_beh.wdb"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="aes_loop_iter.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="aes_loop_iter.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="aes_loop_iter.xst"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="aes_loop_iter_vhdl.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="aes_summary.html"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="aes_vhdl.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="aes_xst.xrpt"/>
@@ -55,6 +59,7 @@
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="../../hdl/vhdl/aes.vhd"/>
@@ -140,7 +145,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1397283681" xil_pn:in_ck="4102240855125195643" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-4425365365294459562" xil_pn:start_ts="1397282059">
+    <transform xil_pn:end_ts="1397293198" xil_pn:in_ck="2290444002120721776" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-4425365365294459562" xil_pn:start_ts="1397292992">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -154,6 +159,8 @@
       <outfile xil_pn:name="aes.syr"/>
       <outfile xil_pn:name="aes.xst"/>
       <outfile xil_pn:name="aes_beh.prj"/>
+      <outfile xil_pn:name="aes_loop_iter.prj"/>
+      <outfile xil_pn:name="aes_loop_iter_vhdl.prj"/>
       <outfile xil_pn:name="aes_vhdl.prj"/>
       <outfile xil_pn:name="aes_xst.xrpt"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>

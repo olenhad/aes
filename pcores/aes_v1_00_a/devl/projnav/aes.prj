@@ -1,2 +1,4 @@
+vhdl work "utils.vhd"
 vhdl aes_v1_00_a "../../hdl/vhdl/utils.vhd"
+vhdl work "aes_loop_iter.vhd"
 vhdl aes_v1_00_a "../../hdl/vhdl/aes.vhd"
