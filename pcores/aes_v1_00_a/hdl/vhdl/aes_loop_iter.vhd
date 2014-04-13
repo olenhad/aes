@@ -41,7 +41,7 @@ port
 		key : in AES_Block;
 		stage : in AES_Decrypt_Stage;
 		result : out AES_Block;
-		done : out std_logic
+		done : out AES_Decrypt_Done
 	);
 end aes_loop_iter;
 
@@ -153,7 +153,7 @@ variable cur_state : AES_Block;
 	begin
 		if rising_edge(clk) then
 
-			
+			done <= DNothing;
 
 			if stage = DecryptReset then
 					cur_state := state;
@@ -161,7 +161,7 @@ variable cur_state : AES_Block;
 
 					add_round_key_state <= state;
 					add_round_key_key <= key;
-					done <= '0';
+					done <= DResetDone;
 					--inv_mix_cols_box_state <= state;
 
 					--inv_shift_rows_state <= state;
@@ -171,7 +171,7 @@ variable cur_state : AES_Block;
 				
 					result <= add_round_key_result;
 					cur_state := add_round_key_result;
-					done <= '1';
+					done <= DInitialDone;
 					
 					-- next state setup
 					inv_shift_rows_state <= cur_state;
@@ -183,26 +183,26 @@ variable cur_state : AES_Block;
 						cur_state := inv_shift_rows_result;
 						inv_subs_box_state <= cur_state;						
 						iter_stage <= 1;
-						done <= '0';
+						done <= DNothing;
 					when 1 =>
 						cur_state := inv_subs_box_result;
 						add_round_key_state <= cur_state;
 						add_round_key_key <= key;
 						
 						iter_stage <= 2;
-						done <= '0';
+						done <= DNothing;
 					when 2 =>
 						cur_state := add_round_key_result;
 						inv_mix_cols_box_state <= cur_state;
 						iter_stage <= 3;
-						done <= '0';
+						done <= DNothing;
 					when 3 =>
 						cur_state := inv_mix_cols_box_result;
 
 						inv_shift_rows_state <= cur_state;
 
 						iter_stage <= 0;
-						done <= '1';
+						done <= DNinerDone;
 						result <= cur_state;
 					-- TODO fit shiftrows here. PLIS
 				end case ;
@@ -213,18 +213,18 @@ variable cur_state : AES_Block;
 						inv_subs_box_state <= cur_state;
 
 						iter_stage <= 1;
-						done <= '0';
+						done <= DNothing;
 					when 1 =>
 						cur_state := inv_subs_box_result;
 						add_round_key_state <= cur_state;
 						add_round_key_key <= key;
 						iter_stage <= 2;
-						done <= '0';
+						done <= DNothing;
 					when 2 =>
 
 						cur_state := add_round_key_result;
 						iter_stage <= 0;
-						done <= '1';
+						done <= DEndDone;
 						result <= cur_state;
 						
 					when others =>

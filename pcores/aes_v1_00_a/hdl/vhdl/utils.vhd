@@ -51,7 +51,8 @@ package utils is
 
 	type AES_IndexTuple is array(0 to 1) of AES_Block_Index;
 
-	type AES_Decrypt_Stage is (DecryptReset,DecryptInitial, DecryptNineLoop, DecryptEnd);
+	type AES_Decrypt_Stage is (DecryptIdle, DecryptReset,DecryptInitial, DecryptNineLoop, DecryptEnd);
+	type AES_Decrypt_Done is (DNothing, DResetDone, DInitialDone, DNinerDone, DEndDone);
 	
 	function v2i (arg : AES_Byte) return AES_Int;
 	function i2v (arg : AES_Int) return AES_Byte;
