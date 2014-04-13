@@ -32,8 +32,9 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="aes.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="aes.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="aes.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="aes_envsettings.html"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="aes_guide.ncd" xil_pn:origination="imported"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="aes_stx_beh.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="aes_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="aes_summary.html"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="aes_vhdl.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="aes_xst.xrpt"/>
@@ -104,6 +105,8 @@
     <transform xil_pn:end_ts="1397376806" xil_pn:in_ck="-4516299292066912020" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-809731651085140301" xil_pn:start_ts="1397376799">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
@@ -114,6 +117,8 @@
     <transform xil_pn:end_ts="1397376807" xil_pn:in_ck="7130759491340027311" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="8916427109707753147" xil_pn:start_ts="1397376806">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="testbench_isim_beh.wdb"/>
@@ -146,12 +151,10 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1397338093" xil_pn:in_ck="-3800345269878382908" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="6930963713348060277" xil_pn:start_ts="1397337159">
+    <transform xil_pn:end_ts="1397377943" xil_pn:in_ck="-3800345269878382908" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="6930963713348060277" xil_pn:start_ts="1397376957">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="aes.lso"/>
@@ -161,6 +164,7 @@
       <outfile xil_pn:name="aes.stx"/>
       <outfile xil_pn:name="aes.syr"/>
       <outfile xil_pn:name="aes.xst"/>
+      <outfile xil_pn:name="aes_stx_beh.prj"/>
       <outfile xil_pn:name="aes_vhdl.prj"/>
       <outfile xil_pn:name="aes_xst.xrpt"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
