@@ -1,5 +1,5 @@
 
-<EDKSYSTEM EDKVERSION="13.2" EDWVERSION="1.2" TIMESTAMP="Wed Apr 02 08:46:17 2014">
+<EDKSYSTEM EDKVERSION="13.2" EDWVERSION="1.2" TIMESTAMP="Sun Apr 13 08:29:54 2014">
 
   <SYSTEMINFO ARCH="spartan3e" DEVICE="xc3s1600e" PACKAGE="fg320" PART="xc3s1600efg320-4" SOURCE="C:/ee4218-aes/aes2/system.xmp" SPEEDGRADE="-4"/>
 
@@ -181,7 +181,7 @@
         <PARAMETER MPD_INDEX="75" NAME="C_OPCODE_0x0_ILLEGAL" TYPE="integer" VALUE="0">
           <DESCRIPTION>&lt;qt&gt;Generate Illegal Instruction Exception for NULL Instruction&lt;/qt&gt;</DESCRIPTION>
         </PARAMETER>
-        <PARAMETER MPD_INDEX="76" NAME="C_FSL_LINKS" TYPE="integer" VALUE="0">
+        <PARAMETER CHANGEDBY="USER" IS_INSTANTIATED="TRUE" MHS_INDEX="5" MPD_INDEX="76" NAME="C_FSL_LINKS" TYPE="integer" VALUE="1">
           <DESCRIPTION>Number of Stream Links </DESCRIPTION>
         </PARAMETER>
         <PARAMETER MPD_INDEX="77" NAME="C_FSL_DATA_SIZE" TYPE="integer" VALUE="32"/>
@@ -674,16 +674,16 @@
         <PORT BUS="TRACE" DEF_SIGNAME="__BUS__" DIR="O" MPD_INDEX="284" NAME="Trace_MEM_PipeRun" SIGNAME="__NOC__"/>
         <PORT BUS="TRACE" DEF_SIGNAME="__BUS__" DIR="O" MPD_INDEX="285" NAME="Trace_MB_Halted" SIGNAME="__NOC__"/>
         <PORT BUS="TRACE" DEF_SIGNAME="__BUS__" DIR="O" MPD_INDEX="286" NAME="Trace_Jump_Hit" SIGNAME="__NOC__"/>
-        <PORT BUS="SFSL0:DRFSL0" DEF_SIGNAME="__BUS__" DIR="O" MPD_INDEX="287" NAME="FSL0_S_CLK" SIGIS="CLK" SIGNAME="__NOC__"/>
-        <PORT BUS="SFSL0:DRFSL0" DEF_SIGNAME="__BUS__" DIR="O" MPD_INDEX="288" NAME="FSL0_S_READ" SIGNAME="__NOC__"/>
-        <PORT BUS="SFSL0:DRFSL0" DEF_SIGNAME="__BUS__" DIR="I" ENDIAN="BIG" LEFT="0" LSB="31" MPD_INDEX="289" MSB="0" NAME="FSL0_S_DATA" RIGHT="31" SIGNAME="__NOC__" VECFORMULA="[0:C_FSL_DATA_SIZE-1]"/>
-        <PORT BUS="SFSL0:DRFSL0" DEF_SIGNAME="__BUS__" DIR="I" MPD_INDEX="290" NAME="FSL0_S_CONTROL" SIGNAME="__NOC__"/>
-        <PORT BUS="SFSL0:DRFSL0" DEF_SIGNAME="__BUS__" DIR="I" MPD_INDEX="291" NAME="FSL0_S_EXISTS" SIGNAME="__NOC__"/>
-        <PORT BUS="MFSL0:DWFSL0" DEF_SIGNAME="__BUS__" DIR="O" MPD_INDEX="292" NAME="FSL0_M_CLK" SIGIS="CLK" SIGNAME="__NOC__"/>
-        <PORT BUS="MFSL0:DWFSL0" DEF_SIGNAME="__BUS__" DIR="O" MPD_INDEX="293" NAME="FSL0_M_WRITE" SIGNAME="__NOC__"/>
-        <PORT BUS="MFSL0:DWFSL0" DEF_SIGNAME="__BUS__" DIR="O" ENDIAN="BIG" LEFT="0" LSB="31" MPD_INDEX="294" MSB="0" NAME="FSL0_M_DATA" RIGHT="31" SIGNAME="__NOC__" VECFORMULA="[0:C_FSL_DATA_SIZE-1]"/>
-        <PORT BUS="MFSL0:DWFSL0" DEF_SIGNAME="__BUS__" DIR="O" MPD_INDEX="295" NAME="FSL0_M_CONTROL" SIGNAME="__NOC__"/>
-        <PORT BUS="MFSL0:DWFSL0" DEF_SIGNAME="__BUS__" DIR="I" MPD_INDEX="296" NAME="FSL0_M_FULL" SIGNAME="__NOC__"/>
+        <PORT BUS="SFSL0:DRFSL0" DEF_SIGNAME="aes_0_to_microblaze_0_FSL_S_Clk" DIR="O" MPD_INDEX="287" NAME="FSL0_S_CLK" SIGIS="CLK" SIGNAME="aes_0_to_microblaze_0_FSL_S_Clk"/>
+        <PORT BUS="SFSL0:DRFSL0" DEF_SIGNAME="aes_0_to_microblaze_0_FSL_S_Read" DIR="O" MPD_INDEX="288" NAME="FSL0_S_READ" SIGNAME="aes_0_to_microblaze_0_FSL_S_Read"/>
+        <PORT BUS="SFSL0:DRFSL0" DEF_SIGNAME="aes_0_to_microblaze_0_FSL_S_Data" DIR="I" ENDIAN="BIG" LEFT="0" LSB="31" MPD_INDEX="289" MSB="0" NAME="FSL0_S_DATA" RIGHT="31" SIGNAME="aes_0_to_microblaze_0_FSL_S_Data" VECFORMULA="[0:C_FSL_DATA_SIZE-1]"/>
+        <PORT BUS="SFSL0:DRFSL0" DEF_SIGNAME="aes_0_to_microblaze_0_FSL_S_Control" DIR="I" MPD_INDEX="290" NAME="FSL0_S_CONTROL" SIGNAME="aes_0_to_microblaze_0_FSL_S_Control"/>
+        <PORT BUS="SFSL0:DRFSL0" DEF_SIGNAME="aes_0_to_microblaze_0_FSL_S_Exists" DIR="I" MPD_INDEX="291" NAME="FSL0_S_EXISTS" SIGNAME="aes_0_to_microblaze_0_FSL_S_Exists"/>
+        <PORT BUS="MFSL0:DWFSL0" DEF_SIGNAME="microblaze_0_to_aes_0_FSL_M_Clk" DIR="O" MPD_INDEX="292" NAME="FSL0_M_CLK" SIGIS="CLK" SIGNAME="microblaze_0_to_aes_0_FSL_M_Clk"/>
+        <PORT BUS="MFSL0:DWFSL0" DEF_SIGNAME="microblaze_0_to_aes_0_FSL_M_Write" DIR="O" MPD_INDEX="293" NAME="FSL0_M_WRITE" SIGNAME="microblaze_0_to_aes_0_FSL_M_Write"/>
+        <PORT BUS="MFSL0:DWFSL0" DEF_SIGNAME="microblaze_0_to_aes_0_FSL_M_Data" DIR="O" ENDIAN="BIG" LEFT="0" LSB="31" MPD_INDEX="294" MSB="0" NAME="FSL0_M_DATA" RIGHT="31" SIGNAME="microblaze_0_to_aes_0_FSL_M_Data" VECFORMULA="[0:C_FSL_DATA_SIZE-1]"/>
+        <PORT BUS="MFSL0:DWFSL0" DEF_SIGNAME="microblaze_0_to_aes_0_FSL_M_Control" DIR="O" MPD_INDEX="295" NAME="FSL0_M_CONTROL" SIGNAME="microblaze_0_to_aes_0_FSL_M_Control"/>
+        <PORT BUS="MFSL0:DWFSL0" DEF_SIGNAME="microblaze_0_to_aes_0_FSL_M_Full" DIR="I" MPD_INDEX="296" NAME="FSL0_M_FULL" SIGNAME="microblaze_0_to_aes_0_FSL_M_Full"/>
         <PORT BUS="SFSL1:DRFSL1" DEF_SIGNAME="__BUS__" DIR="O" MPD_INDEX="297" NAME="FSL1_S_CLK" SIGIS="CLK" SIGNAME="__NOC__"/>
         <PORT BUS="SFSL1:DRFSL1" DEF_SIGNAME="__BUS__" DIR="O" MPD_INDEX="298" NAME="FSL1_S_READ" SIGNAME="__NOC__"/>
         <PORT BUS="SFSL1:DRFSL1" DEF_SIGNAME="__BUS__" DIR="I" ENDIAN="BIG" LEFT="0" LSB="31" MPD_INDEX="299" MSB="0" NAME="FSL1_S_DATA" RIGHT="31" SIGNAME="__NOC__" VECFORMULA="[0:C_FSL_DATA_SIZE-1]"/>
@@ -1309,7 +1309,7 @@
             <PORTMAP DIR="O" PHYSICAL="Trace_Jump_Hit"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="__NOC__" BUSSTD="FSL" BUSSTD_PSF="FSL" IS_VALID="FALSE" MPD_INDEX="6" NAME="SFSL0" TYPE="SLAVE">
+        <BUSINTERFACE BUSNAME="aes_0_to_microblaze_0" BUSSTD="FSL" BUSSTD_PSF="FSL" IS_INSTANTIATED="TRUE" MHS_INDEX="5" MPD_INDEX="6" NAME="SFSL0" TYPE="SLAVE">
           <PORTMAPS>
             <PORTMAP DIR="O" PHYSICAL="FSL0_S_CLK"/>
             <PORTMAP DIR="O" PHYSICAL="FSL0_S_READ"/>
@@ -1318,7 +1318,7 @@
             <PORTMAP DIR="I" PHYSICAL="FSL0_S_EXISTS"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="__NOC__" BUSSTD="XIL" BUSSTD_PSF="XIL_DRFSL" IS_VALID="FALSE" MPD_INDEX="38" NAME="DRFSL0" TYPE="TARGET">
+        <BUSINTERFACE BUSNAME="__NOC__" BUSSTD="XIL" BUSSTD_PSF="XIL_DRFSL" MPD_INDEX="38" NAME="DRFSL0" TYPE="TARGET">
           <PORTMAPS>
             <PORTMAP DIR="O" PHYSICAL="FSL0_S_CLK"/>
             <PORTMAP DIR="O" PHYSICAL="FSL0_S_READ"/>
@@ -1327,7 +1327,7 @@
             <PORTMAP DIR="I" PHYSICAL="FSL0_S_EXISTS"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="__NOC__" BUSSTD="FSL" BUSSTD_PSF="FSL" IS_VALID="FALSE" MPD_INDEX="7" NAME="MFSL0" TYPE="MASTER">
+        <BUSINTERFACE BUSNAME="microblaze_0_to_aes_0" BUSSTD="FSL" BUSSTD_PSF="FSL" IS_INSTANTIATED="TRUE" MHS_INDEX="6" MPD_INDEX="7" NAME="MFSL0" TYPE="MASTER">
           <PORTMAPS>
             <PORTMAP DIR="O" PHYSICAL="FSL0_M_CLK"/>
             <PORTMAP DIR="O" PHYSICAL="FSL0_M_WRITE"/>
@@ -1336,7 +1336,7 @@
             <PORTMAP DIR="I" PHYSICAL="FSL0_M_FULL"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="__NOC__" BUSSTD="XIL" BUSSTD_PSF="XIL_DWFSL" IS_VALID="FALSE" MPD_INDEX="39" NAME="DWFSL0" TYPE="INITIATOR">
+        <BUSINTERFACE BUSNAME="__NOC__" BUSSTD="XIL" BUSSTD_PSF="XIL_DWFSL" MPD_INDEX="39" NAME="DWFSL0" TYPE="INITIATOR">
           <PORTMAPS>
             <PORTMAP DIR="O" PHYSICAL="FSL0_M_CLK"/>
             <PORTMAP DIR="O" PHYSICAL="FSL0_M_WRITE"/>
@@ -2251,19 +2251,20 @@
         <PERIPHERAL INSTANCE="mdm_0"/>
         <PERIPHERAL INSTANCE="xps_intc_0"/>
         <PERIPHERAL INSTANCE="xps_tft_0"/>
+        <PERIPHERAL INSTANCE="aes_0"/>
       </PERIPHERALS>
       <INTERRUPTINFO TYPE="TARGET">
         <SOURCE INSTANCE="xps_intc_0" INTC_INDEX="0"/>
       </INTERRUPTINFO>
       <RESOURCES>
-        <RESOURCE PERCENT="7" TOTAL="14752" TYPE="Slices" USED="1150"/>
-        <RESOURCE PERCENT="4" TOTAL="29504" TYPE="Slice Flip Flops" USED="1361"/>
-        <RESOURCE PERCENT="5" TOTAL="29504" TYPE="4 input LUTs" USED="1769"/>
+        <RESOURCE PERCENT="8" TOTAL="14752" TYPE="Slices" USED="1199"/>
+        <RESOURCE PERCENT="4" TOTAL="29504" TYPE="Slice Flip Flops" USED="1439"/>
+        <RESOURCE PERCENT="6" TOTAL="29504" TYPE="4 input LUTs" USED="1825"/>
         <RESOURCE PERCENT="NA" TOTAL="NA" TYPE="IOs" USED="16458"/>
         <RESOURCE PERCENT="0" TOTAL="250" TYPE="bonded IOBs" USED="0"/>
         <RESOURCE PERCENT="8" TOTAL="36" TYPE="MULT18X18SIOs" USED="3"/>
       </RESOURCES>
-      <TIMING FREQUNITS="MHz" MAXFREQ="87.719">
+      <TIMING FREQUNITS="MHz" MAXFREQ="87.589">
         <TIMECLK SIGNAME="DCACHE_FSL_OUT_CLK"/>
         <TIMECLK SIGNAME="DBG_CLK"/>
         <TIMECLK SIGNAME="DBG_UPDATE"/>
@@ -11597,6 +11598,178 @@
         <TIMECLK SIGNAME="MPLB_Clk"/>
         <TIMECLK SIGNAME="SYS_TFT_Clk"/>
         <TIMECLK SIGNAME="SPLB_Clk"/>
+      </TIMING>
+    </MODULE>
+    <MODULE BUSSTD="FSL" BUSSTD_PSF="FSL" HWVERSION="2.11.e" INSTANCE="aes_0_to_microblaze_0" IPTYPE="BUS" MHS_INDEX="20" MODCLASS="BUS" MODTYPE="fsl_v20">
+      <DESCRIPTION TYPE="SHORT">Fast Simplex Link (FSL) Bus</DESCRIPTION>
+      <DESCRIPTION TYPE="LONG">Fast Simplex Link (FSL) is a fast uni-directional point to point communication channel</DESCRIPTION>
+      <DOCUMENTATION>
+        <DOCUMENT SOURCE="C:/Xilinx/13.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/fsl_v20_v2_11_e/doc/fsl_v20.pdf" TYPE="IP"/>
+      </DOCUMENTATION>
+      <LICENSEINFO ICON_NAME="ps_core_preferred"/>
+      <PARAMETERS>
+        <PARAMETER IS_INSTANTIATED="TRUE" MHS_INDEX="2" MPD_INDEX="0" NAME="C_EXT_RESET_HIGH" TYPE="integer" VALUE="1">
+          <DESCRIPTION>External Reset Active High</DESCRIPTION>
+        </PARAMETER>
+        <PARAMETER MPD_INDEX="1" NAME="C_ASYNC_CLKS" TYPE="integer" VALUE="0">
+          <DESCRIPTION>FIFO in FSL operates Asynchronously</DESCRIPTION>
+        </PARAMETER>
+        <PARAMETER MPD_INDEX="2" NAME="C_IMPL_STYLE" TYPE="integer" VALUE="0">
+          <DESCRIPTION>Use BRAMs to Implement FIFO</DESCRIPTION>
+        </PARAMETER>
+        <PARAMETER MPD_INDEX="3" NAME="C_USE_CONTROL" TYPE="integer" VALUE="1">
+          <DESCRIPTION>Propagate Control Bit</DESCRIPTION>
+        </PARAMETER>
+        <PARAMETER MPD_INDEX="4" NAME="C_FSL_DWIDTH" TYPE="integer" VALUE="32">
+          <DESCRIPTION>FSL Data Bus Width</DESCRIPTION>
+        </PARAMETER>
+        <PARAMETER MPD_INDEX="5" NAME="C_FSL_DEPTH" TYPE="integer" VALUE="16">
+          <DESCRIPTION>FSL FIFO Depth</DESCRIPTION>
+        </PARAMETER>
+        <PARAMETER MPD_INDEX="6" NAME="C_READ_CLOCK_PERIOD" TYPE="integer" VALUE="0">
+          <DESCRIPTION>Read Clock Period</DESCRIPTION>
+        </PARAMETER>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="50000000" DIR="I" IS_INSTANTIATED="TRUE" MHS_INDEX="0" MPD_INDEX="0" NAME="FSL_Clk" SIGIS="CLK" SIGNAME="clk_50_0000MHz"/>
+        <PORT DIR="I" IS_INSTANTIATED="TRUE" MHS_INDEX="1" MPD_INDEX="1" NAME="SYS_Rst" SIGNAME="sys_bus_reset"/>
+        <PORT DEF_SIGNAME="aes_0_to_microblaze_0_LMB_Rst" DIR="O" MPD_INDEX="2" NAME="FSL_Rst" SIGNAME="aes_0_to_microblaze_0_LMB_Rst"/>
+        <PORT DIR="I" MPD_INDEX="3" NAME="FSL_M_Clk" SIGNAME="__NOC__"/>
+        <PORT DEF_SIGNAME="aes_0_to_microblaze_0_FSL_M_Data" DIR="I" ENDIAN="BIG" LEFT="0" LSB="31" MPD_INDEX="4" MSB="0" NAME="FSL_M_Data" RIGHT="31" SIGNAME="aes_0_to_microblaze_0_FSL_M_Data" VECFORMULA="[0:C_FSL_DWIDTH-1]"/>
+        <PORT DEF_SIGNAME="aes_0_to_microblaze_0_FSL_M_Control" DIR="I" MPD_INDEX="5" NAME="FSL_M_Control" SIGNAME="aes_0_to_microblaze_0_FSL_M_Control"/>
+        <PORT DEF_SIGNAME="aes_0_to_microblaze_0_FSL_M_Write" DIR="I" MPD_INDEX="6" NAME="FSL_M_Write" SIGNAME="aes_0_to_microblaze_0_FSL_M_Write"/>
+        <PORT DEF_SIGNAME="aes_0_to_microblaze_0_FSL_M_Full" DIR="O" MPD_INDEX="7" NAME="FSL_M_Full" SIGNAME="aes_0_to_microblaze_0_FSL_M_Full"/>
+        <PORT DIR="I" MPD_INDEX="8" NAME="FSL_S_Clk" SIGNAME="__NOC__"/>
+        <PORT DEF_SIGNAME="aes_0_to_microblaze_0_FSL_S_Data" DIR="O" ENDIAN="BIG" LEFT="0" LSB="31" MPD_INDEX="9" MSB="0" NAME="FSL_S_Data" RIGHT="31" SIGNAME="aes_0_to_microblaze_0_FSL_S_Data" VECFORMULA="[0:C_FSL_DWIDTH-1]"/>
+        <PORT DEF_SIGNAME="aes_0_to_microblaze_0_FSL_S_Control" DIR="O" MPD_INDEX="10" NAME="FSL_S_Control" SIGNAME="aes_0_to_microblaze_0_FSL_S_Control"/>
+        <PORT DEF_SIGNAME="aes_0_to_microblaze_0_FSL_S_Read" DIR="I" MPD_INDEX="11" NAME="FSL_S_Read" SIGNAME="aes_0_to_microblaze_0_FSL_S_Read"/>
+        <PORT DEF_SIGNAME="aes_0_to_microblaze_0_FSL_S_Exists" DIR="O" MPD_INDEX="12" NAME="FSL_S_Exists" SIGNAME="aes_0_to_microblaze_0_FSL_S_Exists"/>
+        <PORT DIR="O" MPD_INDEX="13" NAME="FSL_Full" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="__NOC__"/>
+        <PORT DIR="O" MPD_INDEX="14" NAME="FSL_Has_Data" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="__NOC__"/>
+        <PORT DIR="O" MPD_INDEX="15" NAME="FSL_Control_IRQ" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="__NOC__"/>
+      </PORTS>
+      <BUSINTERFACES/>
+      <RESOURCES>
+        <RESOURCE PERCENT="0" TOTAL="14752" TYPE="Slices" USED="22"/>
+        <RESOURCE PERCENT="0" TOTAL="29504" TYPE="Slice Flip Flops" USED="7"/>
+        <RESOURCE PERCENT="0" TOTAL="29504" TYPE="4 input LUTs" USED="44"/>
+        <RESOURCE PERCENT="NA" TOTAL="NA" TYPE="IOs" USED="78"/>
+        <RESOURCE PERCENT="0" TOTAL="250" TYPE="bonded IOBs" USED="0"/>
+      </RESOURCES>
+      <TIMING FREQUNITS="MHz" MAXFREQ="145.409">
+        <TIMECLK SIGNAME="FSL_Clk"/>
+      </TIMING>
+    </MODULE>
+    <MODULE HWVERSION="1.00.a" INSTANCE="aes_0" IPTYPE="PERIPHERAL" MHS_INDEX="21" MODCLASS="PERIPHERAL" MODTYPE="aes">
+      <LICENSEINFO ICON_NAME="ps_core_local"/>
+      <PARAMETERS/>
+      <PORTS>
+        <PORT BUS="MFSL:SFSL" CLKFREQUENCY="50000000" DEF_SIGNAME="__BUS__" DIR="I" IS_INSTANTIATED="TRUE" MHS_INDEX="0" MPD_INDEX="0" NAME="FSL_Clk" SIGIS="CLK" SIGNAME="clk_50_0000MHz"/>
+        <PORT BUS="MFSL:SFSL" DEF_SIGNAME="aes_0_to_microblaze_0_OPB_Rst" DIR="I" MPD_INDEX="1" NAME="FSL_Rst" SIGIS="RST" SIGNAME="aes_0_to_microblaze_0_OPB_Rst"/>
+        <PORT BUS="SFSL" DEF_SIGNAME="microblaze_0_to_aes_0_FSL_S_Clk" DIR="I" MPD_INDEX="2" NAME="FSL_S_Clk" SIGIS="CLK" SIGNAME="microblaze_0_to_aes_0_FSL_S_Clk"/>
+        <PORT BUS="SFSL" DEF_SIGNAME="microblaze_0_to_aes_0_FSL_S_Read" DIR="O" MPD_INDEX="3" NAME="FSL_S_Read" SIGNAME="microblaze_0_to_aes_0_FSL_S_Read"/>
+        <PORT BUS="SFSL" DEF_SIGNAME="microblaze_0_to_aes_0_FSL_S_Data" DIR="I" ENDIAN="BIG" LEFT="0" LSB="31" MPD_INDEX="4" MSB="0" NAME="FSL_S_Data" RIGHT="31" SIGNAME="microblaze_0_to_aes_0_FSL_S_Data" VECFORMULA="[0:31]"/>
+        <PORT BUS="SFSL" DEF_SIGNAME="microblaze_0_to_aes_0_FSL_S_Control" DIR="I" MPD_INDEX="5" NAME="FSL_S_Control" SIGNAME="microblaze_0_to_aes_0_FSL_S_Control"/>
+        <PORT BUS="SFSL" DEF_SIGNAME="microblaze_0_to_aes_0_FSL_S_Exists" DIR="I" MPD_INDEX="6" NAME="FSL_S_Exists" SIGNAME="microblaze_0_to_aes_0_FSL_S_Exists"/>
+        <PORT BUS="MFSL" DEF_SIGNAME="aes_0_to_microblaze_0_FSL_M_Clk" DIR="I" MPD_INDEX="7" NAME="FSL_M_Clk" SIGIS="CLK" SIGNAME="aes_0_to_microblaze_0_FSL_M_Clk"/>
+        <PORT BUS="MFSL" DEF_SIGNAME="aes_0_to_microblaze_0_FSL_M_Write" DIR="O" MPD_INDEX="8" NAME="FSL_M_Write" SIGNAME="aes_0_to_microblaze_0_FSL_M_Write"/>
+        <PORT BUS="MFSL" DEF_SIGNAME="aes_0_to_microblaze_0_FSL_M_Data" DIR="O" ENDIAN="BIG" LEFT="0" LSB="31" MPD_INDEX="9" MSB="0" NAME="FSL_M_Data" RIGHT="31" SIGNAME="aes_0_to_microblaze_0_FSL_M_Data" VECFORMULA="[0:31]"/>
+        <PORT BUS="MFSL" DEF_SIGNAME="aes_0_to_microblaze_0_FSL_M_Control" DIR="O" MPD_INDEX="10" NAME="FSL_M_Control" SIGNAME="aes_0_to_microblaze_0_FSL_M_Control"/>
+        <PORT BUS="MFSL" DEF_SIGNAME="aes_0_to_microblaze_0_FSL_M_Full" DIR="I" MPD_INDEX="11" NAME="FSL_M_Full" SIGNAME="aes_0_to_microblaze_0_FSL_M_Full"/>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="aes_0_to_microblaze_0" BUSSTD="FSL" BUSSTD_PSF="FSL" IS_INSTANTIATED="TRUE" MHS_INDEX="0" MPD_INDEX="1" NAME="MFSL" TYPE="MASTER">
+          <PORTMAPS>
+            <PORTMAP DIR="I" PHYSICAL="FSL_Clk"/>
+            <PORTMAP DIR="I" PHYSICAL="FSL_Rst"/>
+            <PORTMAP DIR="I" PHYSICAL="FSL_M_Clk"/>
+            <PORTMAP DIR="O" PHYSICAL="FSL_M_Write"/>
+            <PORTMAP DIR="O" PHYSICAL="FSL_M_Data"/>
+            <PORTMAP DIR="O" PHYSICAL="FSL_M_Control"/>
+            <PORTMAP DIR="I" PHYSICAL="FSL_M_Full"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="microblaze_0_to_aes_0" BUSSTD="FSL" BUSSTD_PSF="FSL" IS_INSTANTIATED="TRUE" MHS_INDEX="1" MPD_INDEX="0" NAME="SFSL" TYPE="SLAVE">
+          <PORTMAPS>
+            <PORTMAP DIR="I" PHYSICAL="FSL_Clk"/>
+            <PORTMAP DIR="I" PHYSICAL="FSL_Rst"/>
+            <PORTMAP DIR="I" PHYSICAL="FSL_S_Clk"/>
+            <PORTMAP DIR="O" PHYSICAL="FSL_S_Read"/>
+            <PORTMAP DIR="I" PHYSICAL="FSL_S_Data"/>
+            <PORTMAP DIR="I" PHYSICAL="FSL_S_Control"/>
+            <PORTMAP DIR="I" PHYSICAL="FSL_S_Exists"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+      <RESOURCES>
+        <RESOURCE PERCENT="45" TOTAL="14752" TYPE="Slices" USED="6720"/>
+        <RESOURCE PERCENT="8" TOTAL="29504" TYPE="Slice Flip Flops" USED="2435"/>
+        <RESOURCE PERCENT="42" TOTAL="29504" TYPE="4 input LUTs" USED="12440"/>
+        <RESOURCE PERCENT="NA" TOTAL="NA" TYPE="IOs" USED="74"/>
+        <RESOURCE PERCENT="0" TOTAL="250" TYPE="bonded IOBs" USED="0"/>
+      </RESOURCES>
+      <TIMING FREQUNITS="MHz" MAXFREQ="15.531">
+        <TIMECLK SIGNAME="FSL_Clk"/>
+      </TIMING>
+    </MODULE>
+    <MODULE BUSSTD="FSL" BUSSTD_PSF="FSL" HWVERSION="2.11.e" INSTANCE="microblaze_0_to_aes_0" IPTYPE="BUS" MHS_INDEX="22" MODCLASS="BUS" MODTYPE="fsl_v20">
+      <DESCRIPTION TYPE="SHORT">Fast Simplex Link (FSL) Bus</DESCRIPTION>
+      <DESCRIPTION TYPE="LONG">Fast Simplex Link (FSL) is a fast uni-directional point to point communication channel</DESCRIPTION>
+      <DOCUMENTATION>
+        <DOCUMENT SOURCE="C:/Xilinx/13.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/fsl_v20_v2_11_e/doc/fsl_v20.pdf" TYPE="IP"/>
+      </DOCUMENTATION>
+      <LICENSEINFO ICON_NAME="ps_core_preferred"/>
+      <PARAMETERS>
+        <PARAMETER IS_INSTANTIATED="TRUE" MHS_INDEX="2" MPD_INDEX="0" NAME="C_EXT_RESET_HIGH" TYPE="integer" VALUE="1">
+          <DESCRIPTION>External Reset Active High</DESCRIPTION>
+        </PARAMETER>
+        <PARAMETER MPD_INDEX="1" NAME="C_ASYNC_CLKS" TYPE="integer" VALUE="0">
+          <DESCRIPTION>FIFO in FSL operates Asynchronously</DESCRIPTION>
+        </PARAMETER>
+        <PARAMETER MPD_INDEX="2" NAME="C_IMPL_STYLE" TYPE="integer" VALUE="0">
+          <DESCRIPTION>Use BRAMs to Implement FIFO</DESCRIPTION>
+        </PARAMETER>
+        <PARAMETER MPD_INDEX="3" NAME="C_USE_CONTROL" TYPE="integer" VALUE="1">
+          <DESCRIPTION>Propagate Control Bit</DESCRIPTION>
+        </PARAMETER>
+        <PARAMETER MPD_INDEX="4" NAME="C_FSL_DWIDTH" TYPE="integer" VALUE="32">
+          <DESCRIPTION>FSL Data Bus Width</DESCRIPTION>
+        </PARAMETER>
+        <PARAMETER MPD_INDEX="5" NAME="C_FSL_DEPTH" TYPE="integer" VALUE="16">
+          <DESCRIPTION>FSL FIFO Depth</DESCRIPTION>
+        </PARAMETER>
+        <PARAMETER MPD_INDEX="6" NAME="C_READ_CLOCK_PERIOD" TYPE="integer" VALUE="0">
+          <DESCRIPTION>Read Clock Period</DESCRIPTION>
+        </PARAMETER>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="50000000" DIR="I" IS_INSTANTIATED="TRUE" MHS_INDEX="0" MPD_INDEX="0" NAME="FSL_Clk" SIGIS="CLK" SIGNAME="clk_50_0000MHz"/>
+        <PORT DIR="I" IS_INSTANTIATED="TRUE" MHS_INDEX="1" MPD_INDEX="1" NAME="SYS_Rst" SIGNAME="sys_bus_reset"/>
+        <PORT DEF_SIGNAME="microblaze_0_to_aes_0_LMB_Rst" DIR="O" MPD_INDEX="2" NAME="FSL_Rst" SIGNAME="microblaze_0_to_aes_0_LMB_Rst"/>
+        <PORT DIR="I" MPD_INDEX="3" NAME="FSL_M_Clk" SIGNAME="__NOC__"/>
+        <PORT DEF_SIGNAME="microblaze_0_to_aes_0_FSL_M_Data" DIR="I" ENDIAN="BIG" LEFT="0" LSB="31" MPD_INDEX="4" MSB="0" NAME="FSL_M_Data" RIGHT="31" SIGNAME="microblaze_0_to_aes_0_FSL_M_Data" VECFORMULA="[0:C_FSL_DWIDTH-1]"/>
+        <PORT DEF_SIGNAME="microblaze_0_to_aes_0_FSL_M_Control" DIR="I" MPD_INDEX="5" NAME="FSL_M_Control" SIGNAME="microblaze_0_to_aes_0_FSL_M_Control"/>
+        <PORT DEF_SIGNAME="microblaze_0_to_aes_0_FSL_M_Write" DIR="I" MPD_INDEX="6" NAME="FSL_M_Write" SIGNAME="microblaze_0_to_aes_0_FSL_M_Write"/>
+        <PORT DEF_SIGNAME="microblaze_0_to_aes_0_FSL_M_Full" DIR="O" MPD_INDEX="7" NAME="FSL_M_Full" SIGNAME="microblaze_0_to_aes_0_FSL_M_Full"/>
+        <PORT DIR="I" MPD_INDEX="8" NAME="FSL_S_Clk" SIGNAME="__NOC__"/>
+        <PORT DEF_SIGNAME="microblaze_0_to_aes_0_FSL_S_Data" DIR="O" ENDIAN="BIG" LEFT="0" LSB="31" MPD_INDEX="9" MSB="0" NAME="FSL_S_Data" RIGHT="31" SIGNAME="microblaze_0_to_aes_0_FSL_S_Data" VECFORMULA="[0:C_FSL_DWIDTH-1]"/>
+        <PORT DEF_SIGNAME="microblaze_0_to_aes_0_FSL_S_Control" DIR="O" MPD_INDEX="10" NAME="FSL_S_Control" SIGNAME="microblaze_0_to_aes_0_FSL_S_Control"/>
+        <PORT DEF_SIGNAME="microblaze_0_to_aes_0_FSL_S_Read" DIR="I" MPD_INDEX="11" NAME="FSL_S_Read" SIGNAME="microblaze_0_to_aes_0_FSL_S_Read"/>
+        <PORT DEF_SIGNAME="microblaze_0_to_aes_0_FSL_S_Exists" DIR="O" MPD_INDEX="12" NAME="FSL_S_Exists" SIGNAME="microblaze_0_to_aes_0_FSL_S_Exists"/>
+        <PORT DIR="O" MPD_INDEX="13" NAME="FSL_Full" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="__NOC__"/>
+        <PORT DIR="O" MPD_INDEX="14" NAME="FSL_Has_Data" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="__NOC__"/>
+        <PORT DIR="O" MPD_INDEX="15" NAME="FSL_Control_IRQ" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="__NOC__"/>
+      </PORTS>
+      <BUSINTERFACES/>
+      <RESOURCES>
+        <RESOURCE PERCENT="0" TOTAL="14752" TYPE="Slices" USED="22"/>
+        <RESOURCE PERCENT="0" TOTAL="29504" TYPE="Slice Flip Flops" USED="7"/>
+        <RESOURCE PERCENT="0" TOTAL="29504" TYPE="4 input LUTs" USED="44"/>
+        <RESOURCE PERCENT="NA" TOTAL="NA" TYPE="IOs" USED="78"/>
+        <RESOURCE PERCENT="0" TOTAL="250" TYPE="bonded IOBs" USED="0"/>
+      </RESOURCES>
+      <TIMING FREQUNITS="MHz" MAXFREQ="145.409">
+        <TIMECLK SIGNAME="FSL_Clk"/>
       </TIMING>
     </MODULE>
   </MODULES>
