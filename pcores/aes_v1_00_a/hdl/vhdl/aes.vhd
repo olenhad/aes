@@ -142,6 +142,7 @@ architecture EXAMPLE of aes is
 	-- 2  => (0 => x"d1", 1 => x"1f", 2 => x"ed", 3 => x"9d"), 
 	-- 3  => (0 => x"3e", 1 => x"c3", 2 => x"a4", 3 => x"ce")
 	-- );
+
 	component aes_loop_iter is
 	port
 	(
@@ -182,7 +183,7 @@ begin
 	FSL_M_Data <= word_to_vector(decrypt_result(control_index));
 	
    The_SW_accelerator : process (FSL_Clk) is
-	variable step_num : Integer range -1 to 11 := -1;
+	variable step_num : Integer range -3 to 11 := -3;
 	variable state : AES_Block;	
    variable expanded_key : AES_ExpandedKey;	
 
@@ -215,7 +216,10 @@ begin
 					input_state := InputState;
 				
 				elsif FSL_S_Data(27) = '1' then
-					input_state := InputStart;
+					input_state := InputStart;	
+				else 
+					-- SHIT  FORGOT THIS :(
+					input_state := InputIdle;
 				end if;
 			else
 				case input_state is
@@ -233,7 +237,7 @@ begin
 			end if;
 		
 			if (enable_decrypt = '1') then
-				if (step_num = -1) then
+				if (step_num = -3) then
 					-- expanded key is 32 bit registers...
 					expanded_key := key_expansion(cypher_key);	
 					
@@ -244,13 +248,26 @@ begin
 					--step_num := 0;	
 					loop_iter_state <= decrypt_input;
 					loop_iter_key <= expanded_key(10);
-					loop_iter_stage <= DecryptInitial;
+					loop_iter_stage <= DecryptReset;
 					step_num := step_num + 1;
 
+				elsif (step_num = - 2) then
+						loop_iter_state <= decrypt_input;
+						loop_iter_key <= expanded_key(10);
+						loop_iter_stage <= DecryptInitial;
+						step_num := step_num + 1;		
+
+				elsif (step_num = - 1) then
+					if loop_iter_done = '1' then
+						--loop_iter_state <= decrypt_input;
+						loop_iter_key <= expanded_key(9);
+						loop_iter_stage <= DecryptNineLoop;
+						step_num := step_num + 1;
+					end if;	
 				elsif (step_num = 0) then
 					if loop_iter_done = '1' then
-						loop_iter_state <= loop_iter_result;
-						loop_iter_key <= expanded_key(9);
+						-- loop_iter_state <= loop_iter_result;
+						loop_iter_key <= expanded_key(8);
 						loop_iter_stage <= DecryptNineLoop;
 						step_num := step_num + 1;		
 					end if ;
@@ -258,8 +275,8 @@ begin
 				
 				elsif (step_num = 1) then
 					if loop_iter_done = '1' then
-						loop_iter_state <= loop_iter_result;
-						loop_iter_key <= expanded_key(8);
+						--loop_iter_state <= loop_iter_result;
+						loop_iter_key <= expanded_key(7);
 						loop_iter_stage <= DecryptNineLoop;
 						step_num := step_num + 1;
 					end if ;
@@ -267,8 +284,8 @@ begin
 					
 				elsif (step_num = 2) then
 					if loop_iter_done = '1' then
-						loop_iter_state <= loop_iter_result;
-						loop_iter_key <= expanded_key(7);
+						--loop_iter_state <= loop_iter_result;
+						loop_iter_key <= expanded_key(6);
 						loop_iter_stage <= DecryptNineLoop;
 						step_num := step_num + 1;
 						
@@ -276,60 +293,52 @@ begin
 				 		
 				elsif (step_num = 3) then
 					if loop_iter_done = '1' then
-						loop_iter_state <= loop_iter_result;
-						loop_iter_key <= expanded_key(6);
+						--loop_iter_state <= loop_iter_result;
+						loop_iter_key <= expanded_key(5);
 						loop_iter_stage <= DecryptNineLoop;
 						step_num := step_num + 1;	
 					end if ;
 					
 				elsif (step_num = 4) then
 					if loop_iter_done = '1' then
-						loop_iter_state <= loop_iter_result;
-						loop_iter_key <= expanded_key(5);
+						--loop_iter_state <= loop_iter_result;
+						loop_iter_key <= expanded_key(4);
 						loop_iter_stage <= DecryptNineLoop;
 						step_num := step_num + 1;
 					end if ;
 					
 				elsif (step_num = 5) then
 					if loop_iter_done = '1' then
-						loop_iter_state <= loop_iter_result;
-						loop_iter_key <= expanded_key(4);
+						--loop_iter_state <= loop_iter_result;
+						loop_iter_key <= expanded_key(3);
 						loop_iter_stage <= DecryptNineLoop;
 						step_num := step_num + 1;						
 					end if ;
 
 				elsif (step_num = 6) then
 					if loop_iter_done = '1' then
-						loop_iter_state <= loop_iter_result;
-						loop_iter_key <= expanded_key(3);
+						--loop_iter_state <= loop_iter_result;
+						loop_iter_key <= expanded_key(2);
 						loop_iter_stage <= DecryptNineLoop;
 						step_num := step_num + 1;	
 					end if ;
 				
 				elsif (step_num = 7) then
 					if loop_iter_done = '1' then
-						loop_iter_state <= loop_iter_result;
-						loop_iter_key <= expanded_key(2);
+						--loop_iter_state <= loop_iter_result;
+						loop_iter_key <= expanded_key(1);
 						loop_iter_stage <= DecryptNineLoop;
 						step_num := step_num + 1;
 					end if ;
 					
 				elsif (step_num = 8) then
 					if loop_iter_done = '1' then
-						loop_iter_state <= loop_iter_result;
-						loop_iter_key <= expanded_key(1);
-						loop_iter_stage <= DecryptNineLoop;
-						step_num := step_num + 1;
-					end if ;
-					
-				elsif (step_num = 9) then
-					if loop_iter_done = '1' then
-						loop_iter_state <= loop_iter_result;
+						--loop_iter_state <= loop_iter_result;
 						loop_iter_key <= expanded_key(0);
 						loop_iter_stage <= DecryptEnd;
 						step_num := step_num + 1;
 					end if ;
-																
+															
 				else 
 					
 					-- 16 RAMS more here
@@ -342,6 +351,7 @@ begin
 					 	decrypt_result <= state;
 						decryption_finished <= '1';
 						enable_output <= '1';
+						loop_iter_stage <= DecryptReset;
 					end if;
 							
 				end if;

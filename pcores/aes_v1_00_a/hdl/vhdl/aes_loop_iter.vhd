@@ -118,7 +118,7 @@ signal inv_subs_box_result : AES_Block;
 component inv_mix_cols_box is
   port (
 	state: in AES_Block;
-	result : in AES_Block
+	result : out AES_Block
   ) ;
 end component ;
 
@@ -148,41 +148,59 @@ mix_cols : inv_mix_cols_box port map (inv_mix_cols_box_state, inv_mix_cols_box_r
 shift_rows : inv_shift_rows_box port map (inv_shift_rows_state, inv_shift_rows_result);
 
 process(clk)
-	variable cur_state : AES_Block;
+variable cur_state : AES_Block;
+
 	begin
 		if rising_edge(clk) then
 
-			cur_state := state;
+			
 
-			inv_subs_box_state <= cur_state;
+			if stage = DecryptReset then
+					cur_state := state;
+					-- inv_subs_box_state <= state;
 
-			add_round_key_state <= cur_state;
-			add_round_key_key <= key;
+					add_round_key_state <= state;
+					add_round_key_key <= key;
+					done <= '0';
+					--inv_mix_cols_box_state <= state;
 
-			inv_mix_cols_box_state <= cur_state;
+					--inv_shift_rows_state <= state;
+		
 
-			inv_shift_rows_state <= cur_state;
+			elsif stage = DecryptInitial then
+				
+					result <= add_round_key_result;
+					cur_state := add_round_key_result;
+					done <= '1';
+					
+					-- next state setup
+					inv_shift_rows_state <= cur_state;
+					iter_stage <= 0;
 
-			if stage = DecryptInitial then
-				result <= add_round_key_result;
-				done <= '1';
 			elsif stage = DecryptNineLoop then
 				case iter_stage is
-				
 					when 0 =>
 						cur_state := inv_shift_rows_result;
+						inv_subs_box_state <= cur_state;						
 						iter_stage <= 1;
 						done <= '0';
 					when 1 =>
 						cur_state := inv_subs_box_result;
+						add_round_key_state <= cur_state;
+						add_round_key_key <= key;
+						
 						iter_stage <= 2;
 						done <= '0';
 					when 2 =>
 						cur_state := add_round_key_result;
+						inv_mix_cols_box_state <= cur_state;
 						iter_stage <= 3;
 						done <= '0';
 					when 3 =>
 						cur_state := inv_mix_cols_box_result;
+
+						inv_shift_rows_state <= cur_state;
+
 						iter_stage <= 0;
 						done <= '1';
 						result <= cur_state;
@@ -192,17 +210,23 @@ process(clk)
 				case iter_stage is
 					when 0 =>
 						cur_state := inv_shift_rows_result;
+						inv_subs_box_state <= cur_state;
+
 						iter_stage <= 1;
 						done <= '0';
 					when 1 =>
 						cur_state := inv_subs_box_result;
+						add_round_key_state <= cur_state;
+						add_round_key_key <= key;
 						iter_stage <= 2;
 						done <= '0';
 					when 2 =>
+
 						cur_state := add_round_key_result;
 						iter_stage <= 0;
 						done <= '1';
 						result <= cur_state;
+						
 					when others =>
 					
 				end case;		

@@ -81,6 +81,114 @@
         wait for CLK_period*5; -- wait until global set/reset completes
 
         -- Add user defined stimulus here
+			FSL_S_Control <= '1';
+			FSL_S_Data <= x"00000004";
+
+		wait for CLK_period;	
+			FSL_S_Control <= '0';
+			FSL_S_Data <= x"00010203";
+
+		wait for CLK_period;
+			FSL_S_Control <= '1';
+			FSL_S_Data <= x"00000005";
+
+		wait for CLK_period;	
+			FSL_S_Control <= '0';
+			FSL_S_Data <= x"04050607";
+
+		wait for CLK_period;
+			FSL_S_Control <= '1';
+			FSL_S_Data <= x"00000006";
+
+		wait for CLK_period;	
+			FSL_S_Control <= '0';
+			FSL_S_Data <= x"08090a0b";
+
+		wait for CLK_period;
+			FSL_S_Control <= '1';
+			FSL_S_Data <= x"00000007";
+
+		wait for CLK_period;	
+			FSL_S_Control <= '0';
+			FSL_S_Data <= x"0c0d0e0f";
+
+-- sending state
+-- x"12c497c5"
+-- x"6fb4b8f4"
+-- x"d11fed9d"
+-- x"3ec3a4ce"
+		wait for CLK_period;
+			FSL_S_Control <= '1';
+			FSL_S_Data <= x"00000008";
+
+		wait for CLK_period;	
+			FSL_S_Control <= '0';
+			FSL_S_Data <= x"12c497c5";
+
+		wait for CLK_period;
+			FSL_S_Control <= '1';
+			FSL_S_Data <= x"00000009";
+			
+		wait for CLK_period;	
+			FSL_S_Control <= '0';
+			FSL_S_Data <= x"6fb4b8f4";
+
+		wait for CLK_period;
+			FSL_S_Control <= '1';
+			FSL_S_Data <= x"0000000a";									
+
+		wait for CLK_period;	
+			FSL_S_Control <= '0';
+			FSL_S_Data <= x"d11fed9d";
+
+		wait for CLK_period;
+			FSL_S_Control <= '1';
+			FSL_S_Data <= x"0000000b";									
+
+		wait for CLK_period;	
+			FSL_S_Control <= '0';
+			FSL_S_Data <= x"3ec3a4ce";
+
+
+-- START Decrypt
+		wait for CLK_period;
+			FSL_S_Control <= '1';
+			FSL_S_Data <= x"00000010";
+		wait for CLK_period;
+			FSL_S_Control <= '0';
+			FSL_S_Data <= x"00000000";	
+
+		wait for CLK_period*50;
+
+-- READ INPUTS
+-- (x"03050703")
+-- (x"00056677")
+-- (x"8899aabb")
+-- (x"ccddeeff")
+		wait for CLK_period;
+			FSL_S_Control <= '1';
+			FSL_S_Data <= x"00000000";
+		wait for CLK_period;
+			assert FSL_M_Data = x"03050703" report "Decrypt phailed" severity warning;
+
+
+		wait for CLK_period;
+			FSL_S_Control <= '1';
+			FSL_S_Data <= x"00000001";
+		wait for CLK_period;
+			assert FSL_M_Data = x"00056677" report "Decrypt phailed" severity warning;
+
+		wait for CLK_period;
+			FSL_S_Control <= '1';
+			FSL_S_Data <= x"00000002";
+		wait for CLK_period;
+			assert FSL_M_Data = x"8899aabb" report "Decrypt phailed" severity warning;
+
+		wait for CLK_period;
+			FSL_S_Control <= '1';
+			FSL_S_Data <= x"00000003";
+		wait for CLK_period;
+			assert FSL_M_Data = x"ccddeeff" report "Decrypt phailed" severity warning;
 
 
         wait; -- will wait forever
